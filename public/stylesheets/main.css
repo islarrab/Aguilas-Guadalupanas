@@ -1,0 +1,73 @@
+body {
+  background: url(../images/background.jpg) fixed;
+  font-family: Verdana, Sans Serif;
+  font-size: 14px;
+}
+
+.website {
+  border: 3px solid white;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -moz-box-shadow: 0 0 5px #888;
+  -webkit-box-shadow: 0 0 5px #888;
+  box-shadow: 0 0 5px #888;
+}
+
+#main {
+  background-color: rgba(255,255,255,1);
+  overflow: auto;
+  width: 991px;
+  margin: -20px auto -20px auto;
+  -moz-box-shadow: 0 0 10px 10px rgba(0,0,0,0.4);
+  -webkit-box-shadow: 0 0 10px 20px rgba(0,0,0,0.4);
+  box-shadow: 0 0 10px 10px rgba(0,0,0,0.4);
+}
+
+/*HEADER*/
+#header {
+  width:831px;
+  height:100px;
+  padding:10px;
+  background-color: rgba(255, 255, 255, 0.7);
+  margin:28px auto 20px auto;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+}
+
+img.header#logo {
+  background-color: transparent;
+}
+
+/* MENU */
+#menu {
+  width: 831px;
+  height: 30px;
+  margin: 0px auto 20px auto;
+  padding-left: 20px;
+  background-color: rgba(255,255,255,.7);
+}
+
+/* CONTENIDO */
+#content {
+  float: left;
+  width: 610px;
+  margin: 0px 0px 20px 67px;
+  background-color: rgba(255,255,255,.7);
+  padding-left: 10px;
+}
+
+#extras {
+  float: right;
+  width: 200px;
+  margin: 0px 68px 20px 0px;
+  background-color: rgba(255,255,255,.7);
+  padding-left: 10px;
+}
+
+#footer {
+  overflow: auto;
+  text-align: center;
+  font-size: 10px;
+  width: 831px;
+  margin: 0px auto 10px auto;
+}
