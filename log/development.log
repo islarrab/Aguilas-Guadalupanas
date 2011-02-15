@@ -113,3 +113,128 @@ Migrating to AddInfoToUsers (20110215225653)
   [1m[36mSQL (0.2ms)[0m  [1mPRAGMA index_list("users")[0m
   [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_users_on_reset_password_token')
   [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_users_on_email')[0m
+
+
+Started GET "/" for 127.0.0.1 at Tue Feb 15 15:24:20 -0800 2011
+  Processing by HomeController#index as HTML
+Rendered general/_header.html.erb (0.4ms)
+Rendered general/_menu.html.erb (0.4ms)
+Rendered general/_extras.html.erb (0.4ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered home/index.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 29ms (Views: 28.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/background.jpg" for 127.0.0.1 at Tue Feb 15 15:24:20 -0800 2011
+
+ActionController::RoutingError (No route matches "/images/background.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at Tue Feb 15 15:24:23 -0800 2011
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered devise/shared/_errors.erb (0.9ms)
+Rendered devise/shared/_usr_form.erb (49.4ms)
+Rendered devise/registrations/new.html.erb within layouts/application (53.1ms)
+Completed   in 126ms
+
+ActionView::Template::Error (undefined method `usuario' for #<User:0xb6dcbfd4>):
+    1: <%= render "devise/shared/errors", :target => @user %>
+    2: <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+    3:   * Usuario:<br/>
+    4:   <%= f.text_field :usuario, :maxlength => 20 %><br/>
+    5:   * Password (mínimo 6 caracteres):<br/>
+    6:   <%= f.password_field :password %><br/>
+    7:   * Confirma tu password:<br/>
+  app/views/devise/shared/_usr_form.erb:4:in `_app_views_devise_shared__usr_form_erb___1002999812__613546158_990576'
+  app/views/devise/shared/_usr_form.erb:2:in `_app_views_devise_shared__usr_form_erb___1002999812__613546158_990576'
+  app/views/devise/registrations/new.html.erb:3:in `_app_views_devise_registrations_new_html_erb___312438007__613541318_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (236.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (250.8ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at Tue Feb 15 15:24:44 -0800 2011
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered devise/shared/_errors.erb (0.8ms)
+Rendered devise/shared/_usr_form.erb (53.5ms)
+Rendered devise/shared/_links.erb (2.8ms)
+Rendered general/_header.html.erb (0.4ms)
+Rendered general/_menu.html.erb (0.4ms)
+Rendered general/_extras.html.erb (0.4ms)
+Rendered general/_footer.html.erb (0.4ms)
+Rendered devise/registrations/new.html.erb within layouts/application (74.8ms)
+Completed 200 OK in 134ms (Views: 88.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/background.jpg" for 127.0.0.1 at Tue Feb 15 15:24:44 -0800 2011
+
+ActionController::RoutingError (No route matches "/images/background.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at Tue Feb 15 15:24:55 -0800 2011
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered devise/shared/_errors.erb (1.1ms)
+Rendered devise/shared/_usr_form.erb (41.0ms)
+Rendered devise/shared/_links.erb (3.7ms)
+Rendered general/_header.html.erb (0.6ms)
+Rendered general/_menu.html.erb (0.5ms)
+Rendered general/_extras.html.erb (0.4ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered devise/registrations/new.html.erb within layouts/application (68.5ms)
+Completed 200 OK in 100ms (Views: 82.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/background.jpg" for 127.0.0.1 at Tue Feb 15 15:24:55 -0800 2011
+
+ActionController::RoutingError (No route matches "/images/background.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at Tue Feb 15 15:25:16 -0800 2011
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered devise/shared/_errors.erb (0.9ms)
+Rendered devise/shared/_usr_form.erb (44.5ms)
+Rendered devise/shared/_links.erb (4.1ms)
+Rendered general/_header.html.erb (0.6ms)
+Rendered general/_menu.html.erb (0.5ms)
+Rendered general/_extras.html.erb (0.5ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered devise/registrations/new.html.erb within layouts/application (75.0ms)
+Completed 200 OK in 135ms (Views: 90.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/background.jpg" for 127.0.0.1 at Tue Feb 15 15:25:16 -0800 2011
+
+ActionController::RoutingError (No route matches "/images/background.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at Tue Feb 15 15:28:16 -0800 2011
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered devise/shared/_errors.erb (0.7ms)
+Rendered devise/shared/_usr_form.erb (40.1ms)
+Rendered general/_header.html.erb (0.5ms)
+Rendered general/_menu.html.erb (0.5ms)
+Rendered general/_extras.html.erb (0.4ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered devise/registrations/new.html.erb within layouts/application (57.1ms)
+Completed 200 OK in 98ms (Views: 67.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/background.jpg" for 127.0.0.1 at Tue Feb 15 15:28:16 -0800 2011
+
+ActionController::RoutingError (No route matches "/images/background.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)

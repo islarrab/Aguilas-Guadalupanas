@@ -1,0 +1,43 @@
+<%= render "devise/shared/errors", :target => @user %>
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  * Usuario:<br/>
+  <%= f.text_field :username, :maxlength => 20 %><br/>
+  * Password (mínimo 6 caracteres):<br/>
+  <%= f.password_field :password %><br/>
+  * Confirma tu password:<br/>
+  <%= f.password_field :password_confirmation %><p> 
+
+  * Nombre:<br/>
+  <%= f.text_field :nombre %><br/>
+  * Apellido Paterno:<br/>
+  <%= f.text_field :apellido_paterno %><br/>
+  * Apellido Materno:<br/>
+  <%= f.text_field :apellido_materno %><p>
+
+  * Email:<br/>
+  <%= f.text_field :email %><p>
+
+  * Tel&eacute;fono de Contacto:<br/>
+  <%= f.text_field :telefono, :maxlength => 10 %><br/>
+  Tel&eacute;fono Celular:<br/>
+  <%= f.text_field :celular, :maxlength => 10 %><p>
+
+  * Direcci&oacute;n:<br/>
+  <%= f.text_field :direccion %><p>
+
+  * Instituto de Origen:<br/>
+  <%= f.radio_button :tec, 't' %> ITESM<br/>
+  <%= f.radio_button :tec, 'f' %> UDEM<p>
+
+  * Matr&iacute;cula (solo n&uacute;meros):<br/>
+  <%= f.text_field :matricula %><br/>
+  * Semestre:<br/>
+  <%= f.number_field :semestre, :maxlength => 2 %><br/>
+  * Carrera:<br/>
+  <%= f.text_field :carrera, :maxlength => 5 %><br/>
+  * Horas de SSC (ya acreditadas a la fecha):<br/>
+  <%= f.number_field :carrera, :max => 500 %><p>
+
+  <%= f.submit 'Guardar'%>
+  <input type=button value=Regresar onClick="javascript:history.back(1);"><p>
+<% end %>
