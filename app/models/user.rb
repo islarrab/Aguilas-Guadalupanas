@@ -10,9 +10,9 @@ class User < ActiveRecord::Base
 
   validates_format_of :email, :with => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
   validates_presence_of :password_confirmation, :username, :nombre,
-  :apellido_paterno, :apellido_materno, :horas_ssc, :tec, :carrera, :matricula,
+  :apellido_paterno, :apellido_materno, :tec, :carrera, :matricula,
   :direccion
-  validates_length_of :password, :in 6..20
-  validates_length_of :telefono, :in 8..10, :allow_nil => false
-  validates_length_of :celular, :is => 10, :allow_nil => true
+  validates_length_of :password, :in => 6..20
+  validates_length_of :telefono, :in => 8..10, :allow_nil => false
+  validates_length_of :celular, :is => 10, :allow_blank => true
 end

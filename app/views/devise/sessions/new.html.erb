@@ -1,15 +1,16 @@
 <h2>Log in</h2>
 
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <p><%= f.label :username %><br />
+  <p>Usuario:<br />
   <%= f.text_field :username %></p>
 
   <p><%= f.label :password %><br />
   <%= f.password_field :password %></p>
 
   <% if devise_mapping.rememberable? -%>
-    <p><%= f.check_box :remember_me %> <%= f.label :remember_me %></p>
+    <p><%= f.check_box :remember_me %> Recordarme en esta PC</p>
   <% end -%>
 
-  <p><%= f.submit "Sign in" %></p>
+  <p><%= f.submit "Entrar" %>
+  <input type=button value=Cancelar onClick="javascript:history.back(1);"</p>
 <% end %>
