@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   :username, :nombre, :apellido_paterno, :apellido_materno, :horas_ssc, :tec,
   :carrera, :matricula, :semestre, :telefono, :celular, :direccion
 
+  validates_confirmation_of :password
   validates_format_of :email, :with => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
   validates_presence_of :password_confirmation, :username, :nombre,
   :apellido_paterno, :apellido_materno, :tec, :carrera, :matricula,
