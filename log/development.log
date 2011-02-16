@@ -1473,3 +1473,147 @@ ActionController::RoutingError (No route matches "/images/background.jpg"):
   
 
 Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Feb 15 21:10:10 -0800 2011
+  Processing by HomeController#index as HTML
+Rendered general/_header.html.erb (0.5ms)
+Rendered general/_menu.html.erb (0.5ms)
+Rendered general/_extras.html.erb (0.5ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered home/index.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 48ms (Views: 47.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/background.jpg" for 127.0.0.1 at Tue Feb 15 21:10:11 -0800 2011
+
+ActionController::RoutingError (No route matches "/images/background.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/login" for 127.0.0.1 at Tue Feb 15 21:10:14 -0800 2011
+  Processing by Devise::SessionsController#new as HTML
+Rendered general/_header.html.erb (1.1ms)
+Rendered general/_menu.html.erb (0.9ms)
+Rendered general/_extras.html.erb (0.9ms)
+Rendered general/_footer.html.erb (0.9ms)
+Rendered devise/sessions/new.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 153ms (Views: 60.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/background.jpg" for 127.0.0.1 at Tue Feb 15 21:10:15 -0800 2011
+
+ActionController::RoutingError (No route matches "/images/background.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at Tue Feb 15 21:10:21 -0800 2011
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"commit"=>"Entrar", "authenticity_token"=>"2bskwTYV67QK7SK0PeeZNkjOxSpGpOKfODdnxANLA3w=", "utf8"=>"✓", "user"=>{"remember_me"=>"0", "username"=>"vikonava", "password"=>"[FILTERED]"}}
+  [1m[36mSQL (1.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."username" = 'vikonava') LIMIT 1
+  [1m[36mAREL (1.2ms)[0m  [1mUPDATE "users" SET "updated_at" = '2011-02-16 05:10:22.264313', "current_sign_in_at" = '2011-02-16 05:10:22.263301', "sign_in_count" = 4, "last_sign_in_at" = '2011-02-16 00:57:47.387139' WHERE ("users"."id" = 1)[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 580ms
+
+
+Started GET "/" for 127.0.0.1 at Tue Feb 15 21:10:22 -0800 2011
+  Processing by HomeController#index as HTML
+Rendered general/_header.html.erb (0.6ms)
+Rendered general/_menu.html.erb (0.6ms)
+Rendered general/_extras.html.erb (0.6ms)
+Rendered general/_footer.html.erb (0.6ms)
+Rendered home/index.html.erb within layouts/application (20.4ms)
+Completed 200 OK in 31ms (Views: 30.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/background.jpg" for 127.0.0.1 at Tue Feb 15 21:10:22 -0800 2011
+
+ActionController::RoutingError (No route matches "/images/background.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.8ms)
+
+
+Started GET "/user/edit" for 127.0.0.1 at Tue Feb 15 21:10:27 -0800 2011
+
+ActionController::RoutingError (No route matches "/user/edit"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (7.0ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at Tue Feb 15 21:10:33 -0800 2011
+  Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered devise/shared/_errors.erb (0.9ms)
+Rendered devise/shared/_usr_form.erb (22.1ms)
+Rendered general/_header.html.erb (0.5ms)
+Rendered general/_menu.html.erb (0.5ms)
+Rendered general/_extras.html.erb (0.5ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered devise/registrations/edit.html.erb within layouts/application (52.0ms)
+Completed 200 OK in 148ms (Views: 85.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/images/background.jpg" for 127.0.0.1 at Tue Feb 15 21:10:34 -0800 2011
+
+ActionController::RoutingError (No route matches "/images/background.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at Tue Feb 15 21:12:00 -0800 2011
+  Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered devise/shared/_errors.erb (0.8ms)
+Rendered devise/shared/_usr_form.erb (12.3ms)
+Rendered general/_header.html.erb (0.5ms)
+Rendered general/_menu.html.erb (0.4ms)
+Rendered general/_extras.html.erb (0.5ms)
+Rendered general/_footer.html.erb (0.6ms)
+Rendered devise/registrations/edit.html.erb within layouts/application (30.7ms)
+Completed 200 OK in 188ms (Views: 42.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/images/background.jpg" for 127.0.0.1 at Tue Feb 15 21:12:01 -0800 2011
+
+ActionController::RoutingError (No route matches "/images/background.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/logout" for 127.0.0.1 at Tue Feb 15 21:12:52 -0800 2011
+  Processing by Devise::SessionsController#destroy as HTML
+  [1m[35mUser Load (1.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 66ms
+
+
+Started GET "/" for 127.0.0.1 at Tue Feb 15 21:12:53 -0800 2011
+  Processing by HomeController#index as HTML
+Rendered general/_header.html.erb (0.4ms)
+Rendered general/_menu.html.erb (0.5ms)
+Rendered general/_extras.html.erb (0.5ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered home/index.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 29ms (Views: 28.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/images/background.jpg" for 127.0.0.1 at Tue Feb 15 21:12:53 -0800 2011
+
+ActionController::RoutingError (No route matches "/images/background.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)

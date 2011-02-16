@@ -1,11 +1,13 @@
 <%= render "devise/shared/errors", :target => @user %>
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  * Usuario:<br/>
-  <%= f.text_field :username, :maxlength => 20 %><br/>
-  * Password (mínimo 6 caracteres):<br/>
-  <%= f.password_field :password %><br/>
-  * Confirma tu password:<br/>
-  <%= f.password_field :password_confirmation %><p> 
+  <% if (!user_signed_in?) %>
+    * Usuario:<br/>
+    <%= f.text_field :username, :maxlength => 20 %><br/>
+    * Password (mínimo 6 caracteres):<br/>
+    <%= f.password_field :password %><br/>
+    * Confirma tu password:<br/>
+    <%= f.password_field :password_confirmation %><p> 
+  <% end %>
 
   * Nombre:<br/>
   <%= f.text_field :nombre %><br/>
