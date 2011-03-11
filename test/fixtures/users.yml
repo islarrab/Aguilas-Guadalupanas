@@ -4,8 +4,24 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
+one: {
+  email: loren@ipsum.org
+}
 # column: value
 #
 two: {}
 #  column: value
+sample: 
+  username: username
+  nombre: mi nombre
+  apellido_paterno: paterno
+  apellido_materno: materno
+  email: lorem@ipsum.org
+  telefono: 83000000
+  celular: 8180000000
+  direccion: bla bla bla bla
+  tec: t
+  matricula: 111111
+  semestre: 9
+  carrera: ITC
+  horas_ssc: 0

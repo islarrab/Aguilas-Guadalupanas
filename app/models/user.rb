@@ -15,13 +15,14 @@ class User < ActiveRecord::Base
   validates_presence_of :password_confirmation, :username, :nombre,
   :apellido_paterno, :apellido_materno, :tec, :carrera, :matricula,
   :direccion, :semestre
+  validates_length_of :username, :in => 6..20
   validates_length_of :password, :in => 6..20
+  validates_length_of :carrera, :in => 2..4
   validates_length_of :telefono, :in => 8..10, :allow_nil => false
   validates_length_of :celular, :is => 10, :allow_blank => true
-  validates_numericality_of :horas_ssc, :only_integer => true
+  validates_numericality_of :horas_ssc, :only_integer => true, :greater_than_or_equal_to => 0, :less_than_or_equal_to => 500
   validates_numericality_of :matricula, :only_integer => true
-  validates_numericality_of :semestre, :only_integer => true
+  validates_numericality_of :semestre, :only_integer => true, :greater_than_or_equal_to => 1, :less_than_or_equal_to => 12
   validates_numericality_of :telefono, :only_integer => true
-  validates_numericality_of :celular, :only_integer => true
-
+  validates_numericality_of :celular, :only_integer => true, :allow_blank => true
 end
