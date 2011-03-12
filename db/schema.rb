@@ -10,7 +10,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110215225653) do
+ActiveRecord::Schema.define(:version => 20110312052300) do
+
+  create_table "activities", :force => true do |t|
+    t.string   "nombre"
+    t.date     "fecha"
+    t.time     "hora"
+    t.time     "duracion"
+    t.integer  "valor"
+    t.integer  "actividad"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "project_id"
+  end
+
+  create_table "projects", :force => true do |t|
+    t.string   "nombre"
+    t.date     "fecha"
+    t.integer  "min_de_actv"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "fin",         :default => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "", :null => false

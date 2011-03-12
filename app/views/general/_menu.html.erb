@@ -1,9 +1,10 @@
 <% if user_signed_in? %>
-<%= link_to "Proyectos", "/#" %> |
-<%= link_to "Actividades", "/#" %> |
-<%= link_to "Usuarios", "/#" %> |
-<%= link_to "Desconectar", "/logout" %>
+  <% if (current_user.admin? || current_user.coordinator?) %>
+    <%= link_to "Proyectos", projects_path %> |
+  <% end %>
+  <%= link_to "Mi Cuenta", edit_user_registration_path %> |
+  <%= link_to "Desconectar", "/logout" %>
 <% else %>
-<%= link_to "Conectar", "/login" %> |
-<%= link_to "Registrarse", "/registrar" %>
+  <%= link_to "Conectar", "/login" %> |
+  <%= link_to "Registrarse", "/registrar" %>
 <% end %>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  nombre: MyString
+  fecha: 2011-03-11
+  min_de_actv: 1
+
+two:
+  nombre: MyString
+  fecha: 2011-03-11
+  min_de_actv: 1

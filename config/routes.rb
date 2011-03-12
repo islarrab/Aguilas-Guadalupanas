@@ -1,4 +1,9 @@
 VikoBlog::Application.routes.draw do
+  resources :projects do
+    get "projend"
+    resources :activities
+  end
+
   #get "admin/index"
   get "/admin" => "admin#index"
 

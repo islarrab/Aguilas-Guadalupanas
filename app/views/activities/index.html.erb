@@ -1,0 +1,42 @@
+<h1>Actividades del Proyecto</h1>
+<b>Proyecto:</b> <%= @project.nombre %><br/>
+<b>Fecha de Inicio:</b> <%= @project.fecha %><br/><br/>
+<table>
+<% if !@activities.empty? %> 
+  <tr>
+    <th>Nombre</th>
+    <th>Fecha</th>
+    <th>Hora</th>
+    <th>Duracion</th>
+    <th>Valor</th>
+    <th>Tipo</th>
+    <th></th>
+    <% if !@project.fin? %>
+      <th></th>
+      <th></th>
+    <% end %>
+  </tr>
+
+  <% @activities.each do |activity| %>
+  <tr>
+    <td><%= activity.nombre %></td>
+    <td><%= activity.fecha %></td>
+    <td><%= activity.hora %></td>
+    <td><%= activity.duracion %></td>
+    <td><%= activity.valor %></td>
+    <td><%= activity.actividad %></td>
+    <td><%= link_to 'Ver', project_activity_path(@project,activity) %></td>
+    <% if !@project.fin? %> 
+      <td><%= link_to 'Editar', edit_project_activity_path(@project,activity) %></td>
+      <td><%= link_to 'Eliminar', project_activity_path(@project,activity), :confirm => 'Are you sure?', :method => :delete %></td>
+    <% end %>
+  </tr>
+  <% end %>
+<% else %>
+  <td align=center><i>Aun no hay actividades para este proyecto</i></td>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nueva Actividad', new_project_activity_path(@project) %>

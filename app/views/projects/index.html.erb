@@ -1,0 +1,64 @@
+<h1>Proyectos</h1>
+
+<table>
+  <tr>
+    <th colspan=5>Proyectos Actuales</th>
+  </tr>
+<% if !@projects.empty? %>
+    <tr>
+      <th>Nombre</th>
+      <th>Fecha Inicio</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  <% @projects.each do |project| %>
+    <tr>
+      <td><%= project.nombre %></td>
+      <td><%= project.fecha %></td>
+      <td><%= link_to 'Ver', project %></td>
+      <td><%= link_to 'Editar', edit_project_path(project) %></td>
+      <td><%= link_to "Actividades", project_activities_path(project) %></td> 
+      <td><%= link_to 'Finalizar', project_projend_path(project), :confirm => 'Estas seguro?' %></td>
+    </tr>
+  <% end %>
+<% else %>
+  <tr>
+    <td align=center><i>No hay proyectos actuales</i></td>
+  </tr>
+<% end %>
+</table>
+<br/>
+
+<table>
+  <tr>
+    <th colspan=5>Proyectos Finalizados</th>
+  </tr>
+<% if !@projectsfin.empty? %>
+    <tr>
+      <th>Nombre</th>
+      <th>Fecha Inicio</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  <% @projectsfin.each do |project| %>
+    <tr>
+      <td><%= project.nombre %></td>
+      <td><%= project.fecha %></td>
+      <td><%= link_to 'Ver', project %></td>
+      <td><%= link_to "Actividades", project_activities_path(project) %></td>
+      <td><%= link_to 'Eliminar', project, :confirm => 'Estas seguro?', :method => :delete %></td>
+    </tr>
+  <% end %>
+<% else %>
+  <tr>
+    <td align=center><i>No hay proyectos finalizados</i></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nuevo Proyecto', new_project_path %>

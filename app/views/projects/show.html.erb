@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @project.nombre %>
+</p>
+
+<p>
+  <b>Fecha:</b>
+  <%= @project.fecha %>
+</p>
+
+<p>
+  <b>Minimo de actividades:</b>
+  <%= @project.min_de_actv %>
+</p>
+
+<% if !@project.fin? %>
+  <%= link_to 'Editar', edit_project_path(@project) %> |
+<% end %>
+<%= link_to 'Atras', projects_path %>

@@ -51,10 +51,10 @@ img.header#logo {
 /* CONTENIDO */
 #content {
   float: left;
-  width: 840px;
+  width: 830px;
   margin: 0px 0px 20px 67px;
   background-color: rgba(255,255,255,.7);
-  padding-left: 10px;
+  padding: 0px 10px 10px 10px;
 }
 
 #extras {
