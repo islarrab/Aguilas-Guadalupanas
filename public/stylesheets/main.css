@@ -40,10 +40,11 @@ img.header#logo {
 
 /* MENU */
 #menu {
-  width: 831px;
-  height: 30px;
+  text-align: center;
+  width: 851px;
+  height: 25px;
   margin: 0px auto 20px auto;
-  padding-left: 20px;
+  padding-top: 6px;
   background-color: rgba(255,255,255,.7);
 }
 

@@ -1,6 +1,9 @@
 VikoBlog::Application.routes.draw do
+  #get "admin/index"
+  get "/admin" => "admin#index"
+
   devise_for :users do
-    get "/registrarse" => "devise/registrations#new"
+    get "/registrar" => "devise/registrations#new"
     get "/login" => "devise/sessions#new"
     get "/logout" => "devise/sessions#destroy"
   end

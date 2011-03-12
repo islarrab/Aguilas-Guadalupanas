@@ -1,0 +1,9 @@
+<% if user_signed_in? %>
+<%= link_to "Proyectos", "/#" %> |
+<%= link_to "Actividades", "/#" %> |
+<%= link_to "Usuarios", "/#" %> |
+<%= link_to "Desconectar", "/logout" %>
+<% else %>
+<%= link_to "Conectar", "/login" %> |
+<%= link_to "Registrarse", "/registrar" %>
+<% end %>
