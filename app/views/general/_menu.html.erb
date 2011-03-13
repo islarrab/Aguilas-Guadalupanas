@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-  <% if (current_user.admin? || current_user.coordinator?) %>
+  <% if can? :read, Project %>
     <%= link_to "Proyectos", projects_path %> |
   <% end %>
   <%= link_to "Mi Cuenta", edit_user_registration_path %> |

@@ -1,9 +1,17 @@
+<%= link_to "<< Volver a listado de Proyectos", projects_path %>
+<br/>
 <h1>Actividades del Proyecto</h1>
+<br/>
 <b>Proyecto:</b> <%= @project.nombre %><br/>
-<b>Fecha de Inicio:</b> <%= @project.fecha %><br/><br/>
+<b>Fecha de Inicio:</b> <%= @project.fecha.strftime("%d/%m/%Y") %><br/><br/>
+<% if can? :create, @project => Activity %>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <%= link_to image_tag("new.png", :border => 0), new_project_activity_path(@project) %>
+  <%= link_to 'Nueva Actividad', new_project_activity_path(@project) %>
+<% end %>
 <table>
 <% if !@activities.empty? %> 
-  <tr>
+  <tr class="keys">
     <th>Nombre</th>
     <th>Fecha</th>
     <th>Hora</th>
@@ -17,18 +25,36 @@
     <% end %>
   </tr>
 
+  <% odd = false %>
   <% @activities.each do |activity| %>
-  <tr>
-    <td><%= activity.nombre %></td>
-    <td><%= activity.fecha %></td>
-    <td><%= activity.hora %></td>
-    <td><%= activity.duracion %></td>
+  <% 
+     case activity.actividad
+       when 1
+         act = "Actividad"
+       when 2
+         act = "Junta"
+       when 3
+         act = "Taller"
+       else
+         act = "Asueto"
+     end 
+  %>
+  <% if odd == true %>
+  <tr class="odd">
+  <% else %>
+  <tr?
+  <% end %>
+  <% odd = !odd %>
+    <td class="column1"><%= activity.nombre %></td>
+    <td><%= activity.fecha.strftime("%d/%m/%Y") %></td>
+    <td><%= activity.hora.strftime("%I:%M %p") %></td>
+    <td><%= activity.duracion.strftime("%I:%M") %></td>
     <td><%= activity.valor %></td>
-    <td><%= activity.actividad %></td>
-    <td><%= link_to 'Ver', project_activity_path(@project,activity) %></td>
+    <td><%= act %></td>
+    <td><% if can? :show, @project => activity %><%= link_to image_tag("show.png", :border => 0), project_activity_path(@project,activity) %><% end %></td>
     <% if !@project.fin? %> 
-      <td><%= link_to 'Editar', edit_project_activity_path(@project,activity) %></td>
-      <td><%= link_to 'Eliminar', project_activity_path(@project,activity), :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><% if can? :update, @project => activity %><%= link_to image_tag("edit.png", :border => 0), edit_project_activity_path(@project,activity) %><% end %></td>
+      <td><% if can? :destroy, @project => activity %><%= link_to image_tag("delete.png", :border => 0), project_activity_path(@project,activity), :confirm => 'Are you sure?', :method => :delete %><% end %></td>
     <% end %>
   </tr>
   <% end %>
@@ -36,7 +62,5 @@
   <td align=center><i>Aun no hay actividades para este proyecto</i></td>
 <% end %>
 </table>
-
 <br />
 
-<%= link_to 'Nueva Actividad', new_project_activity_path(@project) %>

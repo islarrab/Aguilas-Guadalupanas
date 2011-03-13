@@ -3,9 +3,9 @@
 one:
   nombre: MyString
   fecha: 2011-03-11
-  min_de_actv: 1
+  min_de_actv: 3
 
 two:
   nombre: MyString
   fecha: 2011-03-11
-  min_de_actv: 1
+  min_de_actv: 4

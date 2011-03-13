@@ -33,13 +33,13 @@
     <%= f.radio_button :tec, 'f' %> UDEM<p>
 
     * Matr&iacute;cula (solo n&uacute;meros):<br/>
-    <%= f.text_field :matricula %><br/>
+    <%= f.text_field :matricula, :maxlength => 10 %><br/>
     * Semestre:<br/>
     <%= f.number_field :semestre, :maxlength => 2 %><br/>
     * Carrera:<br/>
-    <%= f.text_field :carrera, :maxlength => 5 %><br/>
+    <%= f.text_field :carrera, :maxlength => 4 %><br/>
     * Horas de SSC (ya acreditadas a la fecha):<br/>
-    <%= f.number_field :horas_ssc, :max => 500 %><p>
+    <%= f.number_field :horas_ssc, :max => 500, :maxlength => 3 %><p>
   <% end %>
 
   <%= f.submit 'Guardar'%>

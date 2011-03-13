@@ -1,5 +1,7 @@
 class ActivitiesController < ApplicationController
-  before_filter :authenticate_user!, :check_permissions
+  load_and_authorize_resource :project
+  load_and_authorize_resource :activity, :through => :project
+
   # GET /activities
   # GET /activities.xml
   def index
@@ -17,6 +19,16 @@ class ActivitiesController < ApplicationController
   def show   
     @project = Project.find(params[:project_id])
     @activity = Activity.find(params[:id])
+    case @activity.actividad
+      when 1
+        @act = "Actividad"
+      when 2
+        @act = "Junta"
+      when 3
+        @act = "Taller"
+      else
+        @act = "Asueto"
+    end
 
     respond_to do |format|
       format.html # show.html.erb
@@ -29,6 +41,10 @@ class ActivitiesController < ApplicationController
   def new
     @project = Project.find(params[:project_id])
     @activity = Activity.new
+    t = Time.new
+    @activity.hora = t
+    @activity.duracion = t.change(:hour => 0)
+    @activity.valor = 0
     @btn = "Crear Actividad"
 
     respond_to do |format|

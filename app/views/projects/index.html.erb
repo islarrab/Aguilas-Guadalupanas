@@ -1,11 +1,19 @@
 <h1>Proyectos</h1>
+<br/>
+<% if can? :new, Project %>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <%= link_to image_tag("new.png", :border => 0), new_project_path %>
+  <%= link_to 'Nuevo Proyecto', new_project_path %>
+<% end %>
 
 <table>
-  <tr>
-    <th colspan=5>Proyectos Actuales</th>
+  <thead>
+  <tr class="odd">
+    <th colspan=6>Proyectos Actuales</th>
   </tr>
+  </thead>
 <% if !@projects.empty? %>
-    <tr>
+    <tr class="keys">
       <th>Nombre</th>
       <th>Fecha Inicio</th>
       <th></th>
@@ -13,15 +21,23 @@
       <th></th>
       <th></th>
     </tr>
+  <% odd = false %>
   <% @projects.each do |project| %>
+    <% if can? :show, project %>
+    <% if odd == true %>
+    <tr class="odd">
+    <% else %>
     <tr>
-      <td><%= project.nombre %></td>
-      <td><%= project.fecha %></td>
-      <td><%= link_to 'Ver', project %></td>
-      <td><%= link_to 'Editar', edit_project_path(project) %></td>
-      <td><%= link_to "Actividades", project_activities_path(project) %></td> 
-      <td><%= link_to 'Finalizar', project_projend_path(project), :confirm => 'Estas seguro?' %></td>
+    <% end %>
+      <td class="column1"><%= project.nombre %></td>
+      <td><%= project.fecha.strftime("%d/%m/%Y") %></td>
+      <td><% if can? :read, project => Activity %><%= link_to "Actividades", project_activities_path(project) %><% end %></td> 
+      <td><%= link_to image_tag("show.png", :border => 0), project %></td>
+      <td><% if can? :update, project %><%= link_to image_tag("edit.png", :border => 0), edit_project_path(project) %><% end %></td>
+      <td><% if can? :update, project %><%= link_to 'Finalizar', project_projend_path(project), :confirm => 'Estas seguro?' %><% end %></td>
     </tr>
+    <% odd = !odd %>
+    <% end %>
   <% end %>
 <% else %>
   <tr>
@@ -32,25 +48,35 @@
 <br/>
 
 <table>
+  <thead>
   <tr>
     <th colspan=5>Proyectos Finalizados</th>
   </tr>
+  </thead>
 <% if !@projectsfin.empty? %>
-    <tr>
+    <tr class="keys">
       <th>Nombre</th>
       <th>Fecha Inicio</th>
       <th></th>
       <th></th>
       <th></th>
     </tr>
+  <% odd = false %>
   <% @projectsfin.each do |project| %>
+    <% if can? :show, project %>
+    <% if odd == true %>
+    <tr class="odd">
+    <% else %>
     <tr>
-      <td><%= project.nombre %></td>
-      <td><%= project.fecha %></td>
-      <td><%= link_to 'Ver', project %></td>
-      <td><%= link_to "Actividades", project_activities_path(project) %></td>
-      <td><%= link_to 'Eliminar', project, :confirm => 'Estas seguro?', :method => :delete %></td>
+    <% end %>
+      <td class="column1"><%= project.nombre %></td>
+      <td><%= project.fecha.strftime("%d/%m/%Y") %></td>
+      <td><% if can? :read, project => Activity %><%= link_to "Actividades", project_activities_path(project) %><% end %></td>
+      <td><% if can? :show, project %><%= link_to image_tag("show.png", :border => 0), project %><% end %></td>
+      <td><% if can? :destroy, project %><%= link_to image_tag("delete.png", :border => 0), project, :confirm => 'Estas seguro?', :method => :delete %><% end %></td>
     </tr>
+    <% odd = !odd %>
+    <% end %>
   <% end %>
 <% else %>
   <tr>
@@ -58,7 +84,4 @@
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'Nuevo Proyecto', new_project_path %>
+<br/>

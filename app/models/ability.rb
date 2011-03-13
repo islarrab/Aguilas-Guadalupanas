@@ -7,9 +7,11 @@ class Ability
     if user.admin?
       can :manage, :all
     elsif user.coordinator?
-      can :manage, Project, :user_id => user.id
+      can :manage, Project
+      can :manage, Activity, :project => { :user_id => user.id }
     else
-
+      can :read, Project
+      can :read, Activity
     end
   end
 end

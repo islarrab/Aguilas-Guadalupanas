@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :min_de_actv, "Minimo de Actividades" %><br />
-    <%= f.text_field :min_de_actv %>
+    <%= f.text_field :min_de_actv, :size => 2, :max_length => 2 %>
   </div>
   <div class="actions">
     <%= f.submit @btn %>

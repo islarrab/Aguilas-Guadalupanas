@@ -29,14 +29,18 @@
   </div>
   <div class="field">
     <%= f.label :valor %><br />
-    <%= f.text_field :valor %>
+    <%= f.text_field :valor, :size => 2, :max_length => 2 %>
   </div>
   <div class="field">
     <%= f.label :actividad, "Tipo de Actividad" %><br/>
-    <%= f.radio_button :actividad, "1" %>Actividad<br />
+    <%= f.radio_button :actividad, "1", :checked => true %>Actividad<br />
     <%= f.radio_button :actividad, "2" %>Junta<br />
     <%= f.radio_button :actividad, "3" %>Taller<br />
     <%= f.radio_button :actividad, "0" %>Asueto<br />
+  </div>
+  <div class="field">
+    <%= f.label :comment, "Descripcion" %><br/>
+    <%= f.text_area :comment, :cols => 40, :rows => 5, :escape => false %><br/>
   </div>
   <div class="actions">
     <%= f.submit @btn %>

@@ -6,10 +6,7 @@ one:
   hora: 2011-03-11 20:56:21
   duracion: 2011-03-11 20:56:21
   valor: 1
-  actividad: false
-  junta: false
-  taller: false
-  asueto: false
+  actividad: 0
 
 two:
   nombre: MyString
@@ -17,7 +14,4 @@ two:
   hora: 2011-03-11 20:56:21
   duracion: 2011-03-11 20:56:21
   valor: 1
-  actividad: false
-  junta: false
-  taller: false
-  asueto: false
+  actividad: 2
