@@ -5,7 +5,7 @@ class ProjectsController < ApplicationController
   # GET /projects.xml
   def index
     @projects = Project.find_all_by_fin(false, :order => "fecha DESC")
-    @projectsfin = Project.find_all_by_fin("t", :order => "fecha DESC")
+    @projects_fin = Project.find_all_by_fin("t", :order => "fecha DESC")
 
     respond_to do |format|
       format.html # index.html.erb

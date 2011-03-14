@@ -26825,3 +26825,1312 @@ ActionController::RoutingError (No route matches "/images/background.jpg"):
   
 
 Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/projects" for 127.0.0.1 at Mon Mar 14 11:54:09 -0700 2011
+  Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mProject Load (1.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC[0m
+  [1m[35mProject Load (0.5ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 't') ORDER BY fecha DESC
+Rendered general/_header.html.erb (0.6ms)
+Rendered general/_menu.html.erb (10.7ms)
+Rendered general/_footer.html.erb (0.6ms)
+Rendered projects/index.html.erb within layouts/application (461.0ms)
+Completed 200 OK in 597ms (Views: 473.1ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/images/background.jpg" for 127.0.0.1 at Mon Mar 14 11:54:10 -0700 2011
+
+ActionController::RoutingError (No route matches "/images/background.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at Mon Mar 14 11:55:00 -0700 2011
+  Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mProject Load (0.7ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 't') ORDER BY fecha DESC[0m
+Rendered projects/index.html.erb within layouts/application (16.7ms)
+Completed   in 106ms
+
+ActionView::Template::Error (Missing partial projects/project with {:formats=>[:html], :locale=>[:en, :en], :handlers=>[:builder, :rxml, :erb, :rjs, :rhtml]} in view paths "/home/vikonava/Documents/aguilas/app/views", "/usr/lib/ruby/gems/1.8/gems/devise-1.1.6/app/views"):
+    22:     <th></th>
+    23:   </tr>
+    24:   <% @odd = false %>
+    25:   <%= render(@projects) %>
+    26: <% else %>
+    27:   <tr>
+    28:     <td align=center><i>No hay proyectos actuales</i></td>
+  app/views/projects/index.html.erb:25:in `_app_views_projects_index_html_erb__102982927__613150658_0'
+  app/controllers/projects_controller.rb:10:in `index'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (430.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (445.3ms)
+
+
+Started GET "/projects" for 127.0.0.1 at Mon Mar 14 11:56:57 -0700 2011
+  Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mProject Load (0.9ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC[0m
+  [1m[35mProject Load (0.5ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 't') ORDER BY fecha DESC
+Rendered projects/_project.html.erb (44.5ms)
+Rendered general/_header.html.erb (0.5ms)
+Rendered general/_menu.html.erb (2.4ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered projects/index.html.erb within layouts/application (69.7ms)
+Completed 200 OK in 162ms (Views: 80.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/images/background.jpg" for 127.0.0.1 at Mon Mar 14 11:56:58 -0700 2011
+
+ActionController::RoutingError (No route matches "/images/background.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/projects" for 127.0.0.1 at Mon Mar 14 12:01:36 -0700 2011
+  Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mProject Load (0.7ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC
+  [1m[36mProject Load (0.6ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 't') ORDER BY fecha DESC[0m
+Rendered projects/_project.html.erb (38.4ms)
+Rendered projects/index.html.erb within layouts/application (44.3ms)
+Completed   in 139ms
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.empty?):
+    37:     <th colspan=5>Proyectos Finalizados</th>
+    38:   </tr>
+    39:   </thead>
+    40: <% if !@projectsfin.empty? %>
+    41:     <tr class="keys">
+    42:       <th>Nombre</th>
+    43:       <th>Fecha Inicio</th>
+  app/views/projects/index.html.erb:40:in `_app_views_projects_index_html_erb__102982927__614078738_0'
+  app/controllers/projects_controller.rb:10:in `index'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (591.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (614.5ms)
+
+
+Started GET "/projects" for 127.0.0.1 at Mon Mar 14 12:01:57 -0700 2011
+  Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (3.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mProject Load (2.8ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC[0m
+  [1m[35mProject Load (0.4ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 't') ORDER BY fecha DESC
+Rendered projects/_project.html.erb (39.3ms)
+Rendered projects/_project.html.erb (5.5ms)
+Rendered general/_header.html.erb (0.7ms)
+Rendered general/_menu.html.erb (2.3ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered projects/index.html.erb within layouts/application (68.3ms)
+Completed 200 OK in 161ms (Views: 78.1ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/images/background.jpg" for 127.0.0.1 at Mon Mar 14 12:01:58 -0700 2011
+
+ActionController::RoutingError (No route matches "/images/background.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/projects" for 127.0.0.1 at Mon Mar 14 12:02:24 -0700 2011
+  Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mProject Load (0.6ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 't') ORDER BY fecha DESC[0m
+Rendered projects/_project.html.erb (41.1ms)
+Rendered projects/index.html.erb within layouts/application (46.5ms)
+Completed   in 138ms
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.empty?):
+    37:     <th colspan=5>Proyectos Finalizados</th>
+    38:   </tr>
+    39:   </thead>
+    40: <% if !@projectsfin.empty? %>
+    41:     <tr class="keys">
+    42:       <th>Nombre</th>
+    43:       <th>Fecha Inicio</th>
+  app/views/projects/index.html.erb:40:in `_app_views_projects_index_html_erb__102982927__614163848_0'
+  app/controllers/projects_controller.rb:10:in `index'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (393.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (414.2ms)
+
+
+Started GET "/projects" for 127.0.0.1 at Mon Mar 14 12:02:44 -0700 2011
+  Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mProject Load (0.6ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC[0m
+  [1m[35mProject Load (0.4ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 't') ORDER BY fecha DESC
+Rendered projects/_project.html.erb (39.7ms)
+Rendered projects/_project.html.erb (6.3ms)
+Rendered general/_header.html.erb (0.4ms)
+Rendered general/_menu.html.erb (2.3ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered projects/index.html.erb within layouts/application (69.7ms)
+Completed 200 OK in 163ms (Views: 82.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/images/background.jpg" for 127.0.0.1 at Mon Mar 14 12:02:44 -0700 2011
+
+ActionController::RoutingError (No route matches "/images/background.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (10.3ms)
+
+
+Started GET "/projects" for 127.0.0.1 at Mon Mar 14 12:04:41 -0700 2011
+  Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mProject Load (0.6ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 't') ORDER BY fecha DESC[0m
+Rendered projects/_project.html.erb (36.9ms)
+Rendered projects/_project.html.erb (5.1ms)
+Rendered general/_header.html.erb (0.4ms)
+Rendered general/_menu.html.erb (2.8ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered projects/index.html.erb within layouts/application (70.2ms)
+Completed 200 OK in 161ms (Views: 79.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/images/background.jpg" for 127.0.0.1 at Mon Mar 14 12:04:42 -0700 2011
+
+ActionController::RoutingError (No route matches "/images/background.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/projects" for 127.0.0.1 at Mon Mar 14 12:05:24 -0700 2011
+  Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mProject Load (2.8ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC[0m
+  [1m[35mProject Load (0.4ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 't') ORDER BY fecha DESC
+Rendered projects/_project.html.erb (38.4ms)
+Rendered projects/_project.html.erb (6.5ms)
+Rendered general/_header.html.erb (0.5ms)
+Rendered general/_menu.html.erb (2.2ms)
+Rendered general/_footer.html.erb (0.4ms)
+Rendered projects/index.html.erb within layouts/application (67.4ms)
+Completed 200 OK in 156ms (Views: 77.0ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/images/background.jpg" for 127.0.0.1 at Mon Mar 14 12:05:25 -0700 2011
+
+ActionController::RoutingError (No route matches "/images/background.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/projects" for 127.0.0.1 at Mon Mar 14 12:06:15 -0700 2011
+  Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mProject Load (0.7ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 't') ORDER BY fecha DESC[0m
+Rendered projects/_project.html.erb (41.8ms)
+Rendered projects/_project.html.erb (8.1ms)
+Rendered general/_header.html.erb (0.7ms)
+Rendered general/_menu.html.erb (2.6ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered projects/index.html.erb within layouts/application (71.9ms)
+Completed 200 OK in 166ms (Views: 81.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/images/background.jpg" for 127.0.0.1 at Mon Mar 14 12:06:16 -0700 2011
+
+ActionController::RoutingError (No route matches "/images/background.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/projects/7/activities" for 127.0.0.1 at Mon Mar 14 12:06:47 -0700 2011
+  Processing by ActivitiesController#index as HTML
+  Parameters: {"project_id"=>"7"}
+  [1m[35mProject Load (0.5ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mActivity Load (0.7ms)[0m  [1mSELECT "activities".* FROM "activities" WHERE ("activities".project_id = 7)[0m
+Rendered general/_header.html.erb (0.4ms)
+Rendered general/_menu.html.erb (2.4ms)
+Rendered general/_footer.html.erb (0.4ms)
+Rendered activities/index.html.erb within layouts/application (42.9ms)
+Completed 200 OK in 159ms (Views: 53.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/images/background.jpg" for 127.0.0.1 at Mon Mar 14 12:06:48 -0700 2011
+
+ActionController::RoutingError (No route matches "/images/background.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/projects/7/activities/new" for 127.0.0.1 at Mon Mar 14 12:12:22 -0700 2011
+  Processing by ActivitiesController#new as HTML
+  Parameters: {"project_id"=>"7"}
+  [1m[35mProject Load (0.4ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mUser Load (3.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+Rendered activities/_form.html.erb (21.3ms)
+Rendered general/_header.html.erb (0.7ms)
+Rendered general/_menu.html.erb (2.3ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered activities/new.html.erb within layouts/application (43.8ms)
+Completed 200 OK in 176ms (Views: 57.4ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/images/background.jpg" for 127.0.0.1 at Mon Mar 14 12:12:23 -0700 2011
+
+ActionController::RoutingError (No route matches "/images/background.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (5.8ms)
+
+
+Started GET "/projects/7/activities" for 127.0.0.1 at Mon Mar 14 12:13:14 -0700 2011
+  Processing by ActivitiesController#index as HTML
+  Parameters: {"project_id"=>"7"}
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.4ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mActivity Load (0.6ms)[0m  SELECT "activities".* FROM "activities" WHERE ("activities".project_id = 7)
+ERROR: compiling _app_views_activities__activity_html_erb__372384552__614117968_1144158 RAISED compile error
+/home/vikonava/Documents/aguilas/app/views/activities/_activity.html.erb:10: syntax error, unexpected ':'
+/home/vikonava/Documents/aguilas/app/views/activities/_activity.html.erb:13: syntax error, unexpected '>', expecting kEND
+/home/vikonava/Documents/aguilas/app/views/activities/_activity.html.erb:15: syntax error, unexpected tIVAR, expecting kEND
+@output_buffer.safe_concat('    <tr class="odd">
+              ^
+/home/vikonava/Documents/aguilas/app/views/activities/_activity.html.erb:30: unterminated string meets end of file
+/home/vikonava/Documents/aguilas/app/views/activities/_activity.html.erb:30: syntax error, unexpected tSTRING_END, expecting tSTRING_CONTENT or tREGEXP_END or tSTRING_DBEG or tSTRING_DVAR
+Function body:           def _app_views_activities__activity_html_erb__372384552__614117968_1144158(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "activities/_activity";_old_output_buffer = @output_buffer;activity = local_assigns[:activity];activity_counter = local_assigns[:activity_counter];;@output_buffer = ActionView::OutputBuffer.new; if can? :show, activity 
+  
+    case activity.actividad
+      when 1:
+         act = "Actividad"
+      when 2:
+         act = "Junta"
+      when 3:
+         act = "Taller"
+      else:
+         act = "Asueto"
+    end
+  >%
+  <% if @odd == true 
+@output_buffer.safe_concat('    <tr class="odd">
+');   else 
+@output_buffer.safe_concat('    <tr>
+');   end 
+@output_buffer.safe_concat('    <td class="column1">');@output_buffer.append= ( activity.nombre );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( activity.fecha.strftime("%d/%m/%Y") );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( activity.hora.strftime("%I:%M %p") );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( activity.duracion.strftime("%I:%M") );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( activity.valor );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( act );@output_buffer.safe_concat('</td>
+    <td>'); if can? :show, @project => activity ;@output_buffer.append= ( link_to image_tag("show.png", :border => 0), project_activity_path(@project,activity) ); end ;@output_buffer.safe_concat('</td>
+');     if !@project.fin? 
+@output_buffer.safe_concat('      <td>'); if can? :update, @project => activity ;@output_buffer.append= ( link_to image_tag("edit.png", :border => 0), edit_project_activity_path(@project,activity) ); end ;@output_buffer.safe_concat('</td>
+      <td>'); if can? :destroy, @project => activity ;@output_buffer.append= ( link_to image_tag("delete.png", :border => 0), project_activity_path(@project,activity), :confirm => 'Are you$
+    <% end );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </tr>
+');   @odd = !@odd 
+ end 
+@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/vikonava/Documents/aguilas/app/views/activities/_activity.html.erb:30:in `compile'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:134:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:54:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:127:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/partials.rb:300:in `collection_with_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/partials.rb:297:in `each'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/partials.rb:297:in `collection_with_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/partials.rb:280:in `render_collection'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/partials.rb:255:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/partials.rb:253:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/partials.rb:378:in `_render_partial'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:31:in `render'
+/home/vikonava/Documents/aguilas/app/views/activities/index.html.erb:29:in `_app_views_activities_index_html_erb___722737977__614028558_0'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:135:in `send'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:135:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:54:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:127:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:59:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:56:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:26:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:92:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:17:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:261:in `retrieve_response_from_mimes'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:192:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:192:in `respond_to'
+/home/vikonava/Documents/aguilas/app/controllers/activities_controller.rb:11:in `index'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:151:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:445:in `_run__216790721__process_action__199225275__callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:120:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:40:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal.rb:138:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal.rb:178:in `action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:75:in `optimized_each'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/usr/lib/ruby/gems/1.8/gems/warden-1.0.3/lib/warden/manager.rb:35:in `call'
+/usr/lib/ruby/gems/1.8/gems/warden-1.0.3/lib/warden/manager.rb:34:in `catch'
+/usr/lib/ruby/gems/1.8/gems/warden-1.0.3/lib/warden/manager.rb:34:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/head.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/cookies.rb:295:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:32:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:12:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:31:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:353:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/rack/logger.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/static.rb:30:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:168:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:77:in `send'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:77:in `method_missing'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/rack/log_tailer.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:13:in `run'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/server.rb:213:in `start'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands/server.rb:65:in `start'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:30
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:27:in `tap'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered activities/_activity.html.erb (3.1ms)
+Rendered activities/index.html.erb within layouts/application (19.8ms)
+Completed   in 137ms
+
+ActionView::Template::Error (compile error
+/home/vikonava/Documents/aguilas/app/views/activities/_activity.html.erb:10: syntax error, unexpected ':'
+/home/vikonava/Documents/aguilas/app/views/activities/_activity.html.erb:13: syntax error, unexpected '>', expecting kEND
+/home/vikonava/Documents/aguilas/app/views/activities/_activity.html.erb:15: syntax error, unexpected tIVAR, expecting kEND
+@output_buffer.safe_concat('    <tr class="odd">
+              ^
+/home/vikonava/Documents/aguilas/app/views/activities/_activity.html.erb:30: unterminated string meets end of file
+/home/vikonava/Documents/aguilas/app/views/activities/_activity.html.erb:30: syntax error, unexpected tSTRING_END, expecting tSTRING_CONTENT or tREGEXP_END or tSTRING_DBEG or tSTRING_DVAR):
+    7:          act = "Junta"
+    8:       when 3:
+    9:          act = "Taller"
+    10:       else:
+    11:          act = "Asueto"
+    12:     end
+    13:   >%
+  app/views/activities/_activity.html.erb:30:in `compile'
+  app/views/activities/index.html.erb:29:in `_app_views_activities_index_html_erb___722737977__614028558_0'
+  app/controllers/activities_controller.rb:11:in `index'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (434.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (548.7ms)
+
+
+Started GET "/projects/7/activities" for 127.0.0.1 at Mon Mar 14 12:16:50 -0700 2011
+  Processing by ActivitiesController#index as HTML
+  Parameters: {"project_id"=>"7"}
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mActivity Load (0.7ms)[0m  SELECT "activities".* FROM "activities" WHERE ("activities".project_id = 7)
+ERROR: compiling _app_views_activities__activity_html_erb__372384552__612900438_1144158 RAISED compile error
+/home/vikonava/Documents/aguilas/app/views/activities/_activity.html.erb:13: syntax error, unexpected '>', expecting kEND
+/home/vikonava/Documents/aguilas/app/views/activities/_activity.html.erb:15: syntax error, unexpected tIVAR, expecting kEND
+@output_buffer.safe_concat('    <tr class="odd">
+              ^
+/home/vikonava/Documents/aguilas/app/views/activities/_activity.html.erb:30: unterminated string meets end of file
+/home/vikonava/Documents/aguilas/app/views/activities/_activity.html.erb:30: syntax error, unexpected tSTRING_END, expecting tSTRING_CONTENT or tREGEXP_END or tSTRING_DBEG or tSTRING_DVAR
+Function body:           def _app_views_activities__activity_html_erb__372384552__612900438_1144158(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "activities/_activity";_old_output_buffer = @output_buffer;activity = local_assigns[:activity];activity_counter = local_assigns[:activity_counter];;@output_buffer = ActionView::OutputBuffer.new; if can? :show, activity 
+  
+    case activity.actividad
+      when 1
+         act = "Actividad"
+      when 2
+         act = "Junta"
+      when 3
+         act = "Taller"
+      else
+         act = "Asueto"
+    end
+  >%
+  <% if @odd == true 
+@output_buffer.safe_concat('    <tr class="odd">
+');   else 
+@output_buffer.safe_concat('    <tr>
+');   end 
+@output_buffer.safe_concat('    <td class="column1">');@output_buffer.append= ( activity.nombre );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( activity.fecha.strftime("%d/%m/%Y") );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( activity.hora.strftime("%I:%M %p") );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( activity.duracion.strftime("%I:%M") );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( activity.valor );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( act );@output_buffer.safe_concat('</td>
+    <td>'); if can? :show, @project => activity ;@output_buffer.append= ( link_to image_tag("show.png", :border => 0), project_activity_path(@project,activity) ); end ;@output_buffer.safe_concat('</td>
+');     if !@project.fin? 
+@output_buffer.safe_concat('      <td>'); if can? :update, @project => activity ;@output_buffer.append= ( link_to image_tag("edit.png", :border => 0), edit_project_activity_path(@project,activity) ); end ;@output_buffer.safe_concat('</td>
+      <td>'); if can? :destroy, @project => activity ;@output_buffer.append= ( link_to image_tag("delete.png", :border => 0), project_activity_path(@project,activity), :confirm => 'Are you$
+    <% end );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </tr>
+');   @odd = !@odd 
+ end 
+@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/vikonava/Documents/aguilas/app/views/activities/_activity.html.erb:30:in `compile'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:134:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:54:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:127:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/partials.rb:300:in `collection_with_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/partials.rb:297:in `each'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/partials.rb:297:in `collection_with_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/partials.rb:280:in `render_collection'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/partials.rb:255:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/partials.rb:253:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/partials.rb:378:in `_render_partial'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:31:in `render'
+/home/vikonava/Documents/aguilas/app/views/activities/index.html.erb:29:in `_app_views_activities_index_html_erb___722737977__612870038_0'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:135:in `send'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:135:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:54:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:127:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:59:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:56:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:26:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:92:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:17:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:261:in `retrieve_response_from_mimes'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:192:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:192:in `respond_to'
+/home/vikonava/Documents/aguilas/app/controllers/activities_controller.rb:11:in `index'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:151:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:445:in `_run__216790721__process_action__199225275__callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:120:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:40:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal.rb:138:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal.rb:178:in `action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:75:in `optimized_each'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/usr/lib/ruby/gems/1.8/gems/warden-1.0.3/lib/warden/manager.rb:35:in `call'
+/usr/lib/ruby/gems/1.8/gems/warden-1.0.3/lib/warden/manager.rb:34:in `catch'
+/usr/lib/ruby/gems/1.8/gems/warden-1.0.3/lib/warden/manager.rb:34:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/head.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/cookies.rb:295:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:32:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:12:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:31:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:353:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/rack/logger.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/static.rb:30:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:168:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:77:in `send'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:77:in `method_missing'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/rack/log_tailer.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:13:in `run'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/server.rb:213:in `start'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands/server.rb:65:in `start'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:30
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:27:in `tap'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered activities/_activity.html.erb (3.4ms)
+Rendered activities/index.html.erb within layouts/application (11.0ms)
+Completed   in 145ms
+
+ActionView::Template::Error (compile error
+/home/vikonava/Documents/aguilas/app/views/activities/_activity.html.erb:13: syntax error, unexpected '>', expecting kEND
+/home/vikonava/Documents/aguilas/app/views/activities/_activity.html.erb:15: syntax error, unexpected tIVAR, expecting kEND
+@output_buffer.safe_concat('    <tr class="odd">
+              ^
+/home/vikonava/Documents/aguilas/app/views/activities/_activity.html.erb:30: unterminated string meets end of file
+/home/vikonava/Documents/aguilas/app/views/activities/_activity.html.erb:30: syntax error, unexpected tSTRING_END, expecting tSTRING_CONTENT or tREGEXP_END or tSTRING_DBEG or tSTRING_DVAR):
+    10:       else
+    11:          act = "Asueto"
+    12:     end
+    13:   >%
+    14:   <% if @odd == true %>
+    15:     <tr class="odd">
+    16:   <% else %>
+  app/views/activities/_activity.html.erb:30:in `compile'
+  app/views/activities/index.html.erb:29:in `_app_views_activities_index_html_erb___722737977__612870038_0'
+  app/controllers/activities_controller.rb:11:in `index'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (446.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (467.9ms)
+
+
+Started GET "/projects/7/activities" for 127.0.0.1 at Mon Mar 14 12:17:03 -0700 2011
+  Processing by ActivitiesController#index as HTML
+  Parameters: {"project_id"=>"7"}
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mActivity Load (2.9ms)[0m  SELECT "activities".* FROM "activities" WHERE ("activities".project_id = 7)
+ERROR: compiling _app_views_activities__activity_html_erb__372384552__612362708_1144158 RAISED compile error
+/home/vikonava/Documents/aguilas/app/views/activities/_activity.html.erb:30: unterminated string meets end of file
+/home/vikonava/Documents/aguilas/app/views/activities/_activity.html.erb:30: syntax error, unexpected tSTRING_END, expecting tSTRING_CONTENT or tREGEXP_END or tSTRING_DBEG or tSTRING_DVAR
+Function body:           def _app_views_activities__activity_html_erb__372384552__612362708_1144158(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "activities/_activity";_old_output_buffer = @output_buffer;activity = local_assigns[:activity];activity_counter = local_assigns[:activity_counter];;@output_buffer = ActionView::OutputBuffer.new; if can? :show, activity 
+  
+    case activity.actividad
+      when 1
+         act = "Actividad"
+      when 2
+         act = "Junta"
+      when 3
+         act = "Taller"
+      else
+         act = "Asueto"
+    end
+  
+   if @odd == true 
+@output_buffer.safe_concat('    <tr class="odd">
+');   else 
+@output_buffer.safe_concat('    <tr>
+');   end 
+@output_buffer.safe_concat('    <td class="column1">');@output_buffer.append= ( activity.nombre );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( activity.fecha.strftime("%d/%m/%Y") );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( activity.hora.strftime("%I:%M %p") );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( activity.duracion.strftime("%I:%M") );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( activity.valor );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( act );@output_buffer.safe_concat('</td>
+    <td>'); if can? :show, @project => activity ;@output_buffer.append= ( link_to image_tag("show.png", :border => 0), project_activity_path(@project,activity) ); end ;@output_buffer.safe_concat('</td>
+');     if !@project.fin? 
+@output_buffer.safe_concat('      <td>'); if can? :update, @project => activity ;@output_buffer.append= ( link_to image_tag("edit.png", :border => 0), edit_project_activity_path(@project,activity) ); end ;@output_buffer.safe_concat('</td>
+      <td>'); if can? :destroy, @project => activity ;@output_buffer.append= ( link_to image_tag("delete.png", :border => 0), project_activity_path(@project,activity), :confirm => 'Are you$
+    <% end );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </tr>
+');   @odd = !@odd 
+ end 
+@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/vikonava/Documents/aguilas/app/views/activities/_activity.html.erb:30:in `compile'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:134:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:54:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:127:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/partials.rb:300:in `collection_with_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/partials.rb:297:in `each'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/partials.rb:297:in `collection_with_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/partials.rb:280:in `render_collection'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/partials.rb:255:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/partials.rb:253:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/partials.rb:378:in `_render_partial'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:31:in `render'
+/home/vikonava/Documents/aguilas/app/views/activities/index.html.erb:29:in `_app_views_activities_index_html_erb___722737977__612316368_0'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:135:in `send'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:135:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:54:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:127:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:59:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:56:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:26:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:92:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:17:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:261:in `retrieve_response_from_mimes'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:192:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:192:in `respond_to'
+/home/vikonava/Documents/aguilas/app/controllers/activities_controller.rb:11:in `index'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:151:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:445:in `_run__216790721__process_action__199225275__callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:120:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:40:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal.rb:138:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal.rb:178:in `action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:75:in `optimized_each'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/usr/lib/ruby/gems/1.8/gems/warden-1.0.3/lib/warden/manager.rb:35:in `call'
+/usr/lib/ruby/gems/1.8/gems/warden-1.0.3/lib/warden/manager.rb:34:in `catch'
+/usr/lib/ruby/gems/1.8/gems/warden-1.0.3/lib/warden/manager.rb:34:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/head.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/cookies.rb:295:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:32:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:12:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:31:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:353:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/rack/logger.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/static.rb:30:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:168:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:77:in `send'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:77:in `method_missing'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/rack/log_tailer.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:13:in `run'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/server.rb:213:in `start'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands/server.rb:65:in `start'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:30
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:27:in `tap'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered activities/_activity.html.erb (3.5ms)
+Rendered activities/index.html.erb within layouts/application (10.9ms)
+Completed   in 244ms
+
+ActionView::Template::Error (compile error
+/home/vikonava/Documents/aguilas/app/views/activities/_activity.html.erb:30: unterminated string meets end of file
+/home/vikonava/Documents/aguilas/app/views/activities/_activity.html.erb:30: syntax error, unexpected tSTRING_END, expecting tSTRING_CONTENT or tREGEXP_END or tSTRING_DBEG or tSTRING_DVAR):
+    27:       <td><% if can? :update, @project => activity %><%= link_to image_tag("edit.png", :border => 0), edit_project_activity_path(@project,activity) %><% end %></td>
+    28:       <td><% if can? :destroy, @project => activity %><%= link_to image_tag("delete.png", :border => 0), project_activity_path(@project,activity), :confirm => 'Are you$
+    29:     <% end %>
+    30:   </tr>
+    31:   <% @odd = !@odd %>
+    32: <% end %>
+  app/views/activities/_activity.html.erb:30:in `compile'
+  app/views/activities/index.html.erb:29:in `_app_views_activities_index_html_erb___722737977__612316368_0'
+  app/controllers/activities_controller.rb:11:in `index'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (512.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (539.8ms)
+
+
+Started GET "/projects/7/activities" for 127.0.0.1 at Mon Mar 14 12:17:23 -0700 2011
+  Processing by ActivitiesController#index as HTML
+  Parameters: {"project_id"=>"7"}
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mActivity Load (0.7ms)[0m  SELECT "activities".* FROM "activities" WHERE ("activities".project_id = 7)
+ERROR: compiling _app_views_activities__activity_html_erb__372384552__614007388_1144158 RAISED compile error
+/home/vikonava/Documents/aguilas/app/views/activities/_activity.html.erb:10: syntax error, unexpected ':'
+/home/vikonava/Documents/aguilas/app/views/activities/_activity.html.erb:30: unterminated string meets end of file
+/home/vikonava/Documents/aguilas/app/views/activities/_activity.html.erb:30: syntax error, unexpected tSTRING_END, expecting tSTRING_CONTENT or tREGEXP_END or tSTRING_DBEG or tSTRING_DVAR
+Function body:           def _app_views_activities__activity_html_erb__372384552__614007388_1144158(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "activities/_activity";_old_output_buffer = @output_buffer;activity = local_assigns[:activity];activity_counter = local_assigns[:activity_counter];;@output_buffer = ActionView::OutputBuffer.new; if can? :show, activity 
+  
+    case activity.actividad
+      when 1:
+         act = "Actividad"
+      when 2:
+         act = "Junta"
+      when 3:
+         act = "Taller"
+      else:
+         act = "Asueto"
+    end
+  
+   if @odd == true 
+@output_buffer.safe_concat('    <tr class="odd">
+');   else 
+@output_buffer.safe_concat('    <tr>
+');   end 
+@output_buffer.safe_concat('    <td class="column1">');@output_buffer.append= ( activity.nombre );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( activity.fecha.strftime("%d/%m/%Y") );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( activity.hora.strftime("%I:%M %p") );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( activity.duracion.strftime("%I:%M") );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( activity.valor );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( act );@output_buffer.safe_concat('</td>
+    <td>'); if can? :show, @project => activity ;@output_buffer.append= ( link_to image_tag("show.png", :border => 0), project_activity_path(@project,activity) ); end ;@output_buffer.safe_concat('</td>
+');     if !@project.fin? 
+@output_buffer.safe_concat('      <td>'); if can? :update, @project => activity ;@output_buffer.append= ( link_to image_tag("edit.png", :border => 0), edit_project_activity_path(@project,activity) ); end ;@output_buffer.safe_concat('</td>
+      <td>'); if can? :destroy, @project => activity ;@output_buffer.append= ( link_to image_tag("delete.png", :border => 0), project_activity_path(@project,activity), :confirm => 'Are you$
+    <% end );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </tr>
+');   @odd = !@odd 
+ end 
+@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/vikonava/Documents/aguilas/app/views/activities/_activity.html.erb:30:in `compile'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:134:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:54:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:127:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/partials.rb:300:in `collection_with_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/partials.rb:297:in `each'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/partials.rb:297:in `collection_with_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/partials.rb:280:in `render_collection'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/partials.rb:255:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/partials.rb:253:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/partials.rb:378:in `_render_partial'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:31:in `render'
+/home/vikonava/Documents/aguilas/app/views/activities/index.html.erb:29:in `_app_views_activities_index_html_erb___722737977__613990228_0'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:135:in `send'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:135:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:54:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:127:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:59:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:56:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:26:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:92:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:17:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:261:in `retrieve_response_from_mimes'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:192:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:192:in `respond_to'
+/home/vikonava/Documents/aguilas/app/controllers/activities_controller.rb:11:in `index'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:151:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:445:in `_run__216790721__process_action__199225275__callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:120:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:40:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal.rb:138:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal.rb:178:in `action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:75:in `optimized_each'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/usr/lib/ruby/gems/1.8/gems/warden-1.0.3/lib/warden/manager.rb:35:in `call'
+/usr/lib/ruby/gems/1.8/gems/warden-1.0.3/lib/warden/manager.rb:34:in `catch'
+/usr/lib/ruby/gems/1.8/gems/warden-1.0.3/lib/warden/manager.rb:34:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/head.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/cookies.rb:295:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:32:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:12:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:31:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:353:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/rack/logger.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/static.rb:30:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:168:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:77:in `send'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:77:in `method_missing'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/rack/log_tailer.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:13:in `run'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/server.rb:213:in `start'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands/server.rb:65:in `start'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:30
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:27:in `tap'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered activities/_activity.html.erb (3.2ms)
+Rendered activities/index.html.erb within layouts/application (10.0ms)
+Completed   in 137ms
+
+ActionView::Template::Error (compile error
+/home/vikonava/Documents/aguilas/app/views/activities/_activity.html.erb:10: syntax error, unexpected ':'
+/home/vikonava/Documents/aguilas/app/views/activities/_activity.html.erb:30: unterminated string meets end of file
+/home/vikonava/Documents/aguilas/app/views/activities/_activity.html.erb:30: syntax error, unexpected tSTRING_END, expecting tSTRING_CONTENT or tREGEXP_END or tSTRING_DBEG or tSTRING_DVAR):
+    7:          act = "Junta"
+    8:       when 3:
+    9:          act = "Taller"
+    10:       else:
+    11:          act = "Asueto"
+    12:     end
+    13:   %>
+  app/views/activities/_activity.html.erb:30:in `compile'
+  app/views/activities/index.html.erb:29:in `_app_views_activities_index_html_erb___722737977__613990228_0'
+  app/controllers/activities_controller.rb:11:in `index'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (555.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (581.2ms)
+
+
+Started GET "/projects/7/activities" for 127.0.0.1 at Mon Mar 14 12:18:00 -0700 2011
+  Processing by ActivitiesController#index as HTML
+  Parameters: {"project_id"=>"7"}
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mActivity Load (0.8ms)[0m  SELECT "activities".* FROM "activities" WHERE ("activities".project_id = 7)
+ERROR: compiling _app_views_activities__activity_html_erb__372384552__612910798_1144158 RAISED compile error
+/home/vikonava/Documents/aguilas/app/views/activities/_activity.html.erb:30: unterminated string meets end of file
+/home/vikonava/Documents/aguilas/app/views/activities/_activity.html.erb:30: syntax error, unexpected tSTRING_END, expecting tSTRING_CONTENT or tREGEXP_END or tSTRING_DBEG or tSTRING_DVAR
+Function body:           def _app_views_activities__activity_html_erb__372384552__612910798_1144158(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "activities/_activity";_old_output_buffer = @output_buffer;activity = local_assigns[:activity];activity_counter = local_assigns[:activity_counter];;@output_buffer = ActionView::OutputBuffer.new; if can? :show, activity 
+  
+    case activity.actividad
+      when 1
+         act = "Actividad"
+      when 2
+         act = "Junta"
+      when 3
+         act = "Taller"
+      else
+         act = "Asueto"
+    end
+  
+   if @odd == true 
+@output_buffer.safe_concat('    <tr class="odd">
+');   else 
+@output_buffer.safe_concat('    <tr>
+');   end 
+@output_buffer.safe_concat('    <td class="column1">');@output_buffer.append= ( activity.nombre );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( activity.fecha.strftime("%d/%m/%Y") );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( activity.hora.strftime("%I:%M %p") );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( activity.duracion.strftime("%I:%M") );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( activity.valor );@output_buffer.safe_concat('</td>
+    <td>');@output_buffer.append= ( act );@output_buffer.safe_concat('</td>
+    <td>'); if can? :show, @project => activity ;@output_buffer.append= ( link_to image_tag("show.png", :border => 0), project_activity_path(@project,activity) ); end ;@output_buffer.safe_concat('</td>
+');     if !@project.fin? 
+@output_buffer.safe_concat('      <td>'); if can? :update, @project => activity ;@output_buffer.append= ( link_to image_tag("edit.png", :border => 0), edit_project_activity_path(@project,activity) ); end ;@output_buffer.safe_concat('</td>
+      <td>'); if can? :destroy, @project => activity ;@output_buffer.append= ( link_to image_tag("delete.png", :border => 0), project_activity_path(@project,activity), :confirm => 'Are you$
+    <% end );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </tr>
+');   @odd = !@odd 
+ end 
+@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/vikonava/Documents/aguilas/app/views/activities/_activity.html.erb:30:in `compile'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:134:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:54:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:127:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/partials.rb:300:in `collection_with_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/partials.rb:297:in `each'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/partials.rb:297:in `collection_with_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/partials.rb:280:in `render_collection'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/partials.rb:255:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/partials.rb:253:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/partials.rb:378:in `_render_partial'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:31:in `render'
+/home/vikonava/Documents/aguilas/app/views/activities/index.html.erb:29:in `_app_views_activities_index_html_erb___722737977__612873568_0'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:135:in `send'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:135:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:54:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:127:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:59:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:56:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:26:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:92:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:17:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:261:in `retrieve_response_from_mimes'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:192:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:192:in `respond_to'
+/home/vikonava/Documents/aguilas/app/controllers/activities_controller.rb:11:in `index'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:151:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:445:in `_run__216790721__process_action__199225275__callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:120:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:40:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal.rb:138:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal.rb:178:in `action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:75:in `optimized_each'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/usr/lib/ruby/gems/1.8/gems/warden-1.0.3/lib/warden/manager.rb:35:in `call'
+/usr/lib/ruby/gems/1.8/gems/warden-1.0.3/lib/warden/manager.rb:34:in `catch'
+/usr/lib/ruby/gems/1.8/gems/warden-1.0.3/lib/warden/manager.rb:34:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/head.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/cookies.rb:295:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:32:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:12:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:31:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:353:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/rack/logger.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/static.rb:30:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:168:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:77:in `send'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:77:in `method_missing'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/rack/log_tailer.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:13:in `run'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/server.rb:213:in `start'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands/server.rb:65:in `start'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:30
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:27:in `tap'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered activities/_activity.html.erb (3.2ms)
+Rendered activities/index.html.erb within layouts/application (10.3ms)
+Completed   in 142ms
+
+ActionView::Template::Error (compile error
+/home/vikonava/Documents/aguilas/app/views/activities/_activity.html.erb:30: unterminated string meets end of file
+/home/vikonava/Documents/aguilas/app/views/activities/_activity.html.erb:30: syntax error, unexpected tSTRING_END, expecting tSTRING_CONTENT or tREGEXP_END or tSTRING_DBEG or tSTRING_DVAR):
+    27:       <td><% if can? :update, @project => activity %><%= link_to image_tag("edit.png", :border => 0), edit_project_activity_path(@project,activity) %><% end %></td>
+    28:       <td><% if can? :destroy, @project => activity %><%= link_to image_tag("delete.png", :border => 0), project_activity_path(@project,activity), :confirm => 'Are you$
+    29:     <% end %>
+    30:   </tr>
+    31:   <% @odd = !@odd %>
+    32: <% end %>
+  app/views/activities/_activity.html.erb:30:in `compile'
+  app/views/activities/index.html.erb:29:in `_app_views_activities_index_html_erb___722737977__612873568_0'
+  app/controllers/activities_controller.rb:11:in `index'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (575.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (599.4ms)
+
+
+Started GET "/projects/7/activities" for 127.0.0.1 at Mon Mar 14 12:19:56 -0700 2011
+  Processing by ActivitiesController#index as HTML
+  Parameters: {"project_id"=>"7"}
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.2ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mActivity Load (0.7ms)[0m  SELECT "activities".* FROM "activities" WHERE ("activities".project_id = 7)
+Rendered activities/_activity.html.erb (22.3ms)
+Rendered general/_header.html.erb (0.5ms)
+Rendered general/_menu.html.erb (2.6ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered activities/index.html.erb within layouts/application (46.0ms)
+Completed 200 OK in 272ms (Views: 58.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/images/background.jpg" for 127.0.0.1 at Mon Mar 14 12:19:56 -0700 2011
+
+ActionController::RoutingError (No route matches "/images/background.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)

@@ -13,32 +13,16 @@
   </tr>
   </thead>
 <% if !@projects.empty? %>
-    <tr class="keys">
-      <th>Nombre</th>
-      <th>Fecha Inicio</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  <% odd = false %>
-  <% @projects.each do |project| %>
-    <% if can? :show, project %>
-    <% if odd == true %>
-    <tr class="odd">
-    <% else %>
-    <tr>
-    <% end %>
-      <td class="column1"><%= project.nombre %></td>
-      <td><%= project.fecha.strftime("%d/%m/%Y") %></td>
-      <td><% if can? :read, project => Activity %><%= link_to "Actividades", project_activities_path(project) %><% end %></td> 
-      <td><%= link_to image_tag("show.png", :border => 0), project %></td>
-      <td><% if can? :update, project %><%= link_to image_tag("edit.png", :border => 0), edit_project_path(project) %><% end %></td>
-      <td><% if can? :update, project %><%= link_to 'Finalizar', project_projend_path(project), :confirm => 'Estas seguro?' %><% end %></td>
-    </tr>
-    <% odd = !odd %>
-    <% end %>
-  <% end %>
+  <tr class="keys">
+    <th>Nombre</th>
+    <th>Fecha Inicio</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% @odd = false %>
+  <%= render(@projects) %>
 <% else %>
   <tr>
     <td align=center><i>No hay proyectos actuales</i></td>
@@ -53,7 +37,7 @@
     <th colspan=5>Proyectos Finalizados</th>
   </tr>
   </thead>
-<% if !@projectsfin.empty? %>
+<% if !@projects_fin.empty? %>
     <tr class="keys">
       <th>Nombre</th>
       <th>Fecha Inicio</th>
@@ -61,23 +45,8 @@
       <th></th>
       <th></th>
     </tr>
-  <% odd = false %>
-  <% @projectsfin.each do |project| %>
-    <% if can? :show, project %>
-    <% if odd == true %>
-    <tr class="odd">
-    <% else %>
-    <tr>
-    <% end %>
-      <td class="column1"><%= project.nombre %></td>
-      <td><%= project.fecha.strftime("%d/%m/%Y") %></td>
-      <td><% if can? :read, project => Activity %><%= link_to "Actividades", project_activities_path(project) %><% end %></td>
-      <td><% if can? :show, project %><%= link_to image_tag("show.png", :border => 0), project %><% end %></td>
-      <td><% if can? :destroy, project %><%= link_to image_tag("delete.png", :border => 0), project, :confirm => 'Estas seguro?', :method => :delete %><% end %></td>
-    </tr>
-    <% odd = !odd %>
-    <% end %>
-  <% end %>
+  <% @odd = false %>
+  <%= render(@projects_fin) %>
 <% else %>
   <tr>
     <td align=center><i>No hay proyectos finalizados</i></td>

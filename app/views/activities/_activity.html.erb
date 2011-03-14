@@ -1,0 +1,32 @@
+<% if can? :show, activity %>
+  <%
+    case activity.actividad
+      when 1
+         act = "Actividad"
+      when 2
+         act = "Junta"
+      when 3
+         act = "Taller"
+      else
+         act = "Asueto"
+    end
+  %>
+  <% if @odd == true %>
+    <tr class="odd">
+  <% else %>
+    <tr>
+  <% end %>
+    <td class="column1"><%= activity.nombre %></td>
+    <td><%= activity.fecha.strftime("%d/%m/%Y") %></td>
+    <td><%= activity.hora.strftime("%I:%M %p") %></td>
+    <td><%= activity.duracion.strftime("%I:%M") %></td>
+    <td><%= activity.valor %></td>
+    <td><%= act %></td>
+    <td><% if can? :show, @project => activity %><%= link_to image_tag("show.png", :border => 0), project_activity_path(@project,activity) %><% end %></td>
+    <% if !@project.fin? %>
+      <td><% if can? :update, @project => activity %><%= link_to image_tag("edit.png", :border => 0), edit_project_activity_path(@project,activity) %><% end %></td>
+      <td><% if can? :destroy, @project => activity %><%= link_to image_tag("delete.png", :border => 0), project_activity_path(@project,activity), :confirm => 'Estas seguro?', :method => :delete %><% end %></td>
+    <% end %>
+  </tr>
+  <% @odd = !@odd %>
+<% end %>
