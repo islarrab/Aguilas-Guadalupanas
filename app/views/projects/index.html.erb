@@ -33,7 +33,8 @@
 </div>
 <br/>
 
-<div class="lists"
+<% if can? :new, Project %>
+<div class="lists">
   <table>
     <thead>
     <tr>
@@ -58,3 +59,4 @@
   </table>
 </div>
 <br/>
+<% end %>

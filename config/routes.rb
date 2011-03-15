@@ -5,7 +5,7 @@ VikoBlog::Application.routes.draw do
   end
 
   #get "admin/index"
-  get "/admin" => "admin#index"
+  match "/admin" => "admin#index"
 
   devise_for :users do
     get "/registrar" => "devise/registrations#new"

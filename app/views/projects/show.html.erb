@@ -2,17 +2,37 @@
 <%= link_to "<< Volver a listado de Proyectos", projects_path %>
 <br/>
 
-<h1>Ver Proyecto</h1>
+<h1>Proyecto: <%= @project.nombre %></h1>
+<% if can? :new, Project %>
+  <% if @project.fin? %>
+<h2 align="center"><i>Finalizado</i></h2>
+  <% end %>
+<% end %>
 <br/>
 
-<b>Nombre:</b>
-<%= @project.nombre %>
-<br/>
-<b>Fecha:</b>
+<b>Fecha de Inicio:</b>
 <%= @project.fecha.strftime("%d/%m/%Y") %>
-<br/>
-<b>Minimo de actividades:</b>
-<%= @project.min_de_actv %>
+<% if (user_signed_in? && (current_user.coordinator? || current_user.admin?)) %>
+  <br/>
+  <b>Horas SSC Tec:</b>
+  <%= @project.horas_tec %><br/>
+  <b>Horas SSC UDEM:</b>
+  <%= @project.horas_udem %>
+<% elsif user_signed_in? %>
+  <br/>
+  <% if (@project.horas_tec != 0 && current_user.tec?) %>
+    <b>Horas de SSC:</b>
+    <%= @project.horas_tec %>
+  <% elsif (@project.horas_udem != 0 && !current_user.tec?) %>
+    <b>Horas de SSC:</b>
+    <%= @project.horas_udem %>
+  <% else %>
+    <b>Horas de SSC:</b>
+    <i>Este proyecto no esta aprovado para tu universidad</i>
+  <% end %>
+<% end %>
+<br/><br/>
+<%= @project.descripcion %>
 <br/><br/>
 
 <% if (!@project.fin? && (can? :update, @project)) %>

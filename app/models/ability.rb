@@ -9,9 +9,11 @@ class Ability
     elsif user.coordinator?
       can :manage, Project
       can :manage, Activity, :project => { :user_id => user.id }
-    else
+    elsif !user.id.nil?
       can :read, Project
       can :read, Activity
+    else
+      can :read, Project
     end
   end
 end

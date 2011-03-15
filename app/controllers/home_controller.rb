@@ -8,4 +8,7 @@ class HomeController < ApplicationController
     end
   end
 
+  def tec
+  end
+
 end
