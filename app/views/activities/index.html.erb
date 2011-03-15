@@ -9,27 +9,30 @@
   <%= link_to image_tag("new.png", :border => 0), new_project_activity_path(@project) %>
   <%= link_to 'Nueva Actividad', new_project_activity_path(@project) %>
 <% end %>
-<table>
-<% if !@activities.empty? %> 
-  <tr class="keys">
-    <th>Nombre</th>
-    <th>Fecha</th>
-    <th>Hora</th>
-    <th>Duracion</th>
-    <th>Valor</th>
-    <th>Tipo</th>
-    <th></th>
-    <% if !@project.fin? %>
-      <th></th>
-      <th></th>
-    <% end %>
-  </tr>
 
-  <% @odd = false %>
-  <%= render(@activities) %>
-<% else %>
-  <td align=center><i>Aun no hay actividades para este proyecto</i></td>
-<% end %>
-</table>
+<div class="lists">
+  <table>
+    <% if !@activities.empty? %> 
+    <tr class="keys">
+      <th>Nombre</th>
+      <th>Fecha</th>
+      <th>Hora</th>
+      <th>Duracion</th>
+      <th>Valor</th>
+      <th>Tipo</th>
+      <th></th>
+      <% if !@project.fin? %>
+        <th></th>
+        <th></th>
+      <% end %>
+    </tr>
+
+    <% @odd = false %>
+    <%= render(@activities) %>
+  <% else %>
+    <td align=center><i>Aun no hay actividades para este proyecto</i></td>
+  <% end %>
+  </table>
+</div>
 <br />
 

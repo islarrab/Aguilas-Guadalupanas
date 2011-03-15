@@ -77,9 +77,9 @@ h1 {
   text-align: center;
 }
 
-/* Format Table */
+/* Format Table for Lists */
 
-table {
+.lists table {
   width:90%;
   border-top:1px solid #e5eff8;
   border-right:1px solid #e5eff8;
@@ -87,29 +87,29 @@ table {
   border-collapse:collapse;
 }
 
-tr.odd td {
+.lists tr.odd td {
   background:#f7fbff
 }
 
-tr.odd .column1	{
+.lists tr.odd .column1	{
   background:#f4f9fe;
 }	
 
-tr.keys {
+.lists tr.keys {
   background: #f4f9fe;
 }
 
-tr.keys th {
+.lists tr.keys th {
   text-align: center;
   font-weight: bold;
 }
 
-.column1 {
+.lists .column1 {
   background:#f9fcfe;
   text-align: left;
 }
 
-td {
+.lists td {
   color:#678197;
   border-bottom:1px solid #e5eff8;
   border-left:1px solid #e5eff8;
@@ -117,7 +117,7 @@ td {
   text-align:center;				
 }
 
-th {
+.lists th {
   font-weight:normal;
   color: #678197;
   text-align:left;
@@ -126,25 +126,25 @@ th {
   padding:.3em 1em;
 }							
 
-thead th {
+.lists thead th {
   background:#f4f9fe;
   text-align:center;
   font:bold 1.2em/2em "Century Gothic","Trebuchet MS",Arial,Helvetica,sans-serif;
   color:#66a3d3
 }	
 
-tfoot th {
+.lists tfoot th {
   text-align:center;
   background:#f4f9fe;
 }	
 
-tfoot th strong {
+.lists tfoot th strong {
   font:bold 1.2em "Century Gothic","Trebuchet MS",Arial,Helvetica,sans-serif;
   margin:.5em .5em .5em 0;
   color:#66a3d3;
 }		
 
-tfoot th em {
+.lists tfoot th em {
   color:#f03b58;
   font-weight: bold;
   font-size: 1.1em;

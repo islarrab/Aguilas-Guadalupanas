@@ -6,51 +6,55 @@
   <%= link_to 'Nuevo Proyecto', new_project_path %>
 <% end %>
 
-<table>
-  <thead>
-  <tr class="odd">
-    <th colspan=6>Proyectos Actuales</th>
-  </tr>
-  </thead>
-<% if !@projects.empty? %>
-  <tr class="keys">
-    <th>Nombre</th>
-    <th>Fecha Inicio</th>
-    <th></th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-  <% @odd = false %>
-  <%= render(@projects) %>
-<% else %>
-  <tr>
-    <td align=center><i>No hay proyectos actuales</i></td>
-  </tr>
-<% end %>
-</table>
-<br/>
-
-<table>
-  <thead>
-  <tr>
-    <th colspan=5>Proyectos Finalizados</th>
-  </tr>
-  </thead>
-<% if !@projects_fin.empty? %>
+<div class="lists">
+  <table>
+    <thead>
+    <tr class="odd">
+      <th colspan=6>Proyectos Actuales</th>
+    </tr>
+    </thead>
+  <% if !@projects.empty? %>
     <tr class="keys">
       <th>Nombre</th>
       <th>Fecha Inicio</th>
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
     </tr>
-  <% @odd = false %>
-  <%= render(@projects_fin) %>
-<% else %>
-  <tr>
-    <td align=center><i>No hay proyectos finalizados</i></td>
-  </tr>
-<% end %>
-</table>
+    <% @odd = false %>
+    <%= render(@projects) %>
+  <% else %>
+    <tr>
+      <td align=center><i>No hay proyectos actuales</i></td>
+    </tr>
+  <% end %>
+  </table>
+</div>
+<br/>
+
+<div class="lists"
+  <table>
+    <thead>
+    <tr>
+      <th colspan=5>Proyectos Finalizados</th>
+    </tr>
+    </thead>
+  <% if !@projects_fin.empty? %>
+      <tr class="keys">
+        <th>Nombre</th>
+        <th>Fecha Inicio</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    <% @odd = false %>
+    <%= render(@projects_fin) %>
+  <% else %>
+    <tr>
+      <td align=center><i>No hay proyectos finalizados</i></td>
+    </tr>
+  <% end %>
+  </table>
+</div>
 <br/>
