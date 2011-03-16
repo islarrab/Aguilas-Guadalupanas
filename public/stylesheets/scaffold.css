@@ -1,13 +1,3 @@
-a:link, a:visited {
-  font-family: Harabara;
-  letter-spacing: 1px;
-  text-decoration: none;
-  color: #196084;
-}
-
-a:hover, a:active {
-  text-decoration: underline;
-}
 /*
 p, ol, ul {
   font-family: verdana, arial, helvetica, sans-serif;
@@ -37,7 +27,7 @@ div.field, div.actions {
 
 
 #error_explanation {
-  width: 100%;
+  align: center;
   border: 2px solid #c00;
   padding: 7px;
   padding-bottom: 0;

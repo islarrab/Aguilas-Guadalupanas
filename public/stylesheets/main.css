@@ -1,8 +1,21 @@
 @font-face {
-  font-family: Harabara;
+  font-family: Normal;
   font-style: normal;
   font-weight: normal;
-  src: url(Harabara.ttf);
+  src: url(NORMAL__.otf);
+}
+
+a:link, a:visited {
+  font-family: Normal;
+  font-size: 7px;
+  font-weight: normal;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #196084;
+}
+
+a:hover, a:active {
+  text-decoration: underline;
 }
 
 body {
@@ -52,7 +65,7 @@ img.header#logo {
   width: 851px;
   height: 20px;
   margin: 0px auto 15px auto;
-  padding-top: 5px;
+  padding-top: 2px;
   background-color: rgba(255,255,255,.7);
 }
 
