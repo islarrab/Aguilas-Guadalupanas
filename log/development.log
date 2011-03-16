@@ -41131,3 +41131,460 @@ Rendered general/_menu.html.erb (2.3ms)
 Rendered general/_footer.html.erb (3.1ms)
 Rendered projects/index.html.erb within layouts/application (80.5ms)
 Completed 200 OK in 274ms (Views: 90.7ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/projects" for 127.0.0.1 at Wed Mar 16 14:57:20 -0700 2011
+  Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mProject Load (0.8ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC
+  [1m[36mProject Load (0.7ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 't') ORDER BY fecha DESC[0m
+Rendered projects/_project.html.erb (157.4ms)
+Rendered projects/_project.html.erb (6.7ms)
+Rendered general/_header.html.erb (0.9ms)
+Rendered general/_menu.html.erb (2.7ms)
+Rendered general/_footer.html.erb (0.8ms)
+Rendered projects/index.html.erb within layouts/application (187.7ms)
+Completed 200 OK in 280ms (Views: 197.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/projects" for 127.0.0.1 at Wed Mar 16 14:57:31 -0700 2011
+  Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mProject Load (0.9ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC[0m
+  [1m[35mProject Load (0.5ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 't') ORDER BY fecha DESC
+Rendered projects/_project.html.erb (40.4ms)
+Rendered projects/_project.html.erb (7.9ms)
+Rendered general/_header.html.erb (0.9ms)
+Rendered general/_menu.html.erb (2.4ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered projects/index.html.erb within layouts/application (70.6ms)
+Completed 200 OK in 177ms (Views: 84.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/projects" for 127.0.0.1 at Wed Mar 16 14:58:31 -0700 2011
+  Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mProject Load (0.8ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC
+  [1m[36mProject Load (0.6ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 't') ORDER BY fecha DESC[0m
+Rendered projects/_project.html.erb (43.5ms)
+Rendered projects/_project.html.erb (5.7ms)
+Rendered general/_header.html.erb (0.8ms)
+Rendered general/_menu.html.erb (2.2ms)
+Rendered general/_footer.html.erb (0.6ms)
+Rendered projects/index.html.erb within layouts/application (73.5ms)
+Completed 200 OK in 171ms (Views: 83.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at Wed Mar 16 14:58:51 -0700 2011
+  Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (1.6ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mProject Load (0.9ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC[0m
+  [1m[35mProject Load (0.4ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 't') ORDER BY fecha DESC
+Rendered projects/_project.html.erb (42.1ms)
+Rendered projects/_project.html.erb (6.1ms)
+Rendered general/_header.html.erb (0.8ms)
+Rendered general/_menu.html.erb (2.4ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered projects/index.html.erb within layouts/application (72.6ms)
+Completed 200 OK in 169ms (Views: 85.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/logout" for 127.0.0.1 at Wed Mar 16 14:59:02 -0700 2011
+  Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 180ms
+
+
+Started GET "/" for 127.0.0.1 at Wed Mar 16 14:59:02 -0700 2011
+  Processing by HomeController#index as HTML
+Rendered general/_header.html.erb (0.9ms)
+Rendered general/_menu.html.erb (53.9ms)
+Rendered general/_footer.html.erb (0.9ms)
+Rendered home/index.html.erb within layouts/application (71.5ms)
+Completed 200 OK in 106ms (Views: 82.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Wed Mar 16 14:59:37 -0700 2011
+  Processing by HomeController#index as HTML
+Rendered general/_header.html.erb (1.7ms)
+Rendered general/_menu.html.erb (57.9ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered home/index.html.erb within layouts/application (74.6ms)
+Completed 200 OK in 109ms (Views: 86.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at Wed Mar 16 14:59:42 -0700 2011
+  Processing by Devise::SessionsController#new as HTML
+Rendered general/_header.html.erb (0.8ms)
+Rendered general/_menu.html.erb (28.2ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered devise/sessions/new.html.erb within layouts/application (45.8ms)
+Completed 200 OK in 106ms (Views: 55.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at Wed Mar 16 14:59:47 -0700 2011
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"commit"=>"Entrar", "authenticity_token"=>"tavI2Apj7CiB3FUh+VR/dder6g9M7F+9sx4KvGQj94s=", "utf8"=>"✓", "user"=>{"remember_me"=>"0", "username"=>"vikonava", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."username" = 'vikonava') LIMIT 1
+  [1m[36mAREL (0.7ms)[0m  [1mUPDATE "users" SET "updated_at" = '2011-03-16 21:59:47.365706', "current_sign_in_at" = '2011-03-16 21:59:47.364740', "sign_in_count" = 34, "last_sign_in_at" = '2011-03-16 21:28:18.082482' WHERE ("users"."id" = 1)[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 268ms
+
+
+Started GET "/" for 127.0.0.1 at Wed Mar 16 14:59:47 -0700 2011
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 55ms
+
+
+Started GET "/admin" for 127.0.0.1 at Wed Mar 16 14:59:47 -0700 2011
+  Processing by AdminController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered general/_header.html.erb (0.9ms)
+Rendered general/_menu.html.erb (26.7ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered admin/index.html.erb within layouts/application (44.0ms)
+Completed 200 OK in 106ms (Views: 53.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at Wed Mar 16 14:59:52 -0700 2011
+  Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered devise/shared/_usr_form_e.erb (6.6ms)
+Rendered general/_header.html.erb (0.9ms)
+Rendered general/_menu.html.erb (138.6ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered devise/registrations/edit.html.erb within layouts/application (162.0ms)
+Completed 200 OK in 228ms (Views: 172.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/projects" for 127.0.0.1 at Wed Mar 16 14:59:55 -0700 2011
+  Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mProject Load (1.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC[0m
+  [1m[35mProject Load (0.4ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 't') ORDER BY fecha DESC
+Rendered projects/_project.html.erb (42.2ms)
+Rendered projects/_project.html.erb (5.6ms)
+Rendered general/_header.html.erb (1.3ms)
+Rendered general/_menu.html.erb (2.8ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered projects/index.html.erb within layouts/application (76.9ms)
+Completed 200 OK in 174ms (Views: 87.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/logout" for 127.0.0.1 at Wed Mar 16 15:00:08 -0700 2011
+  Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 182ms
+
+
+Started GET "/" for 127.0.0.1 at Wed Mar 16 15:00:08 -0700 2011
+  Processing by HomeController#index as HTML
+Rendered general/_header.html.erb (0.8ms)
+Rendered general/_menu.html.erb (56.1ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered home/index.html.erb within layouts/application (68.9ms)
+Completed 200 OK in 104ms (Views: 79.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/registrar" for 127.0.0.1 at Wed Mar 16 15:00:10 -0700 2011
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered devise/shared/_usr_form.erb (32.5ms)
+Rendered general/_header.html.erb (0.9ms)
+Rendered general/_menu.html.erb (27.2ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered devise/registrations/new.html.erb within layouts/application (77.5ms)
+Completed 200 OK in 115ms (Views: 89.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at Wed Mar 16 15:00:14 -0700 2011
+  Processing by Devise::SessionsController#new as HTML
+Rendered general/_header.html.erb (0.8ms)
+Rendered general/_menu.html.erb (28.2ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered devise/sessions/new.html.erb within layouts/application (45.9ms)
+Completed 200 OK in 106ms (Views: 56.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at Wed Mar 16 15:00:21 -0700 2011
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"commit"=>"Entrar", "authenticity_token"=>"tavI2Apj7CiB3FUh+VR/dder6g9M7F+9sx4KvGQj94s=", "utf8"=>"✓", "user"=>{"remember_me"=>"0", "username"=>"vikonava", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."username" = 'vikonava') LIMIT 1
+  [1m[36mAREL (0.9ms)[0m  [1mUPDATE "users" SET "sign_in_count" = 35, "updated_at" = '2011-03-16 22:00:22.287346', "last_sign_in_at" = '2011-03-16 21:59:47.364740', "current_sign_in_at" = '2011-03-16 22:00:22.277935' WHERE ("users"."id" = 1)[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 503ms
+
+
+Started GET "/" for 127.0.0.1 at Wed Mar 16 15:00:22 -0700 2011
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 61ms
+
+
+Started GET "/admin" for 127.0.0.1 at Wed Mar 16 15:00:22 -0700 2011
+  Processing by AdminController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered general/_header.html.erb (0.8ms)
+Rendered general/_menu.html.erb (26.8ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered admin/index.html.erb within layouts/application (39.6ms)
+Completed 200 OK in 103ms (Views: 49.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects" for 127.0.0.1 at Wed Mar 16 15:00:25 -0700 2011
+  Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mProject Load (0.8ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC[0m
+  [1m[35mProject Load (0.4ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 't') ORDER BY fecha DESC
+Rendered projects/_project.html.erb (152.0ms)
+Rendered projects/_project.html.erb (6.6ms)
+Rendered general/_header.html.erb (1.1ms)
+Rendered general/_menu.html.erb (2.7ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered projects/index.html.erb within layouts/application (186.5ms)
+Completed 200 OK in 280ms (Views: 198.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at Wed Mar 16 15:02:00 -0700 2011
+  Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mProject Load (1.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 't') ORDER BY fecha DESC[0m
+Rendered projects/_project.html.erb (41.2ms)
+Rendered projects/_project.html.erb (6.8ms)
+Rendered general/_header.html.erb (0.9ms)
+Rendered general/_menu.html.erb (2.4ms)
+Rendered general/_footer.html.erb (0.4ms)
+Rendered projects/index.html.erb within layouts/application (72.4ms)
+Completed 200 OK in 170ms (Views: 84.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at Wed Mar 16 15:02:06 -0700 2011
+  Processing by ProjectsController#new as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered projects/_form.html.erb (18.5ms)
+Rendered general/_header.html.erb (0.8ms)
+Rendered general/_menu.html.erb (2.7ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered projects/new.html.erb within layouts/application (40.3ms)
+Completed 200 OK in 133ms (Views: 53.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at Wed Mar 16 15:02:43 -0700 2011
+  Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered projects/_form.html.erb (17.8ms)
+Rendered general/_header.html.erb (0.8ms)
+Rendered general/_menu.html.erb (2.4ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered projects/new.html.erb within layouts/application (38.1ms)
+Completed 200 OK in 126ms (Views: 51.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/projects" for 127.0.0.1 at Wed Mar 16 15:02:46 -0700 2011
+  Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mProject Load (0.9ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC[0m
+  [1m[35mProject Load (0.4ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 't') ORDER BY fecha DESC
+Rendered projects/_project.html.erb (43.4ms)
+Rendered projects/_project.html.erb (8.6ms)
+Rendered general/_header.html.erb (0.8ms)
+Rendered general/_menu.html.erb (2.4ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered projects/index.html.erb within layouts/application (74.2ms)
+Completed 200 OK in 168ms (Views: 86.9ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/projects/7" for 127.0.0.1 at Wed Mar 16 15:02:48 -0700 2011
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mProject Load (0.6ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+Rendered general/_header.html.erb (1.6ms)
+Rendered general/_menu.html.erb (2.7ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered projects/show.html.erb within layouts/application (34.4ms)
+Completed 200 OK in 224ms (Views: 65.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/projects" for 127.0.0.1 at Wed Mar 16 15:02:50 -0700 2011
+  Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mProject Load (0.9ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC[0m
+  [1m[35mProject Load (0.5ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 't') ORDER BY fecha DESC
+Rendered projects/_project.html.erb (48.0ms)
+Rendered projects/_project.html.erb (6.3ms)
+Rendered general/_header.html.erb (0.9ms)
+Rendered general/_menu.html.erb (2.7ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered projects/index.html.erb within layouts/application (81.8ms)
+Completed 200 OK in 183ms (Views: 92.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/projects/7/edit" for 127.0.0.1 at Wed Mar 16 15:02:53 -0700 2011
+  Processing by ProjectsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+Rendered projects/_form.html.erb (23.0ms)
+Rendered general/_header.html.erb (1.0ms)
+Rendered general/_menu.html.erb (2.5ms)
+Rendered general/_footer.html.erb (0.6ms)
+Rendered projects/edit.html.erb within layouts/application (44.5ms)
+Completed 200 OK in 254ms (Views: 55.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/projects" for 127.0.0.1 at Wed Mar 16 15:02:57 -0700 2011
+  Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (5.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mProject Load (0.8ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC[0m
+  [1m[35mProject Load (8.4ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 't') ORDER BY fecha DESC
+Rendered projects/_project.html.erb (87.1ms)
+Rendered projects/_project.html.erb (10.2ms)
+Rendered general/_header.html.erb (1.0ms)
+Rendered general/_menu.html.erb (7.0ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered projects/index.html.erb within layouts/application (142.7ms)
+Completed 200 OK in 334ms (Views: 160.1ms | ActiveRecord: 14.4ms)
+
+
+Started GET "/projects/7/activities" for 127.0.0.1 at Wed Mar 16 15:03:03 -0700 2011
+  Processing by ActivitiesController#index as HTML
+  Parameters: {"project_id"=>"7"}
+  [1m[36mProject Load (1.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mActivity Load (0.6ms)[0m  SELECT "activities".* FROM "activities" WHERE ("activities".project_id = 7)
+Rendered activities/_activity.html.erb (22.4ms)
+Rendered general/_header.html.erb (0.9ms)
+Rendered general/_menu.html.erb (2.6ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered activities/index.html.erb within layouts/application (46.4ms)
+Completed 200 OK in 178ms (Views: 59.5ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/projects/7/activities" for 127.0.0.1 at Wed Mar 16 15:03:42 -0700 2011
+  Processing by ActivitiesController#index as HTML
+  Parameters: {"project_id"=>"7"}
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mActivity Load (0.6ms)[0m  SELECT "activities".* FROM "activities" WHERE ("activities".project_id = 7)
+Rendered activities/_activity.html.erb (23.2ms)
+Rendered general/_header.html.erb (0.8ms)
+Rendered general/_menu.html.erb (2.3ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered activities/index.html.erb within layouts/application (50.1ms)
+Completed 200 OK in 214ms (Views: 60.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/projects/7/activities/new" for 127.0.0.1 at Wed Mar 16 15:03:46 -0700 2011
+  Processing by ActivitiesController#new as HTML
+  Parameters: {"project_id"=>"7"}
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+Rendered activities/_form.html.erb (18.8ms)
+Rendered general/_header.html.erb (0.8ms)
+Rendered general/_menu.html.erb (2.3ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered activities/new.html.erb within layouts/application (36.6ms)
+Completed 200 OK in 172ms (Views: 46.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/projects/7/activities/new" for 127.0.0.1 at Wed Mar 16 15:04:42 -0700 2011
+  Processing by ActivitiesController#new as HTML
+  Parameters: {"project_id"=>"7"}
+  [1m[35mProject Load (0.5ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+Rendered activities/_form.html.erb (16.4ms)
+Rendered general/_header.html.erb (1.0ms)
+Rendered general/_menu.html.erb (2.7ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered activities/new.html.erb within layouts/application (37.8ms)
+Completed 200 OK in 278ms (Views: 48.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/projects/7/activities" for 127.0.0.1 at Wed Mar 16 15:04:44 -0700 2011
+  Processing by ActivitiesController#index as HTML
+  Parameters: {"project_id"=>"7"}
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mActivity Load (0.6ms)[0m  SELECT "activities".* FROM "activities" WHERE ("activities".project_id = 7)
+Rendered activities/_activity.html.erb (25.1ms)
+Rendered general/_header.html.erb (0.9ms)
+Rendered general/_menu.html.erb (2.4ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered activities/index.html.erb within layouts/application (54.9ms)
+Completed 200 OK in 275ms (Views: 67.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/projects/7/activities/8" for 127.0.0.1 at Wed Mar 16 15:04:48 -0700 2011
+  Processing by ActivitiesController#show as HTML
+  Parameters: {"project_id"=>"7", "id"=>"8"}
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mActivity Load (0.8ms)[0m  [1mSELECT "activities".* FROM "activities" WHERE ("activities".project_id = 7) AND ("activities"."id" = 8) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mActivity Load (0.4ms)[0m  [1mSELECT "activities".* FROM "activities" WHERE ("activities"."id" = 8) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+Rendered general/_header.html.erb (0.8ms)
+Rendered general/_menu.html.erb (2.5ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered activities/show.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 170ms (Views: 34.7ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/projects/7/activities" for 127.0.0.1 at Wed Mar 16 15:04:53 -0700 2011
+  Processing by ActivitiesController#index as HTML
+  Parameters: {"project_id"=>"7"}
+  [1m[36mProject Load (0.6ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.6ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mActivity Load (0.5ms)[0m  SELECT "activities".* FROM "activities" WHERE ("activities".project_id = 7)
+Rendered activities/_activity.html.erb (20.9ms)
+Rendered general/_header.html.erb (0.8ms)
+Rendered general/_menu.html.erb (8.5ms)
+Rendered general/_footer.html.erb (0.6ms)
+Rendered activities/index.html.erb within layouts/application (155.3ms)
+Completed 200 OK in 278ms (Views: 167.5ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/projects/7/activities/8/edit" for 127.0.0.1 at Wed Mar 16 15:04:55 -0700 2011
+  Processing by ActivitiesController#edit as HTML
+  Parameters: {"project_id"=>"7", "id"=>"8"}
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mActivity Load (0.5ms)[0m  [1mSELECT "activities".* FROM "activities" WHERE ("activities".project_id = 7) AND ("activities"."id" = 8) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mActivity Load (0.4ms)[0m  [1mSELECT "activities".* FROM "activities" WHERE ("activities"."id" = 8) LIMIT 1[0m
+Rendered activities/_form.html.erb (30.2ms)
+Rendered general/_header.html.erb (0.8ms)
+Rendered general/_menu.html.erb (2.3ms)
+Rendered general/_footer.html.erb (0.4ms)
+Rendered activities/edit.html.erb within layouts/application (47.8ms)
+Completed 200 OK in 178ms (Views: 60.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/projects/7/activities" for 127.0.0.1 at Wed Mar 16 15:04:58 -0700 2011
+  Processing by ActivitiesController#index as HTML
+  Parameters: {"project_id"=>"7"}
+  [1m[35mProject Load (0.5ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mActivity Load (0.8ms)[0m  [1mSELECT "activities".* FROM "activities" WHERE ("activities".project_id = 7)[0m
+Rendered activities/_activity.html.erb (23.1ms)
+Rendered general/_header.html.erb (1.0ms)
+Rendered general/_menu.html.erb (2.6ms)
+Rendered general/_footer.html.erb (0.6ms)
+Rendered activities/index.html.erb within layouts/application (48.2ms)
+Completed 200 OK in 291ms (Views: 62.0ms | ActiveRecord: 1.9ms)

@@ -1,13 +1,6 @@
-@font-face {
-  font-family: Normal;
-  font-style: normal;
-  font-weight: normal;
-  src: url(NORMAL__.otf);
-}
-
 a:link, a:visited {
-  font-family: Normal;
-  font-size: 7px;
+  font-family: Helvetica;
+  font-size: 10px;
   font-weight: normal;
   letter-spacing: 1px;
   text-decoration: none;

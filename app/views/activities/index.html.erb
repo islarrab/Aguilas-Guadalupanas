@@ -1,4 +1,4 @@
-<%= link_to "<< Volver a listado de Proyectos", projects_path %>
+<%= link_to "<< VOLVER AL LISTADO DE PROYECTOS", projects_path %>
 <br/>
 <table cellspacing=0 cellpadding=0 width=90% align=center>
 <tr>
@@ -10,7 +10,7 @@
   <b>Fecha de Inicio:</b> <%= @project.fecha.strftime("%d/%m/%Y") %><br/><br/>
   <% if can? :create, @project => Activity %>
     <%= link_to image_tag("new.png", :border => 0), new_project_activity_path(@project) %>
-    <%= link_to 'Nueva Actividad', new_project_activity_path(@project) %>
+    <%= link_to 'NUEVA ACTIVIDAD', new_project_activity_path(@project) %>
   <% end %>
   </td>
 </tr>

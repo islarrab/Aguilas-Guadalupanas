@@ -6,11 +6,11 @@
   <% end %>
       <td class="column1"><%= project.nombre %></td>
       <td><%= project.fecha.strftime("%d/%m/%Y") %></td>
-      <td><% if can? :read, project => Activity %><%= link_to "Actividades", project_activities_path(project) %><% end %></td>
+      <td><% if can? :read, project => Activity %><%= link_to "ACTIVIDADES", project_activities_path(project) %><% end %></td>
       <td><%= link_to image_tag("show.png", :border => 0), project %></td>
       <% if !project.fin? %>
       <td><% if can? :update, project %><%= link_to image_tag("edit.png", :border => 0), edit_project_path(project) %><% end %></td>
-      <td><% if can? :update, project %><%= link_to 'Finalizar', project_projend_path(project), :confirm => 'Estas seguro?' %><% end %></td>
+      <td><% if can? :update, project %><%= link_to 'FINALIZAR', project_projend_path(project), :confirm => 'Estas seguro?' %><% end %></td>
       <% else %>
       <td><% if can? :destroy, project %><%= link_to image_tag("delete.png", :border => 0), project, :confirm => 'Estas seguro?', :method => :delete %><% end %></td>
       <% end %>
