@@ -1,47 +1,81 @@
-<%= render "devise/shared/errors", :target => @user %>
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+<table cellspacing=0 cellpadding=2>
+<tr>
+  <td>
   <% if (!user_signed_in?) %>
     * Usuario:<br/>
     <%= f.text_field :username, :maxlength => 20 %><br/>
     * Password (mínimo 6 caracteres):<br/>
     <%= f.password_field :password %><br/>
     * Confirma tu password:<br/>
-    <%= f.password_field :password_confirmation %><p> 
+    <%= f.password_field :password_confirmation %> 
   <% end %>
-
+  </td>
+  <td>
   * Nombre:<br/>
   <%= f.text_field :nombre %><br/>
   * Apellido Paterno:<br/>
   <%= f.text_field :apellido_paterno %><br/>
   * Apellido Materno:<br/>
-  <%= f.text_field :apellido_materno %><p>
-
+  <%= f.text_field :apellido_materno %>
+  </td>
+</tr>
+<tr>
+  <td>
   * Email:<br/>
-  <%= f.text_field :email %><p>
-
-  * Tel&eacute;fono de Contacto:<br/>
-  <%= f.text_field :telefono, :maxlength => 10 %><br/>
-  Tel&eacute;fono Celular:<br/>
-  <%= f.text_field :celular, :maxlength => 10 %><p>
-
-  * Direcci&oacute;n:<br/>
+  <%= f.text_field :email %>
+  <table cellpadding=0 cellspacing=0 width=100%>
+  <tr>
+    <td>
+    * Telefono:<br/>
+    <%= f.text_field :telefono, :maxlength => 10 %>
+    </td>
+    <td>
+    Celular:<br/>
+    <%= f.text_field :celular, :maxlength => 10 %>
+    </td>
+  </tr>
+  </table>
+  * Direccion:<br/>
   <%= f.text_field :direccion %><p>
-
+  </td>
+  <td>
   <% if (!user_signed_in?) %>
-    * Instituto de Origen:<br/>
-    <%= f.radio_button :tec, 't' %> ITESM<br/>
-    <%= f.radio_button :tec, 'f' %> UDEM<p>
-
-    * Matr&iacute;cula (solo n&uacute;meros):<br/>
-    <%= f.text_field :matricula, :maxlength => 10 %><br/>
-    * Semestre:<br/>
-    <%= f.number_field :semestre, :maxlength => 2 %><br/>
-    * Carrera:<br/>
-    <%= f.text_field :carrera, :maxlength => 4 %><br/>
+    <table width=100% cellspacing=0 cellpadding=1>
+    <tr>
+      <td style="vertical-align:top;">
+      * Instituto de Origen:<br/>
+      <%= f.radio_button :tec, 't' %> ITESM<br/>
+      <%= f.radio_button :tec, 'f' %> UDEM<p>
+      </td>
+      <td>
+      * Matricula (solo numeros):<br/>
+      <%= f.text_field :matricula, :maxlength => 10 %><br/>
+      <table width=100% cellspacing=0 cellpadding=0>
+      <tr>
+        <td>
+        * Semestre:<br/>
+        <%= f.number_field :semestre, :maxlength => 2 %><br/>
+        </td>
+        <td>
+        * Carrera:<br/>
+        <%= f.text_field :carrera, :maxlength => 4 %><br/>
+        </td>
+      </tr>
+      </table>
+      </td>
+    </tr>
+    </table>
     * Horas de SSC (ya acreditadas a la fecha):<br/>
     <%= f.number_field :horas_ssc, :max => 500, :maxlength => 3 %><p>
   <% end %>
-
+  </td>
+</tr>
+<tr>
+  <td colspan=2 align=center>
   <%= f.submit 'Guardar'%>
   <input type=button value=Regresar onClick="javascript:history.back(1);"><p>
+  </td>
+</tr>
+</table>
 <% end %>

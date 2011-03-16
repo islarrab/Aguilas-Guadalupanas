@@ -3,43 +3,33 @@
 <%= link_to "<< Volver a listado de Actividades", project_activities_path %>
 <br/>
 
-<p>
-  <b>Nombre:</b>
-  <%= @activity.nombre %>
-</p>
-
-<p>
-  <b>Fecha:</b>
-  <%= @activity.fecha.strftime("%d/%m/%Y") %>
-</p>
-
-<p>
-  <b>Hora:</b>
-  <%= @activity.hora.strftime("%I:%M %p") %>
-</p>
-
-<p>
-  <b>Duracion:</b>
-  <%= @activity.duracion.strftime("%I:%M horas") %>
-</p>
-
-<% if @activity.actividad != 0 %> 
-<p>
-  <b>Valor:</b>
-  <%= @activity.valor %>
-</p>
-<% end %>
-
-<p>
-  <b>Actividad:</b>
-  <%= @act %>
-</p>
-
-<p>
-  <b>Descripcion:</b><br/>
-  <%= text_area_tag 'comment', @activity.comment, :rows => 5, :cols => 40 %>
-</p>
-<% if can? :update, @project => @activity %>
-  <%= link_to 'Editar', edit_project_activity_path(@project,@activity) %> |
-<% end %>
-<%= link_to 'Atras', project_activities_path(@project) %>
+<table width=85% align=center>
+<tr>
+  <td colspan=2><h2>Ver Actividad</h2></td>
+</tr>
+<tr>
+  <td>
+    <b>Proyecto:</b>
+    <%= @activity.project.nombre %><br/>
+    <b>Nombre:</b>
+    <%= @activity.nombre %><br/>
+    <b>Actividad:</b>
+    <%= @act %>
+  </td>
+  <td>
+    <b>Fecha:</b>
+    <%= @activity.fecha.strftime("%d/%m/%Y") %><br/>
+    <b>Hora:</b>
+    <%= @activity.hora.strftime("%I:%M %p") %><br/>
+    <b>Duracion:</b>
+    <%= @activity.duracion.strftime("%I:%M horas") %>
+  </td>
+</tr>
+<tr>
+  <td colspan=2>
+    <br/>
+    <b>Descripcion:</b><br/>
+    <%= @activity.comment %>
+  </td>
+</tr>
+</table>

@@ -1,7 +1,16 @@
+@font-face {
+  font-family: Harabara;
+  font-style: normal;
+  font-weight: normal;
+  src: url(Harabara.ttf);
+}
+
 body {
-  background: url(../images/background.jpg) fixed;
-  font-family: Verdana, Sans Serif;
+  background-image: url(../images/background.png);
+  background-color: #45b4d9;
+  font-family: verdana, arial, helvetica, sans-serif;
   font-size: 14px;
+  background-repeat: repeat-x;
 }
 
 .website {
@@ -14,7 +23,7 @@ body {
 }
 
 #main {
-  background-color: rgba(255,255,255,1);
+  background-color: rgba(255,255,130,.4);
   overflow: auto;
   width: 991px;
   margin: -20px auto -20px auto;
@@ -25,11 +34,10 @@ body {
 
 /*HEADER*/
 #header {
-  width:831px;
+  width:857px;
   height:100px;
-  padding:10px;
   background-color: rgba(255, 255, 255, 0.7);
-  margin:28px auto 20px auto;
+  margin:25px auto 15px auto;
   border-radius: 10px;
   -moz-border-radius: 10px;
 }
@@ -42,9 +50,9 @@ img.header#logo {
 #menu {
   text-align: center;
   width: 851px;
-  height: 25px;
-  margin: 0px auto 20px auto;
-  padding-top: 6px;
+  height: 20px;
+  margin: 0px auto 15px auto;
+  padding-top: 5px;
   background-color: rgba(255,255,255,.7);
 }
 
@@ -52,9 +60,9 @@ img.header#logo {
 #content {
   float: left;
   width: 830px;
-  margin: 0px 0px 20px 67px;
+  margin: 0px 0px 10px 67px;
   background-color: rgba(255,255,255,.7);
-  padding: 10px 10px 10px 10px;
+  padding: 10px 10px 20px 10px;
 }
 
 #extras {
@@ -73,13 +81,23 @@ img.header#logo {
   margin: 0px auto 10px auto;
 }
 
-h1 {
+h1, h2 {
   text-align: center;
+}
+
+td.justify {
+  text-align: justify;
+}
+
+table {
+  padding: 0;
+  border-spacing: 0;
 }
 
 /* Format Table for Lists */
 
 .lists table {
+  background-color: white;
   width:90%;
   border-top:1px solid #e5eff8;
   border-right:1px solid #e5eff8;
@@ -88,7 +106,7 @@ h1 {
 }
 
 .lists tr.odd td {
-  background:#f7fbff
+  background:#f7fbff;
 }
 
 .lists tr.odd .column1	{
@@ -96,7 +114,7 @@ h1 {
 }	
 
 .lists tr.keys {
-  background: #f4f9fe;
+  background: #ccffcc;
 }
 
 .lists tr.keys th {
@@ -127,10 +145,10 @@ h1 {
 }							
 
 .lists thead th {
-  background:#f4f9fe;
+  background:#77BB77;
   text-align:center;
   font:bold 1.2em/2em "Century Gothic","Trebuchet MS",Arial,Helvetica,sans-serif;
-  color:#66a3d3
+  color:white;
 }	
 
 .lists tfoot th {

@@ -1,3 +1,8 @@
-<h2>Editar Cuenta de <%= current_user.username %></h2>
-
-<%= render 'devise/shared/usr_form' %>
+<table align=center cellspacing=0 cellpadding=0>
+<tr>
+  <td align=center><h2>Editar Cuenta de <%= @user.username %></h2></td>
+</tr>
+<tr>
+  <td><%= render 'devise/shared/usr_form_e' %></tr>
+</tr>
+</table>

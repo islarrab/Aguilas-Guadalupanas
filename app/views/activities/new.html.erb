@@ -1,8 +1,12 @@
 <%= link_to "<< Volver a listado de Actividades", project_activities_path %>
 <br/>
-
-<h1>Nueva Actividad</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', project_activities_path(@project) %>
+<table cellspacing=0 cellpadding=0 align=center width=85%>
+<tr>
+  <td><h2>Nueva Actividad</h2></td>
+</tr>
+<tr>
+  <td>
+    <%= render 'form' %>
+  </td>
+</tr>
+</table>

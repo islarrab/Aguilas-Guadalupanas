@@ -1,9 +1,13 @@
 <%= link_to "<< Volver a listado de Actividades", project_activities_path %>
 <br/>
 
-<h1>Editar Actividad</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', project_activity_path(@project,@activity) %> |
-<%= link_to 'Back', project_activities_path(@project) %>
+<table width=85% align=center>
+<tr>
+  <td><h1>Editar Actividad</h1></td>
+</tr>
+<tr>
+  <td>
+    <%= render 'form' %>
+  </td>
+</tr>
+</table>

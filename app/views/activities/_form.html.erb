@@ -11,38 +11,43 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :nombre %><br />
-    <%= f.text_field :nombre %>
-  </div>
-  <div class="field">
-    <%= f.label :fecha %><br />
-    <%= f.date_select :fecha %>
-  </div>
-  <div class="field">
-    <%= f.label :hora %><br />
-    <%= f.time_select :hora, :minute_step => 30 %>
-  </div>
-  <div class="field">
-    <%= f.label :duracion %><br />
-    <%= f.time_select :duracion, :minute_step => 30 %>
-  </div>
-  <div class="field">
-    <%= f.label :valor %><br />
-    <%= f.text_field :valor, :size => 2, :max_length => 2 %>
-  </div>
-  <div class="field">
-    <%= f.label :actividad, "Tipo de Actividad" %><br/>
-    <%= f.radio_button :actividad, "1", :checked => true %>Actividad<br />
-    <%= f.radio_button :actividad, "2" %>Junta<br />
-    <%= f.radio_button :actividad, "3" %>Taller<br />
-    <%= f.radio_button :actividad, "0" %>Asueto<br />
-  </div>
-  <div class="field">
-    <%= f.label :comment, "Descripcion" %><br/>
-    <%= f.text_area :comment, :cols => 40, :rows => 5, :escape => false %><br/>
-  </div>
-  <div class="actions">
-    <%= f.submit @btn %>
-  </div>
+  <table width=100%>
+  <tr>
+    <td>
+      Nombre del Proyecto:<br/>
+      <%= @project.nombre %><br/><br/>
+      * Nombre:<br />
+      <%= f.text_field :nombre %><br/>
+      * Fecha: <br />
+      <%= f.date_select :fecha %>
+    </td>
+    <td>
+      * Hora:<br />
+      <%= f.time_select :hora, :minute_step => 30 %><br/>
+      * Duraci&oacute;n: <br />
+      <%= f.time_select :duracion, :minute_step => 30 %><br/>
+      * Valor:<br />
+      <%= f.text_field :valor, :size => 2, :max_length => 2 %>
+    </td>
+    <td>
+      * Tipo de Actividad:<br/>
+      <%= f.radio_button :actividad, "1", :checked => true %>Actividad<br />
+      <%= f.radio_button :actividad, "2" %>Junta<br />
+      <%= f.radio_button :actividad, "3" %>Taller<br />
+      <%= f.radio_button :actividad, "0" %>Asueto<br />
+    </td>
+  </tr>
+  <tr>
+    <td colspan=3>
+      <br/>
+      Descripcion<br/>
+      <%= f.text_area :comment, :cols => 95, :rows => 8, :escape => false %><br/>
+    </td>
+  </tr>
+  <tr>
+    <td colspan=3 align=center>
+      <%= f.submit @btn %>
+    </td>
+  </tr>
+  </table>
 <% end %>

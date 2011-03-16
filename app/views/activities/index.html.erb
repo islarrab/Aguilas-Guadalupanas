@@ -1,17 +1,28 @@
 <%= link_to "<< Volver a listado de Proyectos", projects_path %>
 <br/>
-<h1>Actividades del Proyecto</h1>
-<br/>
-<b>Proyecto:</b> <%= @project.nombre %><br/>
-<b>Fecha de Inicio:</b> <%= @project.fecha.strftime("%d/%m/%Y") %><br/><br/>
-<% if can? :create, @project => Activity %>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <%= link_to image_tag("new.png", :border => 0), new_project_activity_path(@project) %>
-  <%= link_to 'Nueva Actividad', new_project_activity_path(@project) %>
-<% end %>
+<table cellspacing=0 cellpadding=0 width=90% align=center>
+<tr>
+  <td><h1>Actividades del Proyecto</h1></td>
+</tr>
+<tr>
+  <td>
+  <b>Proyecto:</b> <%= @project.nombre %><br/>
+  <b>Fecha de Inicio:</b> <%= @project.fecha.strftime("%d/%m/%Y") %><br/><br/>
+  <% if can? :create, @project => Activity %>
+    <%= link_to image_tag("new.png", :border => 0), new_project_activity_path(@project) %>
+    <%= link_to 'Nueva Actividad', new_project_activity_path(@project) %>
+  <% end %>
+  </td>
+</tr>
+</table>
 
 <div class="lists">
   <table>
+    <thead>
+      <tr class=odd>
+        <th colspan=9>Listado de Actividades</th>
+      </tr>
+    </thead>
     <% if !@activities.empty? %> 
     <tr class="keys">
       <th>Nombre</th>
@@ -34,5 +45,6 @@
   <% end %>
   </table>
 </div>
-<br />
+
+
 

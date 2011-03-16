@@ -11,31 +11,39 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :nombre %><br />
+<table width=100%>
+<tr>
+  <td>
+    * Nombre:<br />
     <%= f.text_field :nombre %>
-  </div>
-  <div class="field">
-    <%= f.label :fecha, "Fecha de inicio" %><br />
+  </td>
+  <td>
+    * Fecha de Inicio:<br />
     <%= f.date_select :fecha %>
-  </div>
-  <div class="field">
-    <%= f.label :min_de_actv, "Minimo de Actividades" %><br />
-    <%= f.text_field :min_de_actv, :size => 2, :max_length => 2 %>
-  </div>
-  <div class="field">
-    <%= f.label :horas_tec, "Horas SSC para Tec" %><br/>
-    <%= f.text_field :horas_tec, :size => 3, :max_length => 3 %>
-  </div>
-  <div class="field">
-    <%= f.label :horas_udem, "Horas SSC para UDEM" %><br/>
-    <%= f.text_field :horas_udem, :size => 3, :max_length => 3 %>
-  </div>
-  <div class="field">
+  </td>
+</tr>
+<tr>
+  <td colspan=2>
+    <table width=100% cellspacing=0 cellpadding=0>
+    <tr>
+      <td>* Minimo de Actividades: <%= f.text_field :min_de_actv, :size => 2, :max_length => 2 %></td>
+      <td>* Horas SSC para Tec: <%= f.text_field :horas_tec, :size => 3, :max_length => 3 %></td>
+      <td>* Horas SSC para UDEM: <%= f.text_field :horas_udem, :size => 3, :max_length => 3 %></td>
+    </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+  <td colspan=2>
+    <br/>
     <%= f.label :descripcion %><br/>
-    <%= f.text_area :descripcion, :rows => 7, :cols => 115 %>
-  </div>
-  <div class="actions">
+    <%= f.text_area :descripcion, :rows => 7, :cols => 95 %>
+  </td>
+<tr>
+<tr>
+  <td colspan=2 align=center>
     <%= f.submit @btn %>
-  </div>
+  </td>
+</tr>
+</table>
 <% end %>

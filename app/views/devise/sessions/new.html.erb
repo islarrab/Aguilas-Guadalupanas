@@ -1,16 +1,24 @@
-<h2>Log in</h2>
-
+<table align=center cellspacing=0 cellpadding=0>
+<tr>
+  <td align=center><h2>Log in</h2></td>
+</tr>
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+<tr>
+  <td>
   <p>Usuario:<br />
   <%= f.text_field :username %></p>
-
   <p><%= f.label :password %><br />
   <%= f.password_field :password %></p>
-
   <% if devise_mapping.rememberable? -%>
     <p><%= f.check_box :remember_me %> Recordarme en esta PC</p>
   <% end -%>
-
+  </td>
+</tr>
+<tr>
+  <td align=center>
   <p><%= f.submit "Entrar" %>
   <input type=button value=Cancelar onClick="javascript:history.back(1);"</p>
+  </td>
+</tr>
 <% end %>
+</table>
