@@ -9,13 +9,16 @@
   <table>
     <thead>
     <tr class="odd">
-      <th colspan=6>Proyectos Actuales</th>
+      <th colspan=7>Proyectos Actuales</th>
     </tr>
     </thead>
   <% if !@projects.empty? %>
     <tr class="keys">
       <th>Nombre</th>
       <th>Fecha Inicio</th>
+      <% if can? :manage, Project %>
+        <th>Coord</th>
+      <% end %>
       <th></th>
       <th></th>
       <th></th>
@@ -32,19 +35,23 @@
 </div>
 <br/>
 
-<% if can? :new, Project %>
+<% if can? :manage, Project %>
 <br/>
 <div class="lists">
   <table>
     <thead>
     <tr>
-      <th colspan=5>Proyectos Finalizados</th>
+      <th colspan=7>Proyectos Finalizados</th>
     </tr>
     </thead>
   <% if !@projects_fin.empty? %>
       <tr class="keys">
         <th>Nombre</th>
         <th>Fecha Inicio</th>
+        <% if can? :manage, Project %>
+          <th>Coord</th>
+        <% end %>
+        <th></th>
         <th></th>
         <th></th>
         <th></th>

@@ -8,7 +8,7 @@
   <td>
   <b>Proyecto:</b> <%= @project.nombre %><br/>
   <b>Fecha de Inicio:</b> <%= @project.fecha.strftime("%d/%m/%Y") %><br/><br/>
-  <% if can? :create, @project => Activity %>
+  <% if can? :new, @project => Activity %>
     <%= link_to image_tag("new.png", :border => 0), new_project_activity_path(@project) %>
     <%= link_to 'NUEVA ACTIVIDAD', new_project_activity_path(@project) %>
   <% end %>

@@ -1,0 +1,26 @@
+class AccountsController < Devise::RegistrationsController
+  def index
+    @accounts = User.search(params[:username],params[:nombre],params[:apellido_paterno],params[:apellido_materno])
+  
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @accounts }
+    end
+  end
+
+  def new
+    super
+  end
+
+  def create
+    super
+  end
+
+  def update
+    super
+  end 
+
+  def edit
+    super
+  end
+end

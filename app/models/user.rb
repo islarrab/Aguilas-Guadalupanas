@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password
   validates_format_of :email, :with => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
   validates_presence_of :password_confirmation, :username, :nombre,
-  :apellido_paterno, :apellido_materno, :tec, :carrera, :matricula,
+  :apellido_paterno, :apellido_materno, :carrera, :matricula,
   :direccion, :semestre
   validates_length_of :username, :in => 6..20
   validates_length_of :password, :in => 6..20
@@ -25,4 +25,8 @@ class User < ActiveRecord::Base
   validates_numericality_of :semestre, :only_integer => true, :greater_than_or_equal_to => 1, :less_than_or_equal_to => 12
   validates_numericality_of :telefono, :only_integer => true
   validates_numericality_of :celular, :only_integer => true, :allow_blank => true
+
+  def self.search(username, nombre, appat, apmat)
+      find(:all, :conditions => ["username LIKE ? AND nombre LIKE ? AND apellido_paterno LIKE ? AND apellido_paterno LIKE ?", "%#{username}%", "%#{nombre}%","%#{appat}%", "%#{apmat}%"], :limit => 50, :order => "username ASC")
+  end
 end

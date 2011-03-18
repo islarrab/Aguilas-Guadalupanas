@@ -1,5 +1,6 @@
 class Project < ActiveRecord::Base
   has_many :activities, :dependent => :destroy
+  belongs_to :coordinator, :class_name => "User", :foreign_key => "coordinator_id"
   accepts_nested_attributes_for :activities
 
   validates_presence_of :nombre, :fecha, :min_de_actv

@@ -1,4 +1,11 @@
 VikoBlog::Application.routes.draw do
+  get "/accounts" => "accounts#index", :as => "accounts"
+  post "/accounts" => "accounts#index"
+  get "/accounts/edit" => "accounts#edit", :as => "edit_account"
+  put "/accounts/update" => "accounts#update", :as => "update_account"
+  get "/accounts/show" => "accounts#show", :as => "account"
+  delete "/accounts" => "accounts#destroy", :as => "destroy_account"
+
   resources :projects do
     get "projend"
     resources :activities

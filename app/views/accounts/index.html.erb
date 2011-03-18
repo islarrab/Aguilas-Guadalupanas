@@ -1,0 +1,38 @@
+<table width=85% align=center>
+<tr>
+  <td colspan=5><h2>Administraci&oacute;n de Cuentas</h2></td>
+</tr>
+<tr>
+  <td>Usuario:</td>
+  <td>Nombre:</td>
+  <td>Apellido Paterno:</td>
+  <td>Apellido Materno:</td>
+</tr>
+<% form_tag accounts_path, :method => "post" do %>
+<tr>
+  <td><%= text_field_tag :username, params[:username], :size => 15 %></td>
+  <td><%= text_field_tag :nombre, params[:nombre], :size => 15 %></td>
+  <td><%= text_field_tag :apellido_paterno, params[:apellido_paterno], :size => 15 %></td>
+  <td><%= text_field_tag :apellido_materno, params[:apellido_materno], :size => 15 %></td>
+  <td><%= submit_tag "Buscar" %></td>
+</tr>
+<% end %>
+</table>
+<br/>
+<div class="lists">
+  <table>
+    <tr class="keys">
+      <th style="background-color:#77bb77;color:white;">Usuario</th>
+      <th style="background-color:#77bb77;color:white;">Nombre</th>
+      <th style="background-color:#77bb77;color:white;">Universidad</th>
+      <th style="background-color:#77bb77;color:white;">Tel&eacute;fono</th>
+      <th style="background-color:#77bb77;color:white;">Celular</th>
+      <th style="background-color:#77bb77;color:white;"></th>
+    </tr>
+    <% odd = false %>
+    <% @accounts.each do |account| %>
+      <%= render "account", :account => account, :odd => odd %>
+      <% odd = !odd %>
+    <% end %>
+  </table>
+</div>

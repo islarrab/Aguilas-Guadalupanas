@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110315034850) do
+ActiveRecord::Schema.define(:version => 20110317014226) do
 
   create_table "activities", :force => true do |t|
     t.string   "nombre"
@@ -31,10 +31,11 @@ ActiveRecord::Schema.define(:version => 20110315034850) do
     t.integer  "min_de_actv"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "fin",         :default => false
-    t.integer  "horas_tec",   :default => 0
-    t.integer  "horas_udem",  :default => 0
+    t.boolean  "fin",            :default => false
+    t.integer  "horas_tec",      :default => 0
+    t.integer  "horas_udem",     :default => 0
     t.text     "descripcion"
+    t.integer  "coordinator_id"
   end
 
   create_table "users", :force => true do |t|

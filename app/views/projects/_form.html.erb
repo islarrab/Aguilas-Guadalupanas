@@ -35,6 +35,11 @@
 </tr>
 <tr>
   <td colspan=2>
+    Coordinador: <%= collection_select :project, :coordinator_id, User.find_all_by_coordinator("t"), :id, :username, :include_blank => true, :selected => @project.coordinator %>
+  </td>
+</tr>
+<tr>
+  <td colspan=2>
     <br/>
     <%= f.label :descripcion %><br/>
     <%= f.text_area :descripcion, :rows => 7, :cols => 95 %>
