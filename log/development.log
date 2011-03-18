@@ -60409,3 +60409,275 @@ Rendered general/_menu.html.erb (164.5ms)
 Rendered general/_footer.html.erb (0.6ms)
 Rendered accounts/index.html.erb within layouts/application (212.8ms)
 Completed 200 OK in 309ms (Views: 226.5ms | ActiveRecord: 72.6ms)
+
+
+Started GET "/logout" for 127.0.0.1 at Fri Mar 18 00:18:22 -0700 2011
+  Processing by Devise::SessionsController#destroy as HTML
+  [1m[35mUser Load (2.1ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 65ms
+
+
+Started GET "/" for 127.0.0.1 at Fri Mar 18 00:18:22 -0700 2011
+  Processing by HomeController#index as HTML
+Rendered general/_header.html.erb (0.9ms)
+Rendered general/_menu.html.erb (76.6ms)
+Rendered general/_footer.html.erb (0.6ms)
+Rendered home/index.html.erb within layouts/application (90.0ms)
+Completed 200 OK in 128ms (Views: 104.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/login" for 127.0.0.1 at Fri Mar 18 00:18:25 -0700 2011
+  Processing by Devise::SessionsController#new as HTML
+Rendered general/_header.html.erb (1.0ms)
+Rendered general/_menu.html.erb (51.9ms)
+Rendered general/_footer.html.erb (0.6ms)
+Rendered devise/sessions/new.html.erb within layouts/application (73.0ms)
+Completed 200 OK in 301ms (Views: 90.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at Fri Mar 18 00:18:31 -0700 2011
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"commit"=>"Entrar", "authenticity_token"=>"tavI2Apj7CiB3FUh+VR/dder6g9M7F+9sx4KvGQj94s=", "utf8"=>"✓", "user"=>{"remember_me"=>"0", "username"=>"vikonava", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."username" = 'vikonava') LIMIT 1[0m
+  [1m[35mAREL (2.0ms)[0m  UPDATE "users" SET "updated_at" = '2011-03-18 07:18:31.817172', "sign_in_count" = 45, "last_sign_in_at" = '2011-03-18 06:54:39.561043', "current_sign_in_at" = '2011-03-18 07:18:31.816072' WHERE ("users"."id" = 1)
+Redirected to http://localhost:3000/
+Completed 302 Found in 334ms
+
+
+Started GET "/" for 127.0.0.1 at Fri Mar 18 00:18:31 -0700 2011
+  Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 91ms
+
+
+Started GET "/admin" for 127.0.0.1 at Fri Mar 18 00:18:32 -0700 2011
+  Processing by AdminController#index as HTML
+  [1m[35mUser Load (7.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered general/_header.html.erb (0.9ms)
+Rendered general/_menu.html.erb (241.1ms)
+Rendered general/_footer.html.erb (1.5ms)
+Rendered admin/index.html.erb within layouts/application (262.2ms)
+Completed 200 OK in 388ms (Views: 283.0ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at Fri Mar 18 00:18:34 -0700 2011
+  Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  SELECT COUNT(*) FROM "projects" WHERE ("projects"."fin" = 'f')
+  [1m[36mProject Load (0.7ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC[0m
+Rendered projects/_project.html.erb (25.6ms)
+Rendered general/_header.html.erb (0.9ms)
+Rendered general/_menu.html.erb (15.0ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered projects/index.html.erb within layouts/application (68.2ms)
+Completed 200 OK in 187ms (Views: 83.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/projects/6/activities" for 127.0.0.1 at Fri Mar 18 00:18:38 -0700 2011
+  Processing by ActivitiesController#index as HTML
+  Parameters: {"project_id"=>"6"}
+  [1m[35mProject Load (0.4ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 6) LIMIT 1
+  [1m[36mUser Load (5.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 6) LIMIT 1
+  [1m[36mActivity Load (0.5ms)[0m  [1mSELECT "activities".* FROM "activities" WHERE ("activities".project_id = 6)[0m
+Rendered general/_header.html.erb (0.8ms)
+Rendered general/_menu.html.erb (165.6ms)
+Rendered general/_footer.html.erb (0.7ms)
+Rendered activities/index.html.erb within layouts/application (189.4ms)
+Completed 200 OK in 331ms (Views: 202.3ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/projects" for 127.0.0.1 at Fri Mar 18 00:18:41 -0700 2011
+  Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE ("projects"."fin" = 'f')[0m
+  [1m[35mProject Load (0.7ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC
+Rendered projects/_project.html.erb (26.8ms)
+Rendered general/_header.html.erb (1.0ms)
+Rendered general/_menu.html.erb (14.3ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered projects/index.html.erb within layouts/application (65.1ms)
+Completed 200 OK in 186ms (Views: 81.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/projects/7/activities" for 127.0.0.1 at Fri Mar 18 00:18:44 -0700 2011
+  Processing by ActivitiesController#index as HTML
+  Parameters: {"project_id"=>"7"}
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mActivity Load (0.8ms)[0m  SELECT "activities".* FROM "activities" WHERE ("activities".project_id = 7)
+Rendered activities/_activity.html.erb (24.0ms)
+Rendered general/_header.html.erb (1.0ms)
+Rendered general/_menu.html.erb (14.1ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered activities/index.html.erb within layouts/application (63.1ms)
+Completed 200 OK in 203ms (Views: 76.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/projects/7/activities/8/edit" for 127.0.0.1 at Fri Mar 18 00:18:48 -0700 2011
+  Processing by ActivitiesController#edit as HTML
+  Parameters: {"project_id"=>"7", "id"=>"8"}
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mActivity Load (0.6ms)[0m  [1mSELECT "activities".* FROM "activities" WHERE ("activities".project_id = 7) AND ("activities"."id" = 8) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mActivity Load (0.5ms)[0m  SELECT "activities".* FROM "activities" WHERE ("activities"."id" = 8) LIMIT 1
+Rendered activities/_form.html.erb (32.0ms)
+Rendered general/_header.html.erb (0.9ms)
+Rendered general/_menu.html.erb (17.4ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered activities/edit.html.erb within layouts/application (65.2ms)
+Completed 200 OK in 229ms (Views: 85.2ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/projects/7/activities/8" for 127.0.0.1 at Fri Mar 18 00:18:57 -0700 2011
+  Processing by ActivitiesController#update as HTML
+  Parameters: {"commit"=>"Guardar Cambios", "project_id"=>"7", "activity"=>{"comment"=>"Salon: A3-303\r\n\r\nVeremos bla bla bla bla y mas blah", "actividad"=>"0", "hora(2i)"=>"1", "hora(3i)"=>"1", "hora(4i)"=>"07", "nombre"=>"Actividad Temporal", "duracion(1i)"=>"2000", "hora(5i)"=>"00", "valor"=>"0", "duracion(2i)"=>"1", "duracion(3i)"=>"1", "duracion(4i)"=>"07", "duracion(5i)"=>"00", "fecha(1i)"=>"2011", "hora(1i)"=>"2000", "fecha(2i)"=>"3", "fecha(3i)"=>"12"}, "authenticity_token"=>"tavI2Apj7CiB3FUh+VR/dder6g9M7F+9sx4KvGQj94s=", "utf8"=>"✓", "id"=>"8"}
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mActivity Load (0.5ms)[0m  [1mSELECT "activities".* FROM "activities" WHERE ("activities".project_id = 7) AND ("activities"."id" = 8) LIMIT 1[0m
+Completed   in 255ms
+Redirected to http://localhost:3000/
+
+
+Started GET "/" for 127.0.0.1 at Fri Mar 18 00:18:57 -0700 2011
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 201ms
+
+
+Started GET "/admin" for 127.0.0.1 at Fri Mar 18 00:18:57 -0700 2011
+  Processing by AdminController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered general/_header.html.erb (0.9ms)
+Rendered general/_menu.html.erb (61.8ms)
+Rendered general/_footer.html.erb (0.6ms)
+Rendered admin/index.html.erb within layouts/application (75.0ms)
+Completed 200 OK in 152ms (Views: 88.9ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/projects" for 127.0.0.1 at Fri Mar 18 00:19:02 -0700 2011
+  Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE ("projects"."fin" = 'f')[0m
+  [1m[35mProject Load (0.6ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC
+Rendered projects/_project.html.erb (22.4ms)
+Rendered general/_header.html.erb (0.9ms)
+Rendered general/_menu.html.erb (15.0ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered projects/index.html.erb within layouts/application (65.1ms)
+Completed 200 OK in 180ms (Views: 76.6ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/projects/7/activities" for 127.0.0.1 at Fri Mar 18 00:19:04 -0700 2011
+  Processing by ActivitiesController#index as HTML
+  Parameters: {"project_id"=>"7"}
+  [1m[36mProject Load (0.6ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mUser Load (5.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mActivity Load (4.9ms)[0m  SELECT "activities".* FROM "activities" WHERE ("activities".project_id = 7)
+Rendered activities/_activity.html.erb (44.3ms)
+Rendered general/_header.html.erb (1.0ms)
+Rendered general/_menu.html.erb (18.6ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered activities/index.html.erb within layouts/application (104.4ms)
+Completed 200 OK in 378ms (Views: 129.0ms | ActiveRecord: 11.2ms)
+
+
+Started GET "/projects/7/activities/8" for 127.0.0.1 at Fri Mar 18 00:19:08 -0700 2011
+  Processing by ActivitiesController#show as HTML
+  Parameters: {"project_id"=>"7", "id"=>"8"}
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mActivity Load (0.6ms)[0m  [1mSELECT "activities".* FROM "activities" WHERE ("activities".project_id = 7) AND ("activities"."id" = 8) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mActivity Load (0.4ms)[0m  [1mSELECT "activities".* FROM "activities" WHERE ("activities"."id" = 8) LIMIT 1[0m
+  [1m[35mCACHE (1.4ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+Rendered general/_header.html.erb (0.9ms)
+Rendered general/_menu.html.erb (13.7ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered activities/show.html.erb within layouts/application (38.6ms)
+Completed 200 OK in 194ms (Views: 49.4ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/projects/7/activities" for 127.0.0.1 at Fri Mar 18 00:19:11 -0700 2011
+  Processing by ActivitiesController#index as HTML
+  Parameters: {"project_id"=>"7"}
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mActivity Load (0.6ms)[0m  SELECT "activities".* FROM "activities" WHERE ("activities".project_id = 7)
+Rendered activities/_activity.html.erb (28.5ms)
+Rendered general/_header.html.erb (1.0ms)
+Rendered general/_menu.html.erb (17.9ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered activities/index.html.erb within layouts/application (67.8ms)
+Completed 200 OK in 219ms (Views: 80.5ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/projects/7/activities/8/edit" for 127.0.0.1 at Fri Mar 18 00:19:24 -0700 2011
+  Processing by ActivitiesController#edit as HTML
+  Parameters: {"project_id"=>"7", "id"=>"8"}
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mActivity Load (0.6ms)[0m  [1mSELECT "activities".* FROM "activities" WHERE ("activities".project_id = 7) AND ("activities"."id" = 8) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mActivity Load (0.5ms)[0m  SELECT "activities".* FROM "activities" WHERE ("activities"."id" = 8) LIMIT 1
+Rendered activities/_form.html.erb (29.4ms)
+Rendered general/_header.html.erb (0.9ms)
+Rendered general/_menu.html.erb (17.0ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered activities/edit.html.erb within layouts/application (62.1ms)
+Completed 200 OK in 214ms (Views: 74.6ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/projects/7/activities/8" for 127.0.0.1 at Fri Mar 18 00:19:33 -0700 2011
+  Processing by ActivitiesController#update as HTML
+  Parameters: {"commit"=>"Guardar Cambios", "project_id"=>"7", "activity"=>{"comment"=>"Salon: A3-303\r\n\r\nVeremos bla bla bla bla y mas blah", "actividad"=>"0", "hora(2i)"=>"1", "hora(3i)"=>"1", "hora(4i)"=>"07", "nombre"=>"Actividad Temporal", "duracion(1i)"=>"2000", "hora(5i)"=>"00", "valor"=>"0", "duracion(2i)"=>"1", "duracion(3i)"=>"1", "duracion(4i)"=>"07", "duracion(5i)"=>"00", "fecha(1i)"=>"2011", "hora(1i)"=>"2000", "fecha(2i)"=>"3", "fecha(3i)"=>"12"}, "authenticity_token"=>"tavI2Apj7CiB3FUh+VR/dder6g9M7F+9sx4KvGQj94s=", "utf8"=>"✓", "id"=>"8"}
+  [1m[36mProject Load (0.7ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mActivity Load (0.7ms)[0m  [1mSELECT "activities".* FROM "activities" WHERE ("activities".project_id = 7) AND ("activities"."id" = 8) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mActivity Load (0.5ms)[0m  [1mSELECT "activities".* FROM "activities" WHERE ("activities"."id" = 8) LIMIT 1[0m
+  [1m[35mAREL (0.9ms)[0m  UPDATE "activities" SET "comment" = 'Salon: A3-303
+
+Veremos bla bla bla bla y mas blah', "updated_at" = '2011-03-18 07:19:34.164370' WHERE ("activities"."id" = 8)
+Redirected to http://localhost:3000/projects/7/activities
+Completed 302 Found in 181ms
+
+
+Started GET "/projects/7/activities" for 127.0.0.1 at Fri Mar 18 00:19:34 -0700 2011
+  Processing by ActivitiesController#index as HTML
+  Parameters: {"project_id"=>"7"}
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mUser Load (1.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mActivity Load (0.6ms)[0m  SELECT "activities".* FROM "activities" WHERE ("activities".project_id = 7)
+Rendered activities/_activity.html.erb (27.4ms)
+Rendered general/_header.html.erb (1.2ms)
+Rendered general/_menu.html.erb (14.8ms)
+Rendered general/_footer.html.erb (0.5ms)
+Rendered activities/index.html.erb within layouts/application (64.2ms)
+Completed 200 OK in 202ms (Views: 77.0ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/projects/7/activities/8" for 127.0.0.1 at Fri Mar 18 00:19:39 -0700 2011
+  Processing by ActivitiesController#show as HTML
+  Parameters: {"project_id"=>"7", "id"=>"8"}
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mActivity Load (0.6ms)[0m  [1mSELECT "activities".* FROM "activities" WHERE ("activities".project_id = 7) AND ("activities"."id" = 8) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mActivity Load (0.5ms)[0m  [1mSELECT "activities".* FROM "activities" WHERE ("activities"."id" = 8) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+Rendered general/_header.html.erb (1.0ms)
+Rendered general/_menu.html.erb (17.6ms)
+Rendered general/_footer.html.erb (0.6ms)
+Rendered activities/show.html.erb within layouts/application (45.1ms)
+Completed 200 OK in 358ms (Views: 57.5ms | ActiveRecord: 2.3ms)

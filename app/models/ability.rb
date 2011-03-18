@@ -8,7 +8,7 @@ class Ability
       can :manage, :all
     elsif user.coordinator?
       can :read, Project
-      can [:new, :edit, :destroy], Activity, :project => { :coordinator_id => user.id }
+      can [:new, :edit, :update, :destroy], Activity, :project => { :coordinator_id => user.id }
       can :read, Activity
     elsif !user.id.nil?
       can :read, Project
