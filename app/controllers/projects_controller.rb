@@ -4,8 +4,14 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.xml
   def index
-    @projects = Project.find_all_by_fin(false, :order => "fecha DESC")
-    @projects_fin = Project.find_all_by_fin("t", :order => "fecha DESC")
+    @projects = Project.order("fecha DESC").where(:fin => false)
+    if can? :manage, Project
+      if current_user.admin?
+        @projects_fin = Project.order("fecha DESC").where(:fin => true)
+      else
+        @projects_fin = Project.order("fecha DESC").where(:fin => true, :coordinator_id => current_user.id)
+      end
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -46,6 +52,8 @@ class ProjectsController < ApplicationController
   # POST /projects.xml
   def create
     @project = Project.new(params[:project])
+    @coordinator = User.find_all_by_id(params[:project])
+    @project.coordinator = @coordinator
 
     respond_to do |format|
       if @project.save
@@ -62,6 +70,8 @@ class ProjectsController < ApplicationController
   # PUT /projects/1.xml
   def update
     @project = Project.find(params[:id])
+    coordinator = User.find_by_id(params[:coordinator_id])
+    @project.coordinator = coordinator
 
     respond_to do |format|
       if @project.update_attributes(params[:project])

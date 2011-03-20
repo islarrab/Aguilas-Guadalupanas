@@ -2,4 +2,57 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    errors:
+      messages:
+        blank: "no puede estar en blanco"
+        confirmation: "y la confirmacion no concuerdan"
+        accepted: "no es aceptado"
+        too_short: "es demasiado corto (minimo %{count} caracteres)"
+        too_long: "es demasiado largo (maximo %{count} caracteres"
+        wrong_length: "no es valido"
+        taken: "ya existe"
+        invalid: "no es valido"
+        not_a_number: "no es un numero"
+        greater_than: "debe ser mayor que %{count}"
+        greater_than_or_equal_to: "debe ser mayor o igual a %{count}"
+        equal_to: "debe ser igual que %{count}"
+        less_than: "debe ser menor que %{count}"
+        less_than_or_equal_to: "debe ser menor o igual a %{count}"
+        odd: "debe ser numero impar"
+        even: "debe ser numero par"
+    models:
+      project: "Proyecto"
+      user: "Usuario"
+      activity: "Actividad"
+    attributes:
+      project:
+        nombre: "Nombre"
+        min_de_actv: "Minimo de Actividades"
+        fecha: "Fecha"
+        horas_tec: "Horas SSC (Tec)"
+        horas_udem: "Horas SSC (UDEM)"
+        descripcion: "Descripcion"
+      activity:
+        nombre: "Nombre"
+        fecha: "Fecha"
+        hora: "Hora"
+        duracion: "Duracion"
+        valor: "Valor"
+        actividad: "Tipo de Actividad"
+        comment: "Descripcion"
+      user:
+        username: "Usuario"
+        nombre: "Nombre"
+        password: "Password"
+        apellido_paterno: "Apellido Paterno"
+        apellido_materno: "Apellido Materno"
+        email: "E-mail"
+        tec: "Instituto de Origen"
+        matricula: "Matricula"
+        semestre: "Semestre"
+        carrera: "Carrera"
+        telefono: "Telefono"
+        celula: "Celular"
+        direccion: "Direccion"
+        horas_ssc: "Horas de SSC"

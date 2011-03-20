@@ -24,7 +24,7 @@
     <td><%= act %></td>
     <td><% if can? :show, @project => activity %><%= link_to image_tag("show.png", :border => 0), project_activity_path(@project,activity) %><% end %></td>
     <% if !@project.fin? %>
-      <td><% if can? :update, @project => activity %><%= link_to image_tag("edit.png", :border => 0), edit_project_activity_path(@project,activity) %><% end %></td>
+      <td><% if can? :edit, @project => activity %><%= link_to image_tag("edit.png", :border => 0), edit_project_activity_path(@project,activity) %><% end %></td>
       <td><% if can? :destroy, @project => activity %><%= link_to image_tag("delete.png", :border => 0), project_activity_path(@project,activity), :confirm => 'Estas seguro?', :method => :delete %><% end %></td>
     <% end %>
   </tr>

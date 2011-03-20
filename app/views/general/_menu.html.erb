@@ -1,11 +1,14 @@
 <% if !user_signed_in? %>
-  <%= link_to "Conectar", "/login" %> |
-  <%= link_to "Registrarse", "/registrar" %> |
+  <%= link_to "CONECTAR", "/login" %> |
+  <%= link_to "REGISTRARSE", "/registrar" %> |
+<% end %>
+<% if can? :read, Account %>
+  <%= link_to "USUARIOS", accounts_path %> |
 <% end %>
 <% if can? :read, Project %>
-  <%= link_to "Proyectos", projects_path %>
+  <%= link_to "PROYECTOS", projects_path %>
 <% end %>
 <% if user_signed_in? %>
-  | <%= link_to "Mi Cuenta", edit_user_registration_path %> |
-  <%= link_to "Desconectar", "/logout" %>
+  | <%= link_to "MI CUENTA", edit_user_registration_path %> |
+  <%= link_to "DESCONECTAR", "/logout" %>
 <% end %>

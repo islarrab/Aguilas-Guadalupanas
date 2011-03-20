@@ -1,7 +1,7 @@
 <%= form_for(@project) do |f| %>
-  <% if @project.errors.any? %>
+ <% if @project.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+      <h2>Se encontraron <%= pluralize(@project.errors.count, "error", "errores") %> en la forma:</h2>
 
       <ul>
       <% @project.errors.full_messages.each do |msg| %>
@@ -31,6 +31,11 @@
       <td>* Horas SSC para UDEM: <%= f.text_field :horas_udem, :size => 3, :max_length => 3 %></td>
     </tr>
     </table>
+  </td>
+</tr>
+<tr>
+  <td colspan=2>
+    Coordinador: <%= collection_select :project, :coordinator_id, User.find_all_by_coordinator("t"), :id, :username, :include_blank => true, :selected => @project.coordinator %>
   </td>
 </tr>
 <tr>
