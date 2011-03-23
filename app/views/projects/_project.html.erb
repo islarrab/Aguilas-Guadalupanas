@@ -16,11 +16,12 @@
       <td><% if can? :read, project => Activity %><%= link_to "ACTIVIDADES", project_activities_path(project) %><% end %></td>
       <td><%= link_to image_tag("show.png", :border => 0), project %></td>
       <% if !project.fin? %>
-      <td><% if can? :edit, project %><%= link_to image_tag("edit.png", :border => 0), edit_project_path(project) %><% end %></td>
-      <td><% if can? :manage, project %><%= link_to 'FINALIZAR', project_projend_path(project), :confirm => 'Estas seguro?' %><% end %></td>
+      <% if can? :edit, project %><td><%= link_to image_tag("edit.png", :border => 0), edit_project_path(project) %></td><% end %>
+      <% if can? :manage, project %><td><%= link_to 'FINALIZAR', project_projend_path(project), :confirm => 'Estas seguro?' %></td><% end %>
       <% else %>
-      <td><% if can? :destroy, project %><%= link_to image_tag("delete.png", :border => 0), project, :confirm => 'Estas seguro?', :method => :delete %><% end %></td>
+      <% if can? :destroy, project %><td><%= link_to image_tag("delete.png", :border => 0), project, :confirm => 'Estas seguro?', :method => :delete %></td><% end %>
       <% end %>
+	  <td><%= link_to image_tag("accept.png", :border => 0), project_add_user_path(project) %></td>
     </tr>
   <% @odd = !@odd %>
 <% end %>

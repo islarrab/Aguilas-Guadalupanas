@@ -4,6 +4,7 @@ gem 'rails', '3.0.3'
 gem 'devise'
 gem 'cancan'
 gem 'heroku'
+gem 'json'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

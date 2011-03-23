@@ -8,6 +8,7 @@ VikoBlog::Application.routes.draw do
 
   resources :projects do
     get "projend"
+	get "add_user"
     resources :activities
   end
 

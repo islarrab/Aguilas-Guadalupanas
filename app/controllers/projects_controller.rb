@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  load_and_authorize_resource
+  load_resource
 
   # GET /projects
   # GET /projects.xml
@@ -46,6 +46,11 @@ class ProjectsController < ApplicationController
   def edit
     @project = Project.find(params[:id])
     @btn = "Guardar Cambios"
+	
+	respond_to do |format|
+      format.html # edit.html.erb
+      format.xml  { render :xml => @project }
+    end
   end
 
   # POST /projects
@@ -98,7 +103,7 @@ class ProjectsController < ApplicationController
   # DELETE /projects/1
   # DELETE /projects/1.xml
   def destroy
-    @project = Project.find(params[:id])
+    @project = Project.find(params[:project_id])
     @project.destroy
 
     respond_to do |format|
@@ -106,13 +111,34 @@ class ProjectsController < ApplicationController
       format.xml  { head :ok }
     end
   end
-
+	
+	# GET /projects/1/add_user
+	def add_user
+		
+		@project = Project.find(params[:project_id])
+		@user = current_user
+		
+		@project_user = ProjectUser.new(:project_id => @project.id, :user_id => @user.id)
+		
+		
+		
+		respond_to do |format|
+			if (@project_user.save)
+				format.html { redirect_to(projects_url, :notice => "Inscrito exitosamente") }
+				format.xml  { head :ok }
+			else
+				format.html { redirect_to(projects_url, :notice => "Error") }
+				format.xml  { head :ok }
+			end
+		end
+	end
+	
   private
     def check_permissions
       @user = current_user
       if !(@user.coordinator? || @user.admin?)
         flash[:error] = "No se tienen los permisos necesarios para acceder"
         redirect_to :root
-       end
+      end
     end
 end
