@@ -1,0 +1,48 @@
+<%= form_for(@account, :url => update_account_path(:user_id => @account.id)) do |f| %>
+<table cellspacing=0 cellpadding=2>
+<tr>
+  <td colspan=2>
+    Tipo de Cuenta:
+    <select name="tipoCuenta">
+      <option value="0">Estudiante</option>
+      <option value="1" <%if @account.coordinator? %>selected="selected"<% end %>>Coordinador</option>
+      <option value="2" <%if @account.admin? %>selected="selected"<% end %>>Administrador</option>
+    </select>
+  </td>
+</tr>
+<tr>
+  <td>
+  <%= f.label :nombre, "* Nombre:" %><br/>
+  <%= f.text_field :nombre %><br/>
+  <%= f.label :apellido_paterno, "* Apellido Paterno:" %><br/>
+  <%= f.text_field :apellido_paterno %><br/>
+  <%= f.label :apellido_materno, "* Apellido Materno:" %><br/>
+  <%= f.text_field :apellido_materno %>
+  </td>
+  <td>
+  <%= f.label :email, "* Email:" %><br/>
+  <%= f.text_field :email %>
+  <table cellpadding=0 cellspacing=0 width=100%>
+  <tr>
+    <td>
+    <%= f.label :telefono, "* Telefono:" %><br/>
+    <%= f.text_field :telefono, :maxlength => 10 %>
+    </td>
+    <td>
+    <%= f.label :celular, "Celular:" %><br/>
+    <%= f.text_field :celular, :maxlength => 10 %>
+    </td>
+  </tr>
+  </table>
+  <%= f.label :direccion, "* Direccion:" %><br/>
+  <%= f.text_field :direccion %><p>
+  </td>
+</tr>
+<tr>
+  <td colspan=2 align=center>
+  <%= f.submit 'Guardar'%>
+  <input type=button value=Regresar onClick="javascript:history.back(1);"><p>
+  </td>
+</tr>
+</table>
+<% end %>

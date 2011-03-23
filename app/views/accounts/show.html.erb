@@ -1,0 +1,28 @@
+<table align=center cellpadding=10 width=70%>
+<tr>
+  <td colspan=2><div id="notice"><%= notice %></div></td>
+</tr>
+<tr>
+  <td colspan=2><h2>Ver Usuario (<%= @account.username %>)<h2></td>
+</tr>
+<tr>
+  <td>
+    <b>Usuario:</b> <%= @account.username %><br/>
+    <b>Nombre:</b> <%= @account.nombre %> <%= @account.apellido_paterno %> <%= @account.apellido_materno %><br/>
+    <b>Tipo de Cuenta:</b> <%= @tipoCuenta %><br/>
+  </td>
+  <td>
+    <b>Telefono:</b> <%= @account.telefono %><br/>
+    <b>Celular:</b> <%= @celular %><br/>
+    <b>Direcci&oacute;n:</b> <%= @account.direccion %>
+  </td>
+</tr>
+  <td colspan=2>
+    <b>Universidad:</b> <%= @universidad %><br/>
+    <b>Matr&iacute;cula:</b> <%= @account.matricula %><br/>
+    <b>Carrera:</b> <%= @account.carrera %><br/>
+    <b>Semestre:</b> <%= @account.semestre %> semestre<br/>
+    <b>SSC Acreditadas:</b> <%= @account.horas_ssc %>
+  </td>
+</tr>
+</table>
