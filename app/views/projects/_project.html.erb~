@@ -14,7 +14,7 @@
         <% end %>
       <% end %>
       <td><% if can? :read, project => Activity %><%= link_to "ACTIVIDADES", project_activities_path(project) %><% end %></td>
-      <td><%= link_to "EQUIPOS", project_teams_path(project)%></td>
+      <td><%= link_to "EQUIPOS", project_teams_path%></td>
 
       <td><%= link_to image_tag("show.png", :border => 0), project %></td>
       <% if !project.fin? %>

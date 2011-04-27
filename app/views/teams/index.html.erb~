@@ -1,0 +1,43 @@
+<h1>Equipos</h1>
+<div class="lists">
+  <table>
+    <thead>
+    <tr class="odd">
+      <th colspan=9>Equipos</th>
+    </tr>
+    </thead>
+
+    <tr class="keys">
+    <th>Activity</th>
+    <th>User</th>
+    <th>Project</th>
+    <th>Prueba</th>
+    <th>Tipo</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @teams.each do |team| %>
+  <tr>
+    <td><%= team.activity_id %></td>
+    <td><%= team.user_id %></td>
+    <td><%= team.project_id %></td>
+    <td><%= team.Prueba %></td>
+    <td><%= team.tipo %></td>
+    <td><%= link_to 'Agregar Miembros', new_team_member_path(team)%></td>
+    <td><%= link_to 'Show', team %></td>
+    <td><%= link_to 'Edit', edit_team_path(team) %></td>
+    <td><%= link_to 'Destroy', team, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<% if !params[:activity_id]; %> 
+  <%= link_to 'Nuevo Equipo', new_project_team_path %> 
+<%else%>
+  <%= link_to 'Nuevo Equipo', new_project_activity_team_path %>
+<% end %>
+
+<% end %>

@@ -1,0 +1,10 @@
+<h1>Nuevo Equipo</h1>
+
+<%= render 'form' %>
+
+
+<% if !params[:activity_id]; %> 
+  <%= link_to 'Back', project_teams_path %> 
+<%else%>
+  <%= link_to 'Back', project_activity_teams_path %>
+<% end %>

@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Activity:</b>
+  <%= @team.activity_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @team.user_id %>
+</p>
+
+<p>
+  <b>Project:</b>
+  <%= @team.project_id %>
+</p>
+
+<p>
+  <b>Prueba:</b>
+  <%= @team.Prueba %>
+</p>
+
+<p>
+  <b>Tipo:</b>
+  <%= @team.tipo %>
+</p>
+
+
+
+<% if !params[:activity_id]; %> 
+  <%= link_to 'Edit', edit_project_team_path(@team) %> |
+  <%= link_to 'Back', project_teams_path %>
+<%else%>
+  <%= link_to 'Edit', edit_project_activity_team_path(@team) %> |
+  <%= link_to 'Back', project_activity_teams_path %>
+<% end %>
+

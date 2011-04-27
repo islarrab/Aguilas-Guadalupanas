@@ -1,9 +1,7 @@
 VikoBlog::Application.routes.draw do
   resources :members
 
-  resources :teams do
-	resources :members
-  end
+  resources :teams
 
   get "/accounts" => "accounts#index", :as => "accounts"
   post "/accounts" => "accounts#index"
@@ -14,10 +12,12 @@ VikoBlog::Application.routes.draw do
 
   resources :projects do
     resources :teams
+	resources :members
     get "projend"
 	get "add_user"
     resources :activities do
      resources :teams
+	resources :members
     end	
   end
 
