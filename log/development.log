@@ -62553,3 +62553,1521 @@ Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatc
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
 Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (132.0ms)
 Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (147.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-25 11:30:20 -0500
+  Processing by HomeController#index as HTML
+Rendered general/_header.html.erb (1.0ms)
+Rendered general/_menu.html.erb (156.0ms)
+Rendered general/_footer.html.erb (0.0ms)
+Rendered home/index.html.erb within layouts/application (176.0ms)
+Completed 200 OK in 224ms (Views: 224.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-25 13:27:09 -0500
+  Processing by HomeController#index as HTML
+Rendered general/_header.html.erb (0.0ms)
+Rendered general/_menu.html.erb (125.0ms)
+Rendered general/_footer.html.erb (0.0ms)
+Rendered home/index.html.erb within layouts/application (142.0ms)
+Completed 200 OK in 184ms (Views: 162.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-04-25 13:27:21 -0500
+  Processing by Devise::SessionsController#new as HTML
+Rendered general/_header.html.erb (1.0ms)
+Rendered general/_menu.html.erb (97.0ms)
+Rendered general/_footer.html.erb (0.0ms)
+Rendered devise/sessions/new.html.erb within layouts/application (116.0ms)
+Completed 200 OK in 195ms (Views: 146.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2011-04-25 13:27:34 -0500
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ApM+wL3LcBOlnKd8Mh7iTaxxwWxRRxWXPzT/EljIiPA=", "user"=>{"username"=>"prueba", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."username" = 'prueba') LIMIT 1
+  [1m[36mAREL (1.0ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2011-03-23 21:18:15.074313', "current_sign_in_at" = '2011-04-25 18:27:35.071857', "sign_in_count" = 7, "updated_at" = '2011-04-25 18:27:35.072857' WHERE ("users"."id" = 3)[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 829ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-25 13:27:35 -0500
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+Rendered general/_header.html.erb (1.0ms)
+Rendered general/_menu.html.erb (83.0ms)
+Rendered general/_footer.html.erb (1.0ms)
+Rendered home/index.html.erb within layouts/application (100.0ms)
+Completed 200 OK in 209ms (Views: 118.0ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-04-25 13:27:37 -0500
+
+SyntaxError (D:/Library/Documents/Trabajos ITESM/6to Semestre/Aguilas-Guadalupanas/app/controllers/projects_controller.rb:123: syntax error, unexpected keyword_do, expecting keyword_end
+		@project_user do |pu|
+		                ^
+D:/Library/Documents/Trabajos ITESM/6to Semestre/Aguilas-Guadalupanas/app/controllers/projects_controller.rb:157: syntax error, unexpected keyword_end, expecting $end):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (19.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (57.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-25 13:29:32 -0500
+  Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendered general/_header.html.erb (1.0ms)
+Rendered general/_menu.html.erb (85.0ms)
+Rendered general/_footer.html.erb (1.0ms)
+Rendered home/index.html.erb within layouts/application (102.0ms)
+Completed 200 OK in 213ms (Views: 123.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-04-25 13:29:37 -0500
+  Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE ("projects"."fin" = 'f')[0m
+  [1m[35mProject Load (2.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC
+Rendered projects/_project.html.erb (8.0ms)
+Rendered general/_header.html.erb (1.0ms)
+Rendered general/_menu.html.erb (29.0ms)
+Rendered general/_footer.html.erb (0.0ms)
+Rendered projects/index.html.erb within layouts/application (142.0ms)
+Completed 200 OK in 350ms (Views: 206.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/images/accept.png" for 127.0.0.1 at 2011-04-25 13:29:37 -0500
+
+ActionController::RoutingError (No route matches "/images/accept.png"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-25 13:30:54 -0500
+  Processing by HomeController#index as HTML
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+Rendered general/_header.html.erb (1.0ms)
+Rendered general/_menu.html.erb (127.0ms)
+Rendered general/_footer.html.erb (0.0ms)
+Rendered home/index.html.erb within layouts/application (144.0ms)
+Completed 200 OK in 429ms (Views: 165.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-04-25 13:31:04 -0500
+  Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "projects" WHERE ("projects"."fin" = 'f')
+  [1m[36mProject Load (1.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC[0m
+Rendered projects/_project.html.erb (7.0ms)
+Rendered general/_header.html.erb (0.0ms)
+Rendered general/_menu.html.erb (31.0ms)
+Rendered general/_footer.html.erb (0.0ms)
+Rendered projects/index.html.erb within layouts/application (128.0ms)
+Completed 200 OK in 390ms (Views: 149.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/images/accept.png" for 127.0.0.1 at 2011-04-25 13:31:04 -0500
+
+ActionController::RoutingError (No route matches "/images/accept.png"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/images/accept.png" for 127.0.0.1 at 2011-04-25 13:31:05 -0500
+
+ActionController::RoutingError (No route matches "/images/accept.png"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/projects/7/add_user" for 127.0.0.1 at 2011-04-25 13:32:33 -0500
+  Processing by ProjectsController#add_user as HTML
+  Parameters: {"project_id"=>"7"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mProject Load (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+Completed   in 171ms
+
+NoMethodError (undefined method `each' for #<ProjectUser:0x38e70d0>):
+  app/controllers/projects_controller.rb:123:in `add_user'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mProject Load (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ('t'='f')
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (137.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (151.0ms)
+
+
+Started GET "/projects/7/add_user" for 127.0.0.1 at 2011-04-25 13:37:07 -0500
+  Processing by ProjectsController#add_user as HTML
+  Parameters: {"project_id"=>"7"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mProject Load (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+Completed   in 208ms
+
+NameError (uninitialized constant ProjectsController::Project_Users):
+  app/controllers/projects_controller.rb:123:in `add_user'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mProject Load (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ('t'='f')[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (133.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (148.0ms)
+
+
+Started GET "/projects/7/add_user" for 127.0.0.1 at 2011-04-25 13:37:22 -0500
+  Processing by ProjectsController#add_user as HTML
+  Parameters: {"project_id"=>"7"}
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mProject Load (1.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+Completed   in 212ms
+
+NameError (uninitialized constant ProjectsController::Project_users):
+  app/controllers/projects_controller.rb:123:in `add_user'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mProject Load (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ('t'='f')
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (145.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (160.0ms)
+
+
+Started GET "/projects/7/add_user" for 127.0.0.1 at 2011-04-25 13:37:32 -0500
+  Processing by ProjectsController#add_user as HTML
+  Parameters: {"project_id"=>"7"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mProject Load (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+Completed   in 201ms
+
+NameError (uninitialized constant ProjectsController::Projects_Users):
+  app/controllers/projects_controller.rb:123:in `add_user'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mProject Load (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ('t'='f')[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (117.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (132.0ms)
+
+
+Started GET "/projects/7/add_user" for 127.0.0.1 at 2011-04-25 13:38:34 -0500
+  Processing by ProjectsController#add_user as HTML
+  Parameters: {"project_id"=>"7"}
+  [1m[35mUser Load (29.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mProject Load (1.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+Completed   in 175ms
+
+NoMethodError (undefined method `each' for #<Class:0x3a20b28>):
+  app/controllers/projects_controller.rb:123:in `add_user'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mProject Load (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ('t'='f')[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (140.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (154.0ms)
+
+
+Started GET "/projects/7/add_user" for 127.0.0.1 at 2011-04-25 13:41:31 -0500
+  Processing by ProjectsController#add_user as HTML
+  Parameters: {"project_id"=>"7"}
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mProject Load (1.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mProjectUser Load (0.0ms)[0m  SELECT "project_users".* FROM "project_users"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mProjectUser Load (0.0ms)[0m  [1mSELECT "project_users"."id" FROM "project_users" WHERE ("project_users"."user_id" = 3) AND ("project_users"."project_id" = 7) LIMIT 1[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 226ms
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-04-25 13:41:32 -0500
+  Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE ("projects"."fin" = 'f')[0m
+  [1m[35mProject Load (1.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC
+Rendered projects/_project.html.erb (43.0ms)
+Rendered general/_header.html.erb (1.0ms)
+Rendered general/_menu.html.erb (28.0ms)
+Rendered general/_footer.html.erb (1.0ms)
+Rendered projects/index.html.erb within layouts/application (101.0ms)
+Completed 200 OK in 264ms (Views: 121.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/images/accept.png" for 127.0.0.1 at 2011-04-25 13:41:32 -0500
+
+ActionController::RoutingError (No route matches "/images/accept.png"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/projects/7/add_user" for 127.0.0.1 at 2011-04-25 13:41:36 -0500
+  Processing by ProjectsController#add_user as HTML
+  Parameters: {"project_id"=>"7"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mProject Load (1.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mProjectUser Load (0.0ms)[0m  [1mSELECT "project_users".* FROM "project_users"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mProjectUser Load (1.0ms)[0m  SELECT "project_users"."id" FROM "project_users" WHERE ("project_users"."user_id" = 3) AND ("project_users"."project_id" = 7) LIMIT 1
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 272ms
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-04-25 13:41:37 -0500
+  Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "projects" WHERE ("projects"."fin" = 'f')
+  [1m[36mProject Load (1.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC[0m
+Rendered projects/_project.html.erb (16.0ms)
+Rendered general/_header.html.erb (1.0ms)
+Rendered general/_menu.html.erb (28.0ms)
+Rendered general/_footer.html.erb (1.0ms)
+Rendered projects/index.html.erb within layouts/application (76.0ms)
+Completed 200 OK in 308ms (Views: 93.0ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/images/accept.png" for 127.0.0.1 at 2011-04-25 13:41:37 -0500
+
+ActionController::RoutingError (No route matches "/images/accept.png"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/images/accept.png" for 127.0.0.1 at 2011-04-25 13:41:37 -0500
+
+ActionController::RoutingError (No route matches "/images/accept.png"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/projects/7/add_user" for 127.0.0.1 at 2011-04-25 13:41:39 -0500
+  Processing by ProjectsController#add_user as HTML
+  Parameters: {"project_id"=>"7"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mProject Load (1.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mProjectUser Load (0.0ms)[0m  SELECT "project_users".* FROM "project_users"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mProjectUser Load (0.0ms)[0m  [1mSELECT "project_users"."id" FROM "project_users" WHERE ("project_users"."user_id" = 3) AND ("project_users"."project_id" = 7) LIMIT 1[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 273ms
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-04-25 13:41:39 -0500
+  Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE ("projects"."fin" = 'f')[0m
+  [1m[35mProject Load (1.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC
+Rendered projects/_project.html.erb (15.0ms)
+Rendered general/_header.html.erb (1.0ms)
+Rendered general/_menu.html.erb (28.0ms)
+Rendered general/_footer.html.erb (0.0ms)
+Rendered projects/index.html.erb within layouts/application (73.0ms)
+Completed 200 OK in 264ms (Views: 117.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/images/accept.png" for 127.0.0.1 at 2011-04-25 13:41:40 -0500
+
+ActionController::RoutingError (No route matches "/images/accept.png"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/images/accept.png" for 127.0.0.1 at 2011-04-25 13:41:40 -0500
+
+ActionController::RoutingError (No route matches "/images/accept.png"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/projects/7/add_user" for 127.0.0.1 at 2011-04-25 13:41:41 -0500
+  Processing by ProjectsController#add_user as HTML
+  Parameters: {"project_id"=>"7"}
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mProject Load (1.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mProjectUser Load (1.0ms)[0m  [1mSELECT "project_users".* FROM "project_users"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mProjectUser Load (0.0ms)[0m  SELECT "project_users"."id" FROM "project_users" WHERE ("project_users"."user_id" = 3) AND ("project_users"."project_id" = 7) LIMIT 1
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 234ms
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-04-25 13:41:41 -0500
+  Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "projects" WHERE ("projects"."fin" = 'f')
+  [1m[36mProject Load (1.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC[0m
+Rendered projects/_project.html.erb (16.0ms)
+Rendered general/_header.html.erb (1.0ms)
+Rendered general/_menu.html.erb (32.0ms)
+Rendered general/_footer.html.erb (0.0ms)
+Rendered projects/index.html.erb within layouts/application (77.0ms)
+Completed 200 OK in 264ms (Views: 97.0ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/images/accept.png" for 127.0.0.1 at 2011-04-25 13:41:42 -0500
+
+ActionController::RoutingError (No route matches "/images/accept.png"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/images/accept.png" for 127.0.0.1 at 2011-04-25 13:41:42 -0500
+
+ActionController::RoutingError (No route matches "/images/accept.png"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/projects/7/add_user" for 127.0.0.1 at 2011-04-25 13:42:20 -0500
+  Processing by ProjectsController#add_user as HTML
+  Parameters: {"project_id"=>"7"}
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mProject Load (1.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mProjectUser Load (1.0ms)[0m  SELECT "project_users".* FROM "project_users"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mProjectUser Load (0.0ms)[0m  [1mSELECT "project_users"."id" FROM "project_users" WHERE ("project_users"."user_id" = 3) AND ("project_users"."project_id" = 7) LIMIT 1[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 228ms
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-04-25 13:42:20 -0500
+  Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE ("projects"."fin" = 'f')[0m
+  [1m[35mProject Load (1.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC
+Rendered projects/_project.html.erb (16.0ms)
+Rendered general/_header.html.erb (1.0ms)
+Rendered general/_menu.html.erb (31.0ms)
+Rendered general/_footer.html.erb (1.0ms)
+Rendered projects/index.html.erb within layouts/application (80.0ms)
+Completed 200 OK in 276ms (Views: 99.0ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/images/accept.png" for 127.0.0.1 at 2011-04-25 13:42:21 -0500
+
+ActionController::RoutingError (No route matches "/images/accept.png"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.0ms)
+
+
+Started GET "/projects/6/add_user" for 127.0.0.1 at 2011-04-25 13:42:29 -0500
+  Processing by ProjectsController#add_user as HTML
+  Parameters: {"project_id"=>"6"}
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mProject Load (1.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 6) LIMIT 1
+  [1m[36mProjectUser Load (1.0ms)[0m  [1mSELECT "project_users".* FROM "project_users"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mProject Load (1.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mProjectUser Load (0.0ms)[0m  SELECT "project_users"."id" FROM "project_users" WHERE ("project_users"."user_id" = 3) AND ("project_users"."project_id" = 6) LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "project_users" ("created_at", "updated_at", "project_id", "user_id") VALUES ('2011-04-25 18:42:29.947041', '2011-04-25 18:42:29.947041', 6, 3)[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 351ms
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-04-25 13:42:30 -0500
+  Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE ("projects"."fin" = 'f')[0m
+  [1m[35mProject Load (1.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC
+Rendered projects/_project.html.erb (16.0ms)
+Rendered general/_header.html.erb (0.0ms)
+Rendered general/_menu.html.erb (29.0ms)
+Rendered general/_footer.html.erb (0.0ms)
+Rendered projects/index.html.erb within layouts/application (76.0ms)
+Completed 200 OK in 260ms (Views: 95.0ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/images/accept.png" for 127.0.0.1 at 2011-04-25 13:42:30 -0500
+
+ActionController::RoutingError (No route matches "/images/accept.png"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/images/accept.png" for 127.0.0.1 at 2011-04-25 13:42:30 -0500
+
+ActionController::RoutingError (No route matches "/images/accept.png"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/projects/8/add_user" for 127.0.0.1 at 2011-04-25 13:43:06 -0500
+  Processing by ProjectsController#add_user as HTML
+  Parameters: {"project_id"=>"8"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mProject Load (1.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 8) LIMIT 1
+  [1m[36mProjectUser Load (1.0ms)[0m  [1mSELECT "project_users".* FROM "project_users"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mProject Load (1.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mProject Load (1.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 6) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 6) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 6) LIMIT 1[0m
+  [1m[35mProjectUser Load (0.0ms)[0m  SELECT "project_users"."id" FROM "project_users" WHERE ("project_users"."user_id" = 3) AND ("project_users"."project_id" = 8) LIMIT 1
+  [1m[36mAREL (1.0ms)[0m  [1mINSERT INTO "project_users" ("created_at", "updated_at", "project_id", "user_id") VALUES ('2011-04-25 18:43:06.448129', '2011-04-25 18:43:06.448129', 8, 3)[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 382ms
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-04-25 13:43:06 -0500
+  Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE ("projects"."fin" = 'f')[0m
+  [1m[35mProject Load (1.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC
+Rendered projects/_project.html.erb (16.0ms)
+Rendered general/_header.html.erb (0.0ms)
+Rendered general/_menu.html.erb (29.0ms)
+Rendered general/_footer.html.erb (1.0ms)
+Rendered projects/index.html.erb within layouts/application (77.0ms)
+Completed 200 OK in 266ms (Views: 96.0ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/images/accept.png" for 127.0.0.1 at 2011-04-25 13:43:07 -0500
+
+ActionController::RoutingError (No route matches "/images/accept.png"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-04-25 13:57:13 -0500
+  Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "projects" WHERE ("projects"."fin" = 'f')
+  [1m[36mProject Load (1.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC[0m
+Rendered projects/_project.html.erb (15.0ms)
+Rendered general/_header.html.erb (0.0ms)
+Rendered general/_menu.html.erb (26.0ms)
+Rendered general/_footer.html.erb (0.0ms)
+Rendered projects/index.html.erb within layouts/application (102.0ms)
+Completed 200 OK in 267ms (Views: 120.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/images/accept.png" for 127.0.0.1 at 2011-04-25 13:57:14 -0500
+
+ActionController::RoutingError (No route matches "/images/accept.png"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/projects/7/add_user" for 127.0.0.1 at 2011-04-25 13:57:17 -0500
+  Processing by ProjectsController#add_user as HTML
+  Parameters: {"project_id"=>"7"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mProject Load (1.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mProjectUser Load (0.0ms)[0m  SELECT "project_users".* FROM "project_users"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mProject Load (1.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 6) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 6) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 6) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mProject Load (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 8) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 8) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 8) LIMIT 1
+  [1m[36mProjectUser Load (0.0ms)[0m  [1mSELECT "project_users"."id" FROM "project_users" WHERE ("project_users"."user_id" = 3) AND ("project_users"."project_id" = 7) LIMIT 1[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 311ms
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-04-25 13:57:17 -0500
+  Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE ("projects"."fin" = 'f')[0m
+  [1m[35mProject Load (1.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC
+Rendered projects/_project.html.erb (15.0ms)
+Rendered general/_header.html.erb (1.0ms)
+Rendered general/_menu.html.erb (29.0ms)
+Rendered general/_footer.html.erb (0.0ms)
+Rendered projects/index.html.erb within layouts/application (75.0ms)
+Completed 200 OK in 300ms (Views: 96.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/images/accept.png" for 127.0.0.1 at 2011-04-25 13:57:18 -0500
+
+ActionController::RoutingError (No route matches "/images/accept.png"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/images/accept.png" for 127.0.0.1 at 2011-04-25 13:57:18 -0500
+
+ActionController::RoutingError (No route matches "/images/accept.png"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-27 13:17:16 -0500
+  Processing by HomeController#index as HTML
+Rendered general/_header.html.erb (0.0ms)
+Rendered general/_menu.html.erb (182.0ms)
+Rendered general/_footer.html.erb (0.0ms)
+Rendered home/index.html.erb within layouts/application (201.0ms)
+Completed 200 OK in 240ms (Views: 240.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-04-27 13:17:27 -0500
+  Processing by Devise::SessionsController#new as HTML
+Rendered general/_header.html.erb (1.0ms)
+Rendered general/_menu.html.erb (69.0ms)
+Rendered general/_footer.html.erb (1.0ms)
+Rendered devise/sessions/new.html.erb within layouts/application (90.0ms)
+Completed 200 OK in 203ms (Views: 126.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2011-04-27 13:17:31 -0500
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BTy7YH/lbcsKNMadgScTY5A3nSBONfFuiPRbY26jeHw=", "user"=>{"username"=>"prueba", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."username" = 'prueba') LIMIT 1
+  [1m[36mAREL (13.0ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2011-04-25 18:27:35.071857', "current_sign_in_at" = '2011-04-27 18:17:32.747610', "sign_in_count" = 8, "updated_at" = '2011-04-27 18:17:32.748610' WHERE ("users"."id" = 3)[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 875ms
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-27 13:17:32 -0500
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+Rendered general/_header.html.erb (0.0ms)
+Rendered general/_menu.html.erb (88.0ms)
+Rendered general/_footer.html.erb (0.0ms)
+Rendered home/index.html.erb within layouts/application (105.0ms)
+Completed 200 OK in 258ms (Views: 165.0ms | ActiveRecord: 17.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-04-27 13:18:14 -0500
+  Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "projects" WHERE ("projects"."fin" = 'f')
+  [1m[36mProject Load (2.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC[0m
+Rendered projects/_project.html.erb (19.0ms)
+Rendered general/_header.html.erb (1.0ms)
+Rendered general/_menu.html.erb (31.0ms)
+Rendered general/_footer.html.erb (0.0ms)
+Rendered projects/index.html.erb within layouts/application (184.0ms)
+Completed 200 OK in 413ms (Views: 249.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/images/accept.png" for 127.0.0.1 at 2011-04-27 13:18:14 -0500
+
+ActionController::RoutingError (No route matches "/images/accept.png"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/projects/7/add_user" for 127.0.0.1 at 2011-04-27 13:18:55 -0500
+  Processing by ProjectsController#add_user as HTML
+  Parameters: {"project_id"=>"7"}
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mProject Load (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mProjectUser Load (0.0ms)[0m  SELECT "project_users".* FROM "project_users"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mProjectUser Load (0.0ms)[0m  [1mSELECT "project_users"."id" FROM "project_users" WHERE ("project_users"."user_id" = 3) AND ("project_users"."project_id" = 7) LIMIT 1[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 224ms
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-04-27 13:18:56 -0500
+  Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE ("projects"."fin" = 'f')[0m
+  [1m[35mProject Load (1.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC
+Rendered projects/_project.html.erb (15.0ms)
+Rendered general/_header.html.erb (1.0ms)
+Rendered general/_menu.html.erb (28.0ms)
+Rendered general/_footer.html.erb (0.0ms)
+Rendered projects/index.html.erb within layouts/application (75.0ms)
+Completed 200 OK in 257ms (Views: 93.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/images/accept.png" for 127.0.0.1 at 2011-04-27 13:18:56 -0500
+
+ActionController::RoutingError (No route matches "/images/accept.png"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/images/accept.png" for 127.0.0.1 at 2011-04-27 13:18:56 -0500
+
+ActionController::RoutingError (No route matches "/images/accept.png"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/projects/6/add_user" for 127.0.0.1 at 2011-04-27 13:18:59 -0500
+  Processing by ProjectsController#add_user as HTML
+  Parameters: {"project_id"=>"6"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mProject Load (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 6) LIMIT 1
+  [1m[36mProjectUser Load (0.0ms)[0m  [1mSELECT "project_users".* FROM "project_users"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mProject Load (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mProjectUser Load (0.0ms)[0m  SELECT "project_users"."id" FROM "project_users" WHERE ("project_users"."user_id" = 3) AND ("project_users"."project_id" = 6) LIMIT 1
+  [1m[36mAREL (0.0ms)[0m  [1mINSERT INTO "project_users" ("created_at", "updated_at", "project_id", "user_id") VALUES ('2011-04-27 18:18:59.581576', '2011-04-27 18:18:59.581576', 6, 3)[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 686ms
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-04-27 13:18:59 -0500
+  Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE ("projects"."fin" = 'f')[0m
+  [1m[35mProject Load (1.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC
+Rendered projects/_project.html.erb (15.0ms)
+Rendered general/_header.html.erb (1.0ms)
+Rendered general/_menu.html.erb (29.0ms)
+Rendered general/_footer.html.erb (0.0ms)
+Rendered projects/index.html.erb within layouts/application (76.0ms)
+Completed 200 OK in 426ms (Views: 94.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/images/accept.png" for 127.0.0.1 at 2011-04-27 13:19:00 -0500
+
+ActionController::RoutingError (No route matches "/images/accept.png"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/images/accept.png" for 127.0.0.1 at 2011-04-27 13:19:00 -0500
+
+ActionController::RoutingError (No route matches "/images/accept.png"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-04-27 13:24:39 -0500
+  Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "projects" WHERE ("projects"."fin" = 'f')
+  [1m[36mProject Load (1.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC[0m
+Rendered projects/_project.html.erb (16.0ms)
+Rendered general/_header.html.erb (0.0ms)
+Rendered general/_menu.html.erb (29.0ms)
+Rendered general/_footer.html.erb (0.0ms)
+Rendered projects/index.html.erb within layouts/application (76.0ms)
+Completed 200 OK in 270ms (Views: 96.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/images/accept.png" for 127.0.0.1 at 2011-04-27 13:24:39 -0500
+
+ActionController::RoutingError (No route matches "/images/accept.png"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/projects/7/add_user" for 127.0.0.1 at 2011-04-27 13:24:41 -0500
+  Processing by ProjectsController#add_user as HTML
+  Parameters: {"project_id"=>"7"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mProject Load (1.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mProjectUser Load (1.0ms)[0m  SELECT "project_users".* FROM "project_users"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+Completed   in 225ms
+
+NoMethodError (undefined method `+' for "#<User:0x3ba9498>":User):
+  app/controllers/projects_controller.rb:132:in `block in add_user'
+  app/controllers/projects_controller.rb:125:in `each'
+  app/controllers/projects_controller.rb:125:in `add_user'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mProject Load (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ('t'='f')[0m
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (218.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (263.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-04-27 13:25:51 -0500
+  Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE ("projects"."fin" = 'f')[0m
+  [1m[35mProject Load (1.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC
+Rendered projects/_project.html.erb (15.0ms)
+Rendered general/_header.html.erb (0.0ms)
+Rendered general/_menu.html.erb (27.0ms)
+Rendered general/_footer.html.erb (1.0ms)
+Rendered projects/index.html.erb within layouts/application (73.0ms)
+Completed 200 OK in 257ms (Views: 92.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/images/accept.png" for 127.0.0.1 at 2011-04-27 13:25:52 -0500
+
+ActionController::RoutingError (No route matches "/images/accept.png"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/projects/7/add_user" for 127.0.0.1 at 2011-04-27 13:25:57 -0500
+  Processing by ProjectsController#add_user as HTML
+  Parameters: {"project_id"=>"7"}
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mProject Load (1.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mProjectUser Load (0.0ms)[0m  [1mSELECT "project_users".* FROM "project_users"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mProjectUser Load (1.0ms)[0m  SELECT "project_users"."id" FROM "project_users" WHERE ("project_users"."user_id" = 3) AND ("project_users"."project_id" = 7) LIMIT 1
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 233ms
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-04-27 13:25:57 -0500
+  Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "projects" WHERE ("projects"."fin" = 'f')
+  [1m[36mProject Load (1.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC[0m
+Rendered projects/_project.html.erb (30.0ms)
+Rendered general/_header.html.erb (1.0ms)
+Rendered general/_menu.html.erb (31.0ms)
+Rendered general/_footer.html.erb (1.0ms)
+Rendered projects/index.html.erb within layouts/application (94.0ms)
+Completed 200 OK in 337ms (Views: 119.0ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/images/accept.png" for 127.0.0.1 at 2011-04-27 13:25:58 -0500
+
+ActionController::RoutingError (No route matches "/images/accept.png"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-04-27 13:27:07 -0500
+  Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE ("projects"."fin" = 'f')[0m
+  [1m[35mProject Load (1.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC
+Rendered projects/_project.html.erb (15.0ms)
+Rendered general/_header.html.erb (0.0ms)
+Rendered general/_menu.html.erb (28.0ms)
+Rendered general/_footer.html.erb (1.0ms)
+Rendered projects/index.html.erb within layouts/application (74.0ms)
+Completed 200 OK in 263ms (Views: 93.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/images/accept.png" for 127.0.0.1 at 2011-04-27 13:27:07 -0500
+
+ActionController::RoutingError (No route matches "/images/accept.png"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/projects/7/add_user" for 127.0.0.1 at 2011-04-27 13:27:09 -0500
+  Processing by ProjectsController#add_user as HTML
+  Parameters: {"project_id"=>"7"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mProject Load (1.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mProjectUser Load (1.0ms)[0m  [1mSELECT "project_users".* FROM "project_users"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+Redirected to http://localhost:3000/projects
+  [1m[36mProjectUser Load (0.0ms)[0m  [1mSELECT "project_users"."id" FROM "project_users" WHERE ("project_users"."user_id" = 3) AND ("project_users"."project_id" = 7) LIMIT 1[0m
+Redirected to 
+Completed   in 291ms
+
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/projects_controller.rb:149:in `block (2 levels) in add_user'
+  app/controllers/projects_controller.rb:144:in `add_user'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mProject Load (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ('t'='f')
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (239.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (255.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-04-27 13:27:23 -0500
+  Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "projects" WHERE ("projects"."fin" = 'f')
+  [1m[36mProject Load (1.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC[0m
+Rendered projects/_project.html.erb (16.0ms)
+Rendered general/_header.html.erb (1.0ms)
+Rendered general/_menu.html.erb (26.0ms)
+Rendered general/_footer.html.erb (0.0ms)
+Rendered projects/index.html.erb within layouts/application (120.0ms)
+Completed 200 OK in 285ms (Views: 137.0ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/images/accept.png" for 127.0.0.1 at 2011-04-27 13:27:23 -0500
+
+ActionController::RoutingError (No route matches "/images/accept.png"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/projects/7/add_user" for 127.0.0.1 at 2011-04-27 13:27:29 -0500
+  Processing by ProjectsController#add_user as HTML
+  Parameters: {"project_id"=>"7"}
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mProject Load (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mProjectUser Load (0.0ms)[0m  SELECT "project_users".* FROM "project_users"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+Redirected to http://localhost:3000/projects
+  [1m[35mProjectUser Load (0.0ms)[0m  SELECT "project_users"."id" FROM "project_users" WHERE ("project_users"."user_id" = 3) AND ("project_users"."project_id" = 7) LIMIT 1
+Redirected to 
+Completed   in 219ms
+
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/projects_controller.rb:149:in `block (2 levels) in add_user'
+  app/controllers/projects_controller.rb:144:in `add_user'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mProject Load (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ('t'='f')[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (143.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (159.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-04-27 13:27:53 -0500
+  Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE ("projects"."fin" = 'f')[0m
+  [1m[35mProject Load (1.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC
+Rendered projects/_project.html.erb (15.0ms)
+Rendered general/_header.html.erb (1.0ms)
+Rendered general/_menu.html.erb (31.0ms)
+Rendered general/_footer.html.erb (1.0ms)
+Rendered projects/index.html.erb within layouts/application (78.0ms)
+Completed 200 OK in 288ms (Views: 98.0ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/images/accept.png" for 127.0.0.1 at 2011-04-27 13:27:54 -0500
+
+ActionController::RoutingError (No route matches "/images/accept.png"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/projects/7/add_user" for 127.0.0.1 at 2011-04-27 13:27:56 -0500
+  Processing by ProjectsController#add_user as HTML
+  Parameters: {"project_id"=>"7"}
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mProject Load (1.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mProjectUser Load (1.0ms)[0m  [1mSELECT "project_users".* FROM "project_users"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mProjectUser Load (0.0ms)[0m  SELECT "project_users"."id" FROM "project_users" WHERE ("project_users"."user_id" = 3) AND ("project_users"."project_id" = 7) LIMIT 1
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 304ms
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-04-27 13:27:57 -0500
+  Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "projects" WHERE ("projects"."fin" = 'f')
+  [1m[36mProject Load (1.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC[0m
+Rendered projects/_project.html.erb (16.0ms)
+Rendered general/_header.html.erb (0.0ms)
+Rendered general/_menu.html.erb (30.0ms)
+Rendered general/_footer.html.erb (0.0ms)
+Rendered projects/index.html.erb within layouts/application (76.0ms)
+Completed 200 OK in 358ms (Views: 95.0ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/images/accept.png" for 127.0.0.1 at 2011-04-27 13:27:57 -0500
+
+ActionController::RoutingError (No route matches "/images/accept.png"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/images/accept.png" for 127.0.0.1 at 2011-04-27 13:27:57 -0500
+
+ActionController::RoutingError (No route matches "/images/accept.png"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-04-27 13:31:24 -0500
+  Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE ("projects"."fin" = 'f')[0m
+  [1m[35mProject Load (1.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC
+Rendered projects/_project.html.erb (44.0ms)
+Rendered general/_header.html.erb (1.0ms)
+Rendered general/_menu.html.erb (30.0ms)
+Rendered general/_footer.html.erb (0.0ms)
+Rendered projects/index.html.erb within layouts/application (105.0ms)
+Completed 200 OK in 268ms (Views: 123.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/images/accept.png" for 127.0.0.1 at 2011-04-27 13:31:25 -0500
+
+ActionController::RoutingError (No route matches "/images/accept.png"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/projects/7/add_user" for 127.0.0.1 at 2011-04-27 13:31:27 -0500
+  Processing by ProjectsController#add_user as HTML
+  Parameters: {"project_id"=>"7"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mProject Load (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mProjectUser Load (0.0ms)[0m  [1mSELECT "project_users".* FROM "project_users"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+Redirected to http://localhost:3000/projects
+  [1m[35mProjectUser Load (1.0ms)[0m  SELECT "project_users"."id" FROM "project_users" WHERE ("project_users"."user_id" = 3) AND ("project_users"."project_id" = 7) LIMIT 1
+Redirected to 
+Completed   in 241ms
+
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/projects_controller.rb:149:in `block (2 levels) in add_user'
+  app/controllers/projects_controller.rb:144:in `add_user'
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mProject Load (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ('t'='f')[0m
+  [1m[35mSQL (1.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (179.0ms)
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (194.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-04-27 13:35:54 -0500
+  Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE ("projects"."fin" = 'f')[0m
+  [1m[35mProject Load (2.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC
+Rendered projects/_project.html.erb (42.0ms)
+Rendered general/_header.html.erb (1.0ms)
+Rendered general/_menu.html.erb (27.0ms)
+Rendered general/_footer.html.erb (1.0ms)
+Rendered projects/index.html.erb within layouts/application (124.0ms)
+Completed 200 OK in 282ms (Views: 139.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/images/accept.png" for 127.0.0.1 at 2011-04-27 13:35:54 -0500
+
+ActionController::RoutingError (No route matches "/images/accept.png"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/projects/7/add_user" for 127.0.0.1 at 2011-04-27 13:35:57 -0500
+  Processing by ProjectsController#add_user as HTML
+  Parameters: {"project_id"=>"7"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mProject Load (1.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mProjectUser Load (0.0ms)[0m  [1mSELECT "project_users".* FROM "project_users"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 243ms
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-04-27 13:35:57 -0500
+  Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE ("projects"."fin" = 'f')[0m
+  [1m[35mProject Load (1.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC
+Rendered projects/_project.html.erb (17.0ms)
+Rendered general/_header.html.erb (1.0ms)
+Rendered general/_menu.html.erb (30.0ms)
+Rendered general/_footer.html.erb (0.0ms)
+Rendered projects/index.html.erb within layouts/application (79.0ms)
+Completed 200 OK in 335ms (Views: 97.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/images/accept.png" for 127.0.0.1 at 2011-04-27 13:35:57 -0500
+
+ActionController::RoutingError (No route matches "/images/accept.png"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-04-27 13:36:51 -0500
+  Processing by HomeController#index as HTML
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (3.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+Rendered general/_header.html.erb (0.0ms)
+Rendered general/_menu.html.erb (145.0ms)
+Rendered general/_footer.html.erb (1.0ms)
+Rendered home/index.html.erb within layouts/application (163.0ms)
+Completed 200 OK in 444ms (Views: 181.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-04-27 13:36:59 -0500
+  Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "projects" WHERE ("projects"."fin" = 'f')
+  [1m[36mProject Load (1.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC[0m
+Rendered projects/_project.html.erb (8.0ms)
+Rendered general/_header.html.erb (1.0ms)
+Rendered general/_menu.html.erb (28.0ms)
+Rendered general/_footer.html.erb (1.0ms)
+Rendered projects/index.html.erb within layouts/application (303.0ms)
+Completed 200 OK in 464ms (Views: 320.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/images/accept.png" for 127.0.0.1 at 2011-04-27 13:36:59 -0500
+
+ActionController::RoutingError (No route matches "/images/accept.png"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/images/accept.png" for 127.0.0.1 at 2011-04-27 13:36:59 -0500
+
+ActionController::RoutingError (No route matches "/images/accept.png"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/projects/7/add_user" for 127.0.0.1 at 2011-04-27 13:37:07 -0500
+  Processing by ProjectsController#add_user as HTML
+  Parameters: {"project_id"=>"7"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mProject Load (1.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mProjectUser Load (1.0ms)[0m  SELECT "project_users".* FROM "project_users"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 240ms
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-04-27 13:37:07 -0500
+  Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "projects" WHERE ("projects"."fin" = 'f')
+  [1m[36mProject Load (1.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC[0m
+Rendered projects/_project.html.erb (16.0ms)
+Rendered general/_header.html.erb (2.0ms)
+Rendered general/_menu.html.erb (29.0ms)
+Rendered general/_footer.html.erb (1.0ms)
+Rendered projects/index.html.erb within layouts/application (77.0ms)
+Completed 200 OK in 443ms (Views: 96.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/images/accept.png" for 127.0.0.1 at 2011-04-27 13:37:08 -0500
+
+ActionController::RoutingError (No route matches "/images/accept.png"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-04-27 13:39:17 -0500
+  Processing by ProjectsController#index as HTML
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE ("projects"."fin" = 'f')[0m
+  [1m[35mProject Load (1.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC
+Rendered projects/_project.html.erb (7.0ms)
+Rendered general/_header.html.erb (0.0ms)
+Rendered general/_menu.html.erb (28.0ms)
+Rendered general/_footer.html.erb (0.0ms)
+Rendered projects/index.html.erb within layouts/application (118.0ms)
+Completed 200 OK in 487ms (Views: 137.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/images/accept.png" for 127.0.0.1 at 2011-04-27 13:39:24 -0500
+
+ActionController::RoutingError (No route matches "/images/accept.png"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/projects/6/add_user" for 127.0.0.1 at 2011-04-27 13:39:37 -0500
+  Processing by ProjectsController#add_user as HTML
+  Parameters: {"project_id"=>"6"}
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mProject Load (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 6) LIMIT 1
+  [1m[36mProjectUser Load (0.0ms)[0m  [1mSELECT "project_users".* FROM "project_users"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mProject Load (1.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 244ms
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-04-27 13:39:38 -0500
+  Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE ("projects"."fin" = 'f')[0m
+  [1m[35mProject Load (1.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC
+Rendered projects/_project.html.erb (15.0ms)
+Rendered general/_header.html.erb (1.0ms)
+Rendered general/_menu.html.erb (29.0ms)
+Rendered general/_footer.html.erb (1.0ms)
+Rendered projects/index.html.erb within layouts/application (74.0ms)
+Completed 200 OK in 261ms (Views: 92.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/images/accept.png" for 127.0.0.1 at 2011-04-27 13:39:38 -0500
+
+ActionController::RoutingError (No route matches "/images/accept.png"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/projects/7/add_user" for 127.0.0.1 at 2011-04-27 13:40:58 -0500
+  Processing by ProjectsController#add_user as HTML
+  Parameters: {"project_id"=>"7"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mProject Load (1.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mProjectUser Load (1.0ms)[0m  [1mSELECT "project_users".* FROM "project_users"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 227ms
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-04-27 13:40:58 -0500
+  Processing by ProjectsController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE ("projects"."fin" = 'f')[0m
+  [1m[35mProject Load (1.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC
+Rendered projects/_project.html.erb (43.0ms)
+Rendered general/_header.html.erb (1.0ms)
+Rendered general/_menu.html.erb (31.0ms)
+Rendered general/_footer.html.erb (0.0ms)
+Rendered projects/index.html.erb within layouts/application (103.0ms)
+Completed 200 OK in 269ms (Views: 123.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/images/accept.png" for 127.0.0.1 at 2011-04-27 13:40:59 -0500
+
+ActionController::RoutingError (No route matches "/images/accept.png"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-04-27 14:12:32 -0500
+  Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  SELECT COUNT(*) FROM "projects" WHERE ("projects"."fin" = 'f')
+  [1m[36mProject Load (1.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC[0m
+Rendered projects/_project.html.erb (15.0ms)
+Rendered general/_header.html.erb (0.0ms)
+Rendered general/_menu.html.erb (28.0ms)
+Rendered general/_footer.html.erb (1.0ms)
+Rendered projects/index.html.erb within layouts/application (72.0ms)
+Completed 200 OK in 233ms (Views: 90.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/images/accept.png" for 127.0.0.1 at 2011-04-27 14:12:33 -0500
+
+ActionController::RoutingError (No route matches "/images/accept.png"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/projects/6/add_user" for 127.0.0.1 at 2011-04-27 14:13:13 -0500
+  Processing by ProjectsController#add_user as HTML
+  Parameters: {"project_id"=>"6"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+  [1m[36mProject Load (1.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 6) LIMIT 1[0m
+  [1m[35mProjectUser Load (1.0ms)[0m  SELECT "project_users".* FROM "project_users" WHERE ("project_users"."user_id" = 3)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mProject Load (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE ("projects"."id" = 7) LIMIT 1
+Redirected to http://localhost:3000/projects
+Completed 302 Found in 272ms
+
+
+Started GET "/projects" for 127.0.0.1 at 2011-04-27 14:13:14 -0500
+  Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT COUNT(*) FROM "projects" WHERE ("projects"."fin" = 'f')
+  [1m[36mProject Load (1.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE ("projects"."fin" = 'f') ORDER BY fecha DESC[0m
+Rendered projects/_project.html.erb (15.0ms)
+Rendered general/_header.html.erb (0.0ms)
+Rendered general/_menu.html.erb (30.0ms)
+Rendered general/_footer.html.erb (0.0ms)
+Rendered projects/index.html.erb within layouts/application (78.0ms)
+Completed 200 OK in 242ms (Views: 97.0ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/images/accept.png" for 127.0.0.1 at 2011-04-27 14:13:14 -0500
+
+ActionController::RoutingError (No route matches "/images/accept.png"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/images/accept.png" for 127.0.0.1 at 2011-04-27 14:13:14 -0500
+
+ActionController::RoutingError (No route matches "/images/accept.png"):
+  
+
+Rendered c:/Ruby192/lib/ruby/gems/1.9.1/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)

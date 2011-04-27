@@ -117,17 +117,33 @@ class ProjectsController < ApplicationController
 		
 		@project = Project.find(params[:project_id])
 		@user = current_user
-		
 		@project_user = ProjectUser.new(:project_id => @project.id, :user_id => @user.id)
 		
+		project_users = ProjectUser.where(:user_id => @user.id)
+		same_month = false
 		
+		project_users.each do |pu|
+			a1 = @project.fecha.month
+			a2 = Project.find(pu.project).fecha.month
+			b1 = @project.fecha.year
+			b2 = Project.find(pu.project).fecha.year
+			puts "#{a1} == #{a2}"
+			puts "#{b1} == #{b2}"
+			
+			if (a1 == a2 && b1 == b2 && !same_month)
+				same_month = true
+			end
+		end
 		
 		respond_to do |format|
-			if (@project_user.save)
+			if (same_month)
+				format.html { redirect_to(projects_url, :notice => "Ya tienes otro proyecto en ese mes") }
+				format.xml  { head :ok }
+			elsif (@project_user.save)
 				format.html { redirect_to(projects_url, :notice => "Inscrito exitosamente") }
 				format.xml  { head :ok }
 			else
-				format.html { redirect_to(projects_url, :notice => "Error") }
+				format.html { redirect_to(projects_url, :notice => "Error al guardar la inscripcion") }
 				format.xml  { head :ok }
 			end
 		end
